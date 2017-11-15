@@ -1,0 +1,139 @@
+\select@language {english} \changetocdepth {2}
+\select@language {english} \providecommand \autonum@processReference [2]{}
+\select@language {english} \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{Contents}{v}{section*.2}
+\defcounter {refsection}{0}\relax 
+\select@language {magyar} \contentsline {chapter}{Kivonat}{vii}{section*.4}
+\defcounter {refsection}{0}\relax 
+\select@language {magyar} \contentsline {paragraph}{Kulcsszavak}{vii}{section*.5}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{Abstract}{ix}{section*.7}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {paragraph}{Keywords}{ix}{section*.8}
+\defcounter {refsection}{0}\relax 
+\select@language {magyar} \contentsline {chapter}{Hallgat\IeC {\'o}i nyilatkozat}{xi}{section*.10}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.11}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{\chapternumberline {2}Background}{3}{chapter.14}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {2.1}Development methods}{3}{section.15}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.1.1}Model driven software development}{3}{subsection.17}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.1.2}Y model}{4}{subsection.18}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.1.3}Modeling languages on different levels of abstraction}{5}{subsection.20}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Class diagram}{5}{section*.21}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Message Sequence Chart}{6}{section*.22}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Sequence diagram}{6}{section*.23}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Statechart}{6}{section*.24}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Activity Diagram}{7}{section*.25}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {2.2}Verification techniques}{7}{section.26}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.2.1}Design time verification}{7}{subsection.27}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.2.2}Runtime verification}{7}{subsection.28}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {2.3}Complex event processing}{8}{section.29}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.3.1}Complex Event Processing Frameworks}{8}{subsection.31}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {2.4}Runtime verification with CEP}{9}{section.32}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Finite automaton \todo {How the fuck did this get here?}}{9}{section*.34}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {2.5}Model based tools}{9}{section.35}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.5.1}Eclipse Modeling Framework}{10}{subsection.36}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.5.2}VIATRA}{10}{subsection.37}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {2.5.3}VIATRA-CEP}{11}{subsection.38}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{\chapternumberline {3}VIATRA-CEP}{13}{chapter.40}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {3.1}Live model integration}{13}{section.41}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {3.2}Event Pattern Language}{14}{section.43}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {paragraph}{Operators and semantics}{14}{section*.44}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {3.3}Contexts}{16}{section.48}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {3.3.1}Matching and partial matches}{16}{subsection.49}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {3.3.2}Noise and noise-reduction}{16}{subsection.50}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {3.3.3}Overview of the event contexts}{16}{subsection.51}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {3.4}Overview of the architecture}{17}{section.54}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {3.5}Intermediate modeling layer}{17}{section.56}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{\chapternumberline {4}Intermediate Language}{21}{chapter.59}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {4.1}Regular Expression}{22}{section.63}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.1.1}Deterministic Finite Automaton}{22}{subsection.68}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {4.2}Timed Regular Expression}{23}{section.72}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.2.1}Timed Event Automaton}{24}{subsection.76}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.2.2}Timed Region Automaton}{25}{subsection.84}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {4.3}Parametric Timed Regular Expression}{26}{section.92}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.3.1}Parametric Timed Region Automaton}{27}{subsection.94}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.3.2}Summary of Formalisms}{28}{subsection.103}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {paragraph}{Transformation from Regular Expression to Automaton}{28}{section*.105}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {paragraph}{Transformation from Timed Regular Expressions to Timed Automaton}{28}{section*.106}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {paragraph}{Transformation from Parametric Timed Regular Expressions to Parametric Timed Automaton}{29}{section*.107}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {4.4}Implementation}{29}{section.108}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.4.1}Parametric Timed Region Event Automaton}{29}{subsection.110}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Finite Automaton}{29}{section*.111}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Timing}{29}{section*.112}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Parameters and Bindings}{30}{section*.113}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Executor}{30}{section*.114}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.4.2}Parametric Timed Regular Expression}{30}{subsection.115}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.4.3}Transformation from Regular Expression to Automaton}{32}{subsection.193}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Regular Expression to Nondeterministic Automaton with $\epsilon $ transitions}{33}{section*.194}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Determinizing the automaton}{34}{section*.199}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {4.4.4}VEPL to Regular expressions}{34}{subsection.226}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{\chapternumberline {5}Additions}{37}{chapter.229}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {section}{\numberline {5.1}Tokens and parameters}{37}{section.230}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsection}{\numberline {5.1.1}Possible Data Structures for Parameter Binding Relations}{39}{subsection.242}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Decision List}{39}{section*.243}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Disjunctive Decision Set}{39}{section*.246}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{MDDe}{40}{section*.250}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {chapter}{References}{41}{section*.252}
