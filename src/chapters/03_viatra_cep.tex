@@ -10,38 +10,22 @@ automatically generates events on every appearance and/or disappearance of these
 The generated events can be used in event patterns, allowing the users to express complex
 temporal statements of these patterns. A simplified outline of this architecture is shown in~\cref{fig:viatracep:oldinputs}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\linewidth]{figures/chapter_3/oldinput}
-	\caption{A brief outline of the live model integration in VIATRA-CEP \redraw}
-	\label{fig:viatracep:oldinputs}
-\end{figure}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.9\linewidth]{figures/chapter_3/oldinput}
+%	\caption{A brief outline of the live model integration in VIATRA-CEP \redraw}
+%	\label{fig:viatracep:oldinputs}
+%\end{figure}
 
-\tikzstyle{rect} = [
-	thick,
-	inner sep=2mm,
-	%minimum width=30mm,
-	minimum height=10mm,
-	align=center,
-	draw=black,
-	rectangle
-]
 
-\usetikzlibrary{
-	arrows,arrows.meta,
-	shapes,shapes.geometric,shapes.misc,
-	chains, trees,
-	positioning,decorations.pathreplacing	
-}
 \begin{figure}[h]
 \noindent
-\makebox[\textwidth]{%
-
+\makebox[\textwidth]{
 	\centering
-	\begin{tikzpicture}[node distance=1cm and 2cm,
+	\begin{tikzpicture}[
+	node distance=1cm and 2cm,
 	edge/.style={thick, ->}
 	]
-	%
 	\small{
 	\node[rect, minimum height=30mm] (cep) {Complex\\Event\\Processing};
 	\node[rect, left=of cep, yshift=9mm] (es) {Event stream\\adapter};
@@ -51,7 +35,6 @@ temporal statements of these patterns. A simplified outline of this architecture
 	\node[rect, below=of cep] (vql) {VEPL pattern};
 	\node[right=of cep] (fakeNode){};
 	}
-	%
 	\footnotesize{
 		\draw[edge](emf) -- (vp) node[midway, above, align=center]{EMF\\notification};
 		\draw[edge](vp) -- (es) node[midway, above, align=center]{VIATRA-Query\\notification};
@@ -60,8 +43,10 @@ temporal statements of these patterns. A simplified outline of this architecture
 		\draw[edge](vql) -- (cep);
 		\draw[edge](cep) -- (fakeNode) node[midway, above, align=center]{Conclusions};	
 	}
-	\end{tikzpicture}%	
+	\end{tikzpicture}
 }
+	\caption{A brief outline of the live model integration in VIATRA-CEP}
+	\label{fig:viatracep:oldinputs}
 \end{figure}%
 
 
@@ -172,6 +157,7 @@ The last three rows represent an example of the multiple partial matches, as the
 The accepted parts of the traces are under- and overlined from their start to their end.
 
 
+
 \begin{table}
 	\caption{Examples of the Event Contexts in VIATRA-CEP}		
 	\label{tab:cep:contextexample}
@@ -212,6 +198,36 @@ A well defined formal intermediate representation supports the formal verificati
 	\label{fig:viatracep:oldcep}
 \end{figure}
 
+\section{Prefiltering functionalities}
+In the new (0.13) version of the VIATRA-CEP the traits and the check expression has been introduced to help the user automatize some of the prefiltering functions.
+
+These functionalities will be described here, however these are not in the scope of this thesis, as their implementation require a different approach.
+
+\paragraph{Traits}
+Traits provide abstraction mechanism to Atomic event patterns. Currently, it supports abstraction of event parameters. For example if the user want to handle all events with coordinateX and coordinateY fields the user can create an abstraction with traits as shown on \cref{fig:viatracep:trait}.
+
+
+\begin{lstlisting}[caption={Example of the traits in VIATRA-CEP},label={fig:viatracep:trait}]
+	trait position {
+		coordinateX : double = 0.0, //definition with default value
+		coordinateY : double
+	}
+\end{lstlisting}
+
+
+\paragraph{Check expressions in atomic events}
+
+Check expressions are helpful to filter the incoming events without unnecessary code-noise in the patterns. For example if the user wishes to get only the events with positive coordinates a check expression can be applied as shown on \cref{fig:viatracep:check}.
+
+\begin{lstlisting}[caption={Example of the Check expression in VIATRA-CEP},label={fig:viatracep:check}]
+	atomicEvent object with position {
+		check{
+			coordinateX > 0 && coordinateY > 0
+		}
+	}
+\end{lstlisting}
+
+
 
 \section{Intermediate modeling layer}
 Our proposal is to use an intermediate language between the event pattern language and the automata representation, and to use this intermediate language as a common representation of the high level specification, as shown on \cref{fig:viatracep:newcep}. In addition, the long term goal is to support formal analysis of the defined properties. 
@@ -226,7 +242,7 @@ Our proposal is to use an intermediate language between the event pattern langua
 
 
 Using an intermediate language increases the extensibility of the framework, as additional pattern languages can be added later, by implementing a compiler from the high level language to the intermediate language, as shown on \cref{fig:viatracep:newinputs}.
-The intermediate language would allow the user to combine patterns defined in multiple languages, as multiple automata could run and their simultaneous runs could be analysed in a formal way.
+The intermediate language would allow the user to combine patterns defined in multiple languages, as multiple automata could run and their simultaneous runs could be analyzed in a formal way.
 
 
 \begin{figure}[h]

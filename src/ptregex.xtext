@@ -52,7 +52,10 @@ Event:
 	functor=[Functor] ('[' parameters+=Parameter (',' parameters+=Parameter)* ']')?;
 
 Parameter:
-	VarParameter | SingletonParameter | FixParameter;
+	VarParameter | NegVarParameter | SingletonParameter | FixParameter;
+	
+NegVarParameter:
+	'not' body=VarParameter;
 
 FixParameter:
 	FixIntParameter | FixStringParameter;
@@ -64,7 +67,7 @@ FixStringParameter:
 	body=STRING;
 
 VarParameter:
-	var=[Var];
+	variable=[Var];
 
 SingletonParameter:
 	{SingletonParameter} '_';

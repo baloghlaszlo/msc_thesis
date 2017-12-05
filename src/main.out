@@ -18,30 +18,47 @@
 \BOOKMARK [2][-]{subsection.36}{Eclipse Modeling Framework}{section.35}% 18
 \BOOKMARK [2][-]{subsection.37}{VIATRA}{section.35}% 19
 \BOOKMARK [2][-]{subsection.38}{VIATRA-CEP}{section.35}% 20
-\BOOKMARK [0][-]{chapter.40}{VIATRA-CEP}{}% 21
-\BOOKMARK [1][-]{section.41}{Live model integration}{chapter.40}% 22
-\BOOKMARK [1][-]{section.43}{Event Pattern Language}{chapter.40}% 23
-\BOOKMARK [1][-]{section.48}{Contexts}{chapter.40}% 24
-\BOOKMARK [2][-]{subsection.49}{Matching and partial matches}{section.48}% 25
-\BOOKMARK [2][-]{subsection.50}{Noise and noise-reduction}{section.48}% 26
-\BOOKMARK [2][-]{subsection.51}{Overview of the event contexts}{section.48}% 27
-\BOOKMARK [1][-]{section.54}{Overview of the architecture}{chapter.40}% 28
-\BOOKMARK [1][-]{section.56}{Intermediate modeling layer}{chapter.40}% 29
-\BOOKMARK [0][-]{chapter.59}{Intermediate Language}{}% 30
-\BOOKMARK [1][-]{section.63}{Regular Expression}{chapter.59}% 31
-\BOOKMARK [2][-]{subsection.68}{Deterministic Finite Automaton}{section.63}% 32
-\BOOKMARK [1][-]{section.72}{Timed Regular Expression}{chapter.59}% 33
-\BOOKMARK [2][-]{subsection.76}{Timed Event Automaton}{section.72}% 34
-\BOOKMARK [2][-]{subsection.84}{Timed Region Automaton}{section.72}% 35
-\BOOKMARK [1][-]{section.92}{Parametric Timed Regular Expression}{chapter.59}% 36
-\BOOKMARK [2][-]{subsection.94}{Parametric Timed Region Automaton}{section.92}% 37
-\BOOKMARK [2][-]{subsection.103}{Summary of Formalisms}{section.92}% 38
-\BOOKMARK [1][-]{section.108}{Implementation}{chapter.59}% 39
-\BOOKMARK [2][-]{subsection.110}{Parametric Timed Region Event Automaton}{section.108}% 40
-\BOOKMARK [2][-]{subsection.115}{Parametric Timed Regular Expression}{section.108}% 41
-\BOOKMARK [2][-]{subsection.193}{Transformation from Regular Expression to Automaton}{section.108}% 42
-\BOOKMARK [2][-]{subsection.226}{VEPL to Regular expressions}{section.108}% 43
-\BOOKMARK [0][-]{chapter.229}{Additions}{}% 44
-\BOOKMARK [1][-]{section.230}{Tokens and parameters}{chapter.229}% 45
-\BOOKMARK [2][-]{subsection.242}{Possible Data Structures for Parameter Binding Relations}{section.230}% 46
-\BOOKMARK [0][-]{section*.252}{References}{}% 47
+\BOOKMARK [1][-]{section.40}{Related work}{chapter.14}% 21
+\BOOKMARK [0][-]{chapter.42}{VIATRA-CEP}{}% 22
+\BOOKMARK [1][-]{section.43}{Live model integration}{chapter.42}% 23
+\BOOKMARK [1][-]{section.45}{Event Pattern Language}{chapter.42}% 24
+\BOOKMARK [1][-]{section.50}{Contexts}{chapter.42}% 25
+\BOOKMARK [2][-]{subsection.51}{Matching and partial matches}{section.50}% 26
+\BOOKMARK [2][-]{subsection.52}{Noise and noise-reduction}{section.50}% 27
+\BOOKMARK [2][-]{subsection.53}{Overview of the event contexts}{section.50}% 28
+\BOOKMARK [1][-]{section.56}{Overview of the architecture}{chapter.42}% 29
+\BOOKMARK [1][-]{section.58}{Prefiltering functionalities}{chapter.42}% 30
+\BOOKMARK [1][-]{section.72}{Intermediate modeling layer}{chapter.42}% 31
+\BOOKMARK [0][-]{chapter.75}{Intermediate Language}{}% 32
+\BOOKMARK [1][-]{section.80}{Overview of Formalisms}{chapter.75}% 33
+\BOOKMARK [1][-]{section.83}{Regular Languages}{chapter.75}% 34
+\BOOKMARK [2][-]{subsection.84}{Regular Expression}{section.83}% 35
+\BOOKMARK [2][-]{subsection.88}{Deterministic Finite Event Automaton}{section.83}% 36
+\BOOKMARK [2][-]{subsection.96}{Nondeterministic Finite Event Automaton}{section.83}% 37
+\BOOKMARK [2][-]{subsection.101}{Transformation from Regular Expression to Deterministic Finite Automaton}{section.83}% 38
+\BOOKMARK [1][-]{section.141}{Timed Languages}{chapter.75}% 39
+\BOOKMARK [2][-]{subsection.142}{Timeout Regular Expression}{section.141}% 40
+\BOOKMARK [2][-]{subsection.146}{Timed Region Automaton}{section.141}% 41
+\BOOKMARK [2][-]{subsection.154}{Nondeterministic Timeout Event Automaton}{section.141}% 42
+\BOOKMARK [2][-]{subsection.167}{Transformation from Timed Regular Expressions to Timed Automata}{section.141}% 43
+\BOOKMARK [1][-]{section.169}{Parametric Timed Languages}{chapter.75}% 44
+\BOOKMARK [2][-]{subsection.170}{Parametric Timed Regular Expression}{section.169}% 45
+\BOOKMARK [2][-]{subsection.172}{Parametric Timed Region Automaton}{section.169}% 46
+\BOOKMARK [2][-]{subsection.181}{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{section.169}% 47
+\BOOKMARK [0][-]{chapter.183}{Algorithms and Implementation}{}% 48
+\BOOKMARK [1][-]{section.184}{Parametric Timeout Regular Expression}{chapter.183}% 49
+\BOOKMARK [1][-]{section.186}{Parametric Timed Event Automaton}{chapter.183}% 50
+\BOOKMARK [2][-]{subsection.187}{Finite Automaton}{section.186}% 51
+\BOOKMARK [2][-]{subsection.189}{Timeout Event Automaton}{section.186}% 52
+\BOOKMARK [2][-]{subsection.191}{Parameters and Bindings}{section.186}% 53
+\BOOKMARK [1][-]{section.194}{Transformation from VEPL to the intermediate language}{chapter.183}% 54
+\BOOKMARK [2][-]{subsection.195}{VEPL to Regular expressions}{section.194}% 55
+\BOOKMARK [1][-]{section.198}{Automaton Executor}{chapter.183}% 56
+\BOOKMARK [2][-]{subsection.199}{Parameter Handling}{section.198}% 57
+\BOOKMARK [2][-]{subsection.200}{Most Na\357ve approach}{section.198}% 58
+\BOOKMARK [2][-]{subsection.202}{Na\357ve approach}{section.198}% 59
+\BOOKMARK [0][-]{chapter.205}{Conclusion}{}% 60
+\BOOKMARK [0][-]{chapter.206}{Acknowledgment}{}% 61
+\BOOKMARK [0][-]{appendix*.207}{Appendix}{}% 62
+\BOOKMARK [1][-]{section.208}{Grammar}{appendix*.207}% 63
+\BOOKMARK [0][-]{section*.290}{References}{}% 64

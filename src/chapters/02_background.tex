@@ -8,10 +8,86 @@ System development is a complex process, therefore it needs to be supported by v
 
 Traditional software development methods often use informal specifications to support system, architecture and component level designs -- which may also be informal. This can easily result in higher verification costs or faulty systems, making them suboptimal choices for safety critical software development. In order to introduce some level of formality and allow manageable, hierarchical software testing procedures, the V model was developed.
 
-\begin{figure}[h]
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{figures/chapter_2/vmodel}
+%	\caption{The traditional V model\citep{vmodel} \redraw }
+%	\label{fig:intro:vmodel}
+%\end{figure}
+
+%\begin{figure}[h]
+%	\noindent
+%	\makebox[\textwidth]{ %
+%		\centering
+%		\begin{tikzpicture}[
+%		edge/.style={thick, ->}
+%		]
+%		%
+%		\small{
+%%			\node[rect] (spec) {Specification};
+%%			\node[rect, below right=of spec] (archdesign) {Architectural\\design};
+%%			\node[rect, below right=of archdesign] (compdesign) {Component\\design};
+%%			\node[rect, right=of compdesign] (ut) {Unit\\Test};
+%%			\node[rect, right=of archdesign] (it) {Integration\\Test};
+%%			\node[rect, right=of spec] (st){System\\Test};
+%%			\node[rect, below right=of compdesign, left=of ut] (impl) {Implementation};
+%%
+%			\node[rect, minimum width=20mm] (spec) {Specification};
+%			\node[rect, minimum width=20mm, below=of spec.east] (archdesign) {Architectural\\design};
+%			\node[rect, minimum width=20mm, below=of archdesign.east] (compdesign) {Component\\design};
+%			\node[rect, minimum width=20mm, right=of compdesign, xshift=10mm] (ut) {Unit\\Test};
+%			\node[rect, minimum width=20mm, above=of ut.east] (it) {Integration\\Test};
+%			\node[rect, minimum width=20mm, above=of it.east] (st){System\\Test};
+%			\path ($(compdesign)!0.5!(ut)$) |- node[rect, minimum width=20mm] {Implementation} ($(compdesign)!0.5!(ut) +(5,0)$);
+%%			
+%%			\node[rect, minimum width=20mm, below=of compdesign.east, xshift=8mm] (impl) {Implementation};
+%%
+%		}
+%		\end{tikzpicture}%	
+%	}
+%	\caption{The traditional V model\citep{vmodel}}
+%	\label{fig:intro:vmodel}
+%\end{figure}%
+
+\begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{figures/chapter_2/vmodel}
-	\caption{The traditional V model\citep{vmodel} \redraw }
+	\begin{tikzpicture}[
+	start chain=going below,
+	squarednode/.style={
+		rectangle,
+		draw=black,
+		very thick,
+		minimum height=1.5cm,
+		text width=2.5cm,
+		inner sep=2mm,
+		align=center	
+	},
+	every loop/.style={
+		looseness=2,
+		text width=2cm	
+	}
+	]
+	\node[squarednode] (D1) {Requirements};
+	\node[squarednode] (D2) [below = of D1, xshift = 1cm] {Architecture design};
+	\node[squarednode] (D3) [below = of D2, xshift = 1cm] {Component design};
+	\node[squarednode] (I)  [below = of D3, xshift = 2.5cm] {Implementation};
+	\node[squarednode] (V3) [above = of I , xshift = 2.5cm] {System V\&V};
+	\node[squarednode] (V2) [above = of V3, xshift = 1cm] {Architecture V\&V};
+	\node[squarednode] (V1) [above = of V2, xshift = 1cm] {Unit V\&V};
+	\draw[thick,->] (D1) -- (D2) node [midway, left, align=right] {Refine};
+	\draw[thick,->] (D2) -- (D3) node [midway, left, align=right] {Refine};
+	\draw[thick,->] (D3) -- ( I) node [midway, right, align=left] {};
+	\draw[thick,<-] ( I) -- (V3) node [midway, right, align=left] {};
+	\draw[thick,<-] (V3) -- (V2) node [midway, right, align=left] {Use};
+	\draw[thick,<-] (V2) -- (V1) node [midway, right, align=left] {Use};
+	\draw[thick,->] ($(D1.east)+(0,.4)$) -- ($(V1.west)+(0,.4)$) node [midway, above] {Transform};
+	\draw[thick,->] ($(D2.east)+(0,.4)$) -- ($(V2.west)+(0,.4)$) node [midway, above] {Transform};
+	\draw[thick,->] ($(D3.east)+(0,.4)$) -- ($(V3.west)+(0,.4)$) node [midway, above] {Transform};
+	\draw[thick,<-] ($(D1.east)-(0,.4)$) -- ($(V1.west)-(0,.4)$) node [midway, above] {Test};
+	\draw[thick,<-] ($(D2.east)-(0,.4)$) -- ($(V2.west)-(0,.4)$) node [midway, above] {Test};
+	\draw[thick,<-] ($(D3.east)-(0,.4)$) -- ($(V3.west)-(0,.4)$) node [midway, above] {Test};
+	\end{tikzpicture}
+	\caption{The traditional V model\citep{vmodel}}
 	\label{fig:intro:vmodel}
 \end{figure}
 
@@ -31,10 +107,58 @@ MDSD will usually result in a software life cycle model for component based syst
 
 \subsection{Y model} 
 
-\begin{figure}[h]
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{figures/chapter_2/YModel}
+%	\caption{A section of the Y model \redraw }
+%	\label{fig:intro:ymodel}
+%\end{figure}
+
+\begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{figures/chapter_2/YModel}
-	\caption{A section of the Y model \redraw }
+	\begin{tikzpicture}[
+	start chain=going below,
+	squarednode/.style={
+		rectangle,
+		draw=black,
+		very thick,
+		minimum height=1.5cm,
+		text width=2.5cm,
+		inner sep=2mm,
+		align=center
+	},
+	every loop/.style={
+		looseness=2,
+		text width=2cm
+	}
+	]
+	\node[squarednode] (D1) {System\\Design Model};
+	\node[squarednode] (D2) [below = of D1, xshift = .2cm] {Architecture\\Design Model};
+	\node[squarednode] (D3) [below = of D2, xshift = .2cm] {Component\\Design Model};
+	\node[squarednode] (V1) [right = 3cm of D1] {System\\V\&V Model};
+	\node[squarednode] (V2) [below = of V1, xshift = -.2cm]{Architecture\\V\&V Model};
+	\node[squarednode] (V3) [below = of V2, xshift = -.2cm] {Component\\V\&V Model};
+	\node[squarednode] (GC) at ($(D3)!0.5!(V3)$) [yshift=-3.5cm, text width=5.5cm] {Design + V\&V Artifacts\\(Source code, Glue code,\\Config. Tables, Test Cases,\\Monitors, Fault Trees, etc.)};
+	\draw[thick,->] (D3.south) -- (GC.north -| D3) node [midway, left, align=right] {Code generation};
+	\draw[thick,->] (V3.south) -- (GC.north -| V3) node [midway, right, align=left] {Test generation};
+	\draw[thick,->] (D1) edge [loop left, align=right] node {Design rules} ();
+	\draw[thick,->] (D2) edge [loop left, align=right] node {Design rules} ();
+	\draw[thick,->] (D3) edge [loop left, align=right] node {Design rules} ();
+	\draw[thick,->] (V1) edge [loop right, align=left] node {Formal methods} ();
+	\draw[thick,->] (V2) edge [loop right, align=left] node {Formal methods} ();
+	\draw[thick,->] (V3) edge [loop right, align=left] node {Formal methods} ();
+	\draw[thick,->] (D1.south) -- (D2.north) node [midway, left, align=right] {Derive};
+	\draw[thick,->] (D2.south) -- (D3.north) node [midway, left, align=right] {Derive};
+	\draw[thick,<-] (V1.south) -- (V2.north) node [midway, right, align=left] {Use};
+	\draw[thick,<-] (V2.south) -- (V3.north) node [midway, right, align=left] {Use};
+	\draw[thick,<->] ($(D1.east)+(0,.4)$) -- ($(V1.west)+(0,.4)$) node [midway, above] {Transform};
+	\draw[thick,<->] ($(D2.east)+(0,.4)$) -- ($(V2.west)+(0,.4)$) node [midway, above] {Transform};
+	\draw[thick,<->] ($(D3.east)+(0,.4)$) -- ($(V3.west)+(0,.4)$) node [midway, above] {Transform};
+	\draw[thick,<->] ($(D1.east)-(0,.4)$) -- ($(V1.west)-(0,.4)$) node [midway, above] {Test};
+	\draw[thick,<->] ($(D2.east)-(0,.4)$) -- ($(V2.west)-(0,.4)$) node [midway, above] {Test};
+	\draw[thick,<->] ($(D3.east)-(0,.4)$) -- ($(V3.west)-(0,.4)$) node [midway, above] {Test};
+	\end{tikzpicture}
+	\caption{An overview of the Y model}
 	\label{fig:intro:ymodel}
 \end{figure}
 
@@ -56,7 +180,7 @@ In software engineering, a class diagram in the Unified Modeling Language (UML) 
 
 \subsubsection{Message Sequence Chart}
 
-The formalism of Message Sequence Charts (MSC) describes the communication between components -- the order in which messages can occur\citep{msc}\citep{msc2}. The message interchange is usually represented by a graphical model. These charts can be used for high level specification, design, trace based testing or documentation. A collection of possible sequence charts can also describe a complete communication protocol between components. UML sequence diagrams were inspired by MSCs, but their semantics differs regarding some of the basic elements of the language such as lifelines and arrows\citep{mscuml}.
+The formalism of Message Sequence Charts (MSC) describes the communication between components -- the order in which messages can occur\citep{msc}\citep{msc2}\citep{Klose2003}. The message interchange is usually represented by a graphical model. These charts can be used for high level specification, design, trace based testing or documentation. A collection of possible sequence charts can also describe a complete communication protocol between components. UML sequence diagrams were inspired by MSCs, but their semantics differs regarding some of the basic elements of the language such as lifelines and arrows\citep{mscuml}.
 
 \subsubsection{Sequence diagram}
 
@@ -172,29 +296,30 @@ I will introduce more details about VIATRA-CEP in~\cref{chap:viatra_cep}.
 
 \todo{New related work}
 
-%\section{Related work}
-%Runtime verification has a long standing history and it is applied in various domains.
-%Starting from analyzing the runs of the processors by special constructs called watchdog processor up to the system level verification of whole hardware--software ecosystems with the help of CEP.
-%Various languages were designed to specify the requirements.
-%% \paragraph{Linear Temporal Logic}
-%Linear temporal logic (LTL) is a popular formalism for the specification and
-%verification of concurrent and reactive systems\citep{pnueli1977temporal}.
-%Most approaches that use LTL adopt a discrete model of time, where a run of a system produces a sequence
-%of observations. Such a model is inadequate for real-time systems, where a run
-%of a system is modelled either as a sequence of events that are time-stamped
-%with reals or as a trajectory with domain the set $\mathbb{R}_+$ of non-negative reals\citep{nivckovic2010mtl}.
-%% \paragraph{Metric Temporal Logic}
-%
-%Current approaches to monitoring real-time properties suffer either from unbounded space requirements or lack of expressiveness. In paper~\citep{ho2014online} the authors adapted a separation technique to enable  the rewriting of arbitrary MTL formulas into LTL formulas over a set of atoms comprising bounded MTL formulas. As a result, they obtain the first trace-length independent online monitoring procedure for full MTL in a dense-time setting.
-%
-%Web  service  applications  are  distributed  processes  that  are  composed  of  dynamically  bounded  services.  In paper~\citep{simmonds2013monitoring}  the authors  give  a  definitive description  of  a  framework  for  performing  runtime  monitoring  of  web  service applications against behavioral correctness properties described as finite	state  automata.  These  properties  specify  forbidden  and  desired  interactions	between service partners. Finite execution traces of web service applications described in BPEL are checked for conformance at runtime. When violations	are discovered, our framework automatically proposes adaptation strategies,	in the form of plans, which users can select for execution. Our framework also allows verification of stated pre- and post-conditions of service partners and provides guarantees of correctness of the generated recovery plans.
-%
-%%hw
-%In ultra-critical systems, even if the software is fault-free, because of the inherent unreliability of commodity hardware and the adversity of operational environments, processing units (and their hosted software) are replicated, and fault-tolerant algorithms are used to compare the outputs. The authors of~\citep{pike2012runtime} investigate both software monitoring in distributed fault-tolerant systems, as well as implementing fault-tolerance mechanisms using RV techniques. They describe the Copilot language and compiler, specifically designed for generating monitors for distributed, hard real-time systems, and they describe a case study in a Byzantine fault-tolerant airspeed sensor system.
-%
-%%hw2 es nyelv
-%Paper~\citep{reinbacher2011past} presents  a  method  for  runtime  verification  of microcontroller binary code based on past time linear temporal logic(ptLTL).  The authors  show  how  to  implement  a  framework  that,  owing  to  a	dedicated hardware unit, does not require code instrumentation, thus,		allowing the program under scrutiny to remain unchanged. Furthermore, they demonstrate techniques for synthesizing the hardware and software units required to monitor the validity of	ptLTL specifications.
-%
-%PSL is a property specification language recently standardized as IEEE 1850TM-2005 PSL. It includes as its temporal layer a linear temporal logic that enhances LTL with regular expressions and other useful features. PSL and its precursor, Sugar, have been used by the IBM Haifa Research Laboratory for formal verification of hardware since 1993, and for informal (dynamic, simulation runtime) verification of hardware since 1997. More recently both Sugar and PSL have been used for formal, dynamic, and runtime verification of software. In paper`\citep{eisner2007psl} the authors introduced PSL and briefly touch on theoretical and practical issues in the use of PSL for dynamic and runtime verification.
-%
-%A goal of runtime software-fault monitoring is to observe software behavior to determine whether it complies with its intended behavior. Monitoring allows one to analyze and recover from detected faults, providing additional defense against catastrophic failure. Although runtime monitoring has been in use for over 40 years, there is renewed interest in its application to fault detection and recovery, largely because of the increasing complexity and ubiquitous nature of software systems.\citep{delgado2004taxonomy}
+\section{Related work}
+\todo{This is actually not related work, maybe remove this?}
+Runtime verification has a long standing history and it is applied in various domains.
+Starting from analyzing the runs of the processors by special constructs called watchdog processor up to the system level verification of whole hardware--software ecosystems with the help of CEP.
+Various languages were designed to specify the requirements.
+% \paragraph{Linear Temporal Logic}
+Linear temporal logic (LTL) is a popular formalism for the specification and
+verification of concurrent and reactive systems\citep{pnueli1977temporal}.
+Most approaches that use LTL adopt a discrete model of time, where a run of a system produces a sequence
+of observations. Such a model is inadequate for real-time systems, where a run
+of a system is modelled either as a sequence of events that are time-stamped
+with reals or as a trajectory with domain the set $\mathbb{R}_+$ of non-negative reals\citep{nivckovic2010mtl}.
+% \paragraph{Metric Temporal Logic}
+
+Current approaches to monitoring real-time properties suffer either from unbounded space requirements or lack of expressiveness. In paper~\citep{ho2014online} the authors adapted a separation technique to enable  the rewriting of arbitrary MTL formulas into LTL formulas over a set of atoms comprising bounded MTL formulas. As a result, they obtain the first trace-length independent online monitoring procedure for full MTL in a dense-time setting.
+
+Web  service  applications  are  distributed  processes  that  are  composed  of  dynamically  bounded  services.  In paper~\citep{simmonds2013monitoring}  the authors  give  a  definitive description  of  a  framework  for  performing  runtime  monitoring  of  web  service applications against behavioral correctness properties described as finite	state  automata.  These  properties  specify  forbidden  and  desired  interactions	between service partners. Finite execution traces of web service applications described in BPEL are checked for conformance at runtime. When violations	are discovered, our framework automatically proposes adaptation strategies,	in the form of plans, which users can select for execution. Our framework also allows verification of stated pre- and post-conditions of service partners and provides guarantees of correctness of the generated recovery plans.
+
+%hw
+In ultra-critical systems, even if the software is fault-free, because of the inherent unreliability of commodity hardware and the adversity of operational environments, processing units (and their hosted software) are replicated, and fault-tolerant algorithms are used to compare the outputs. The authors of~\citep{pike2012runtime} investigate both software monitoring in distributed fault-tolerant systems, as well as implementing fault-tolerance mechanisms using RV techniques. They describe the Copilot language and compiler, specifically designed for generating monitors for distributed, hard real-time systems, and they describe a case study in a Byzantine fault-tolerant airspeed sensor system.
+
+%hw2 es nyelv
+Paper~\citep{reinbacher2011past} presents  a  method  for  runtime  verification  of microcontroller binary code based on past time linear temporal logic(ptLTL).  The authors  show  how  to  implement  a  framework  that,  owing  to  a	dedicated hardware unit, does not require code instrumentation, thus,		allowing the program under scrutiny to remain unchanged. Furthermore, they demonstrate techniques for synthesizing the hardware and software units required to monitor the validity of	ptLTL specifications.
+
+PSL is a property specification language recently standardized as IEEE 1850TM-2005 PSL. It includes as its temporal layer a linear temporal logic that enhances LTL with regular expressions and other useful features. PSL and its precursor, Sugar, have been used by the IBM Haifa Research Laboratory for formal verification of hardware since 1993, and for informal (dynamic, simulation runtime) verification of hardware since 1997. More recently both Sugar and PSL have been used for formal, dynamic, and runtime verification of software. In paper`\citep{eisner2007psl} the authors introduced PSL and briefly touch on theoretical and practical issues in the use of PSL for dynamic and runtime verification.
+
+A goal of runtime software-fault monitoring is to observe software behavior to determine whether it complies with its intended behavior. Monitoring allows one to analyze and recover from detected faults, providing additional defense against catastrophic failure. Although runtime monitoring has been in use for over 40 years, there is renewed interest in its application to fault detection and recovery, largely because of the increasing complexity and ubiquitous nature of software systems.\citep{delgado2004taxonomy}

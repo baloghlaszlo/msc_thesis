@@ -378,6 +378,43 @@
       \endverb
       \keyw{Streaming model transformations; complex event processing; live models; change-driven transformations}
     \endentry
+    \entry{delgado2004taxonomy}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=d302b0740b0076c932ad047f82b26265}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={Nelly},
+           giveni={N\bibinitperiod}}}%
+        {{uniquename=0,hash=4f19a53c46cebb2bab09e6785ff442ca}{%
+           family={Gates},
+           familyi={G\bibinitperiod},
+           given={Ann\bibnamedelima Quiroz},
+           giveni={A\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+        {{uniquename=0,hash=773dbc62762cebba29120118f62dc4f1}{%
+           family={Roach},
+           familyi={R\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{69143389ad890e5c30e1b4f65e864144}
+      \strng{fullhash}{21c63e69e30a1cb5e9bbf0f3988fbf34}
+      \strng{authornamehash}{69143389ad890e5c30e1b4f65e864144}
+      \strng{authorfullhash}{21c63e69e30a1cb5e9bbf0f3988fbf34}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Software Engineering, IEEE Transactions on}
+      \field{number}{12}
+      \field{title}{A taxonomy and catalog of runtime software-fault monitoring tools}
+      \field{volume}{30}
+      \field{year}{2004}
+      \field{pages}{859\bibrangedash 872}
+      \range{pages}{14}
+    \endentry
     \entry{EMF}{online}{}
       \field{sortinit}{E}
       \field{sortinithash}{07bbd5a529b5beaa311df5be05b874bc}
@@ -390,6 +427,31 @@
       \verb{url}
       \verb https://eclipse.org/modeling/emf/
       \endverb
+    \endentry
+    \entry{eisner2007psl}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=a5b2f9448555311c6e621fbd859ae4cd}{%
+           family={Eisner},
+           familyi={E\bibinitperiod},
+           given={Cindy},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a5b2f9448555311c6e621fbd859ae4cd}
+      \strng{fullhash}{a5b2f9448555311c6e621fbd859ae4cd}
+      \strng{authornamehash}{a5b2f9448555311c6e621fbd859ae4cd}
+      \strng{authorfullhash}{a5b2f9448555311c6e621fbd859ae4cd}
+      \field{sortinit}{E}
+      \field{sortinithash}{07bbd5a529b5beaa311df5be05b874bc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Runtime Verification}
+      \field{title}{PSL for runtime verification: Theory and practice}
+      \field{year}{2007}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
     \endentry
     \entry{esper}{online}{}
       \field{sortinit}{E}
@@ -578,6 +640,67 @@
       \field{pages}{721\bibrangedash 732}
       \range{pages}{12}
     \endentry
+    \entry{ho2014online}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=8530f725745b20ed2faf200941727a1b}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Hsi-Ming},
+           giveni={H\bibinithyphendelim M\bibinitperiod}}}%
+        {{uniquename=0,hash=9dcad644e9ede71fbd155e846e020375}{%
+           family={Ouaknine},
+           familyi={O\bibinitperiod},
+           given={Joël},
+           giveni={J\bibinitperiod}}}%
+        {{uniquename=0,hash=4225ab35a9e84541465345977a7f9c42}{%
+           family={Worrell},
+           familyi={W\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{832f5ade96f23bddc7976ca33398d257}
+      \strng{fullhash}{50b6e9b2b5d0c3b6576d2668c5f8cdc2}
+      \strng{authornamehash}{832f5ade96f23bddc7976ca33398d257}
+      \strng{authorfullhash}{50b6e9b2b5d0c3b6576d2668c5f8cdc2}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Runtime Verification}
+      \field{title}{Online monitoring of metric temporal logic}
+      \field{year}{2014}
+      \field{pages}{178\bibrangedash 192}
+      \range{pages}{15}
+    \endentry
+    \entry{Klose2003}{thesis}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=9aac036b0246289b3db177eb2ef9cc25}{%
+           family={Klose},
+           familyi={K\bibinitperiod},
+           given={Jochen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Carl von Ossietzky University of Oldenburg}%
+      }
+      \strng{namehash}{9aac036b0246289b3db177eb2ef9cc25}
+      \strng{fullhash}{9aac036b0246289b3db177eb2ef9cc25}
+      \strng{authornamehash}{9aac036b0246289b3db177eb2ef9cc25}
+      \strng{authorfullhash}{9aac036b0246289b3db177eb2ef9cc25}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Live Sequence Charts: A Graphical Formalism for the Specification of Communication Behavior}}
+      \field{type}{phdthesis}
+      \field{year}{2003}
+      \verb{url}
+      \verb http://d-nb.info/970053304
+      \endverb
+    \endentry
     \entry{lam2006compilers}{misc}{}
       \name{author}{4}{}{%
         {{uniquename=0,hash=8fe9f1fb00f2f44ad187887eef1c6199}{%
@@ -751,6 +874,66 @@
       \field{pages}{54\bibrangedash 63}
       \range{pages}{10}
     \endentry
+    \entry{pike2012runtime}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=e999263af57a564bb56ea55bc3ea5d7c}{%
+           family={Pike},
+           familyi={P\bibinitperiod},
+           given={Lee},
+           giveni={L\bibinitperiod}}}%
+        {{uniquename=0,hash=07ff2618c20792b9bf11818003d324f4}{%
+           family={Niller},
+           familyi={N\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=7a03bce7d0a74987e50dacbcc06604c8}{%
+           family={Wegmann},
+           familyi={W\bibinitperiod},
+           given={Nis},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{14862693ae5780f102b5c8908cf435ad}
+      \strng{fullhash}{c3478c138361e68386d48304c4bcb494}
+      \strng{authornamehash}{14862693ae5780f102b5c8908cf435ad}
+      \strng{authorfullhash}{c3478c138361e68386d48304c4bcb494}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Runtime Verification}
+      \field{title}{Runtime verification for ultra-critical systems}
+      \field{year}{2012}
+      \field{pages}{310\bibrangedash 324}
+      \range{pages}{15}
+    \endentry
+    \entry{pnueli1977temporal}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=48771ab1876a9bd3472621189d78fe6f}{%
+           family={Pnueli},
+           familyi={P\bibinitperiod},
+           given={Amir},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{48771ab1876a9bd3472621189d78fe6f}
+      \strng{fullhash}{48771ab1876a9bd3472621189d78fe6f}
+      \strng{authornamehash}{48771ab1876a9bd3472621189d78fe6f}
+      \strng{authorfullhash}{48771ab1876a9bd3472621189d78fe6f}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Foundations of Computer Science, 1977., 18th Annual Symposium on}
+      \field{title}{The temporal logic of programs}
+      \field{year}{1977}
+      \field{pages}{46\bibrangedash 57}
+      \range{pages}{12}
+    \endentry
     \entry{drools}{incollection}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=d9feb1705d95008648ff8fe3bd1a0846}{%
@@ -776,6 +959,51 @@
       \field{pages}{2\bibrangedash 2}
       \range{pages}{1}
     \endentry
+    \entry{reinbacher2011past}{incollection}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,hash=04496c97830daceeee954530b8d9c5aa}{%
+           family={Reinbacher},
+           familyi={R\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{uniquename=0,hash=b1901f7c69075eb9d48d703f5a975e67}{%
+           family={Brauer},
+           familyi={B\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+        {{uniquename=0,hash=0e4a204856f05680b631bac553756c2c}{%
+           family={Horauer},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{uniquename=0,hash=a39c6fc3c42ec667f4bb88fa7bd2fd43}{%
+           family={Steininger},
+           familyi={S\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{uniquename=0,hash=882993b479ae64df7d1f06efbc01e805}{%
+           family={Kowalewski},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3c9c851bd5cd014671d443ecff33649c}
+      \strng{fullhash}{2e8066d108277c82726160b40aa41988}
+      \strng{authornamehash}{3c9c851bd5cd014671d443ecff33649c}
+      \strng{authorfullhash}{2e8066d108277c82726160b40aa41988}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Formal Methods for Industrial Critical Systems}
+      \field{title}{Past time LTL runtime verification for microcontroller binary code}
+      \field{year}{2011}
+      \field{pages}{37\bibrangedash 51}
+      \range{pages}{15}
+    \endentry
     \entry{stcmove}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=45b95c3ce3b418e40f40794511b688df}{%
@@ -795,6 +1023,43 @@
       \field{journaltitle}{Dr. Dobb’s Journal}
       \field{title}{Who moved my state}
       \field{year}{2003}
+    \endentry
+    \entry{simmonds2013monitoring}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=2712c191bdaf58a1f1852fa0b27bf883}{%
+           family={Simmonds},
+           familyi={S\bibinitperiod},
+           given={Jocelyn},
+           giveni={J\bibinitperiod}}}%
+        {{uniquename=0,hash=58c6fef3e13d681bd1e41c8bc48df7db}{%
+           family={Ben-David},
+           familyi={B\bibinithyphendelim D\bibinitperiod},
+           given={Shoham},
+           giveni={S\bibinitperiod}}}%
+        {{uniquename=0,hash=bd2d1ee9868ac55d22a31d964c92a066}{%
+           family={Chechik},
+           familyi={C\bibinitperiod},
+           given={Marsha},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a440e0e9605403f5a8a13fb69d5c4185}
+      \strng{fullhash}{9f4f1797128e6b2a67f5c611c5ec8288}
+      \strng{authornamehash}{a440e0e9605403f5a8a13fb69d5c4185}
+      \strng{authorfullhash}{9f4f1797128e6b2a67f5c611c5ec8288}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computing}
+      \field{number}{3}
+      \field{title}{Monitoring and recovery for web service applications}
+      \field{volume}{95}
+      \field{year}{2013}
+      \field{pages}{223\bibrangedash 267}
+      \range{pages}{45}
     \endentry
     \entry{suman2008timed}{incollection}{}
       \name{author}{4}{}{%

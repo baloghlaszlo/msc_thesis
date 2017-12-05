@@ -36,6 +36,25 @@
 % Comment in this line to remove todos
 %\renewcommand{\todo}{}
 
+%Tikz stuff 
+\tikzstyle{rect} = [
+	thick,
+	inner sep=2mm,
+	%minimum width=30mm,
+	minimum height=10mm,
+	align=center,
+	draw=black,
+	rectangle
+]
+
+
+%\usetikzlibrary{
+%	arrows,arrows.meta,
+%	shapes,shapes.geometric,shapes.misc,
+%	chains, trees,
+%	positioning,decorations.pathreplacing	
+%}
+
 \bibliography{references}
 
 \begin{document}
@@ -60,7 +79,12 @@
 \include{chapters/02_background}
 \include{chapters/03_viatra_cep}
 \include{chapters/04_intermediate_language}
-\include{chapters/05_additions}
+\include{chapters/05_algo}
+\include{chapters/06_conclusion}
+\include{chapters/07_ack}
+
+
+\include{chapters/10_appendix}
 
 \printbibliography
 
