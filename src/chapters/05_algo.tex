@@ -33,7 +33,7 @@ Transitions have one EventGuard which shows what type of event can fire the tran
 The additional classes required to implement the Timeout functionalities are shown on \cref{fig:algo:timed_automaton}.
 Every timed expression in the regular expression is compiled to SymbolicTimer. Upon entering such timed region all transitions will have a SetTimerAction Action to start the timer. The transitions which exit the given region will have a ResetTimerAction Action for that timer. Every state which is in the Timeout region will have a Transition with a SymbolicTimeoutEvent instead of a SymbolicInputEvent to further specify the movement of the token in case of timeout. Currently these SymbolicTimeoutEvent Transitions are always pointing on a Trap state, however as this gives a more generalized automaton structure so this can help in the future to make the implementation of the Timeout Event Automaton with Intervals easier.
 
-A scratch implementation plan is duplicate the entire region, for each timeout \\ $\langle \mathit{Complex Pattern} \rangle_{t_0 < t < t_1}$ compile the $\mathit{ComplexPattern}$ twice. For the sake of easier understanding, let us call the first compilation's result  pre-interval as it represents when the token is before the desired time interval, and the call the second compilation result in-interval as it represents when the token is in the desired time interval. For each state in the pre-interval part the transition with the timeout will point to the equivalent state in the in-interval part, and for each state in the in-interval part the transition with the timeout will point to a trap state. All of the transitions, which would point to the accepting state of the pre-interval should be pointed to a Trap State as these shows that the pattern match occurred before the required interval.
+A scratch of the implementation plan is duplicate the entire region, for each timeout \\ $\langle \mathit{Complex Pattern} \rangle_{t_0 < t < t_1}$ compile the $\mathit{ComplexPattern}$ twice. For the sake of easier understanding, let us call the first compilation's result  pre-interval as it represents when the token is before the desired time interval, and the call the second compilation result in-interval as it represents when the token is in the desired time interval. For each state in the pre-interval part the transition with the timeout will point to the equivalent state in the in-interval part, and for each state in the in-interval part the transition with the timeout will point to a trap state. All of the transitions, which would point to the accepting state of the pre-interval should be pointed to a Trap State as these shows that the pattern match occurred before the required interval.
   
 \begin{figure}[h]
 	\centering
@@ -43,9 +43,13 @@ A scratch implementation plan is duplicate the entire region, for each timeout \
 \end{figure}
 
 \subsection{Parameters and Bindings}
+\label{section:algo:emfparameterhandilng}
 
 The part of the automaton metamodel which is extended with the parametric properties are shown on \cref{fig:algo:parametric_automaton}
 The parametrization of the events is represented by the Parameter abstract class. The type of each parameter is implemented with a reference to a SymbolicEvent instance. Parameters can be Fix or Free, an Event only has Fix parameters, but the tokens can have both. Event parameters can be bound to fix values or to a token parameter, this is done by the ConstantBinding and TokenParameterBinding respectively.
+
+This parameter handling approach is not the best, however this is which can be easily implemented using EMF.
+The deeper analysis of these parameter relations can are discussed in \cref{section:algo:paramhandling}.
 
 \begin{figure}[h]
 	\centering
@@ -53,12 +57,6 @@ The parametrization of the events is represented by the Parameter abstract class
 	\caption{Metamodel of the Parametric Timed Event Automaton}
 	\label{fig:algo:parametric_automaton}
 \end{figure}
-
-\subsubsection{Executor}
-The algorithm first searches for all the activated transitions.
-If it finds an activated transition, it iterates over the tokens which in on that state. The first token with matching (non-confronting)
-parameter list will be split to the next state if there are new parameter bindings from the event, or moved if there are no new bindings.
-If a token enters an acceptor state it will trigger a function call.
 
 \section{Transformation from VEPL to the intermediate language}
 
@@ -73,38 +71,86 @@ Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processin
 	\caption{Basic VEPL operators in strict immediate context, expressed with regular expressions}		
 	\label{tab:cep:vepl_regex_strict}
 	\centering
-	\begin{tabularx}{0.5\textwidth}{llX}
+	\begin{tabular}{@{}ll@{}}
 		\toprule
-		VEPL operator             &	Regular Expression \\
-		\midrule
-		$p_1$ $\rightarrow$ $p_2$ & $p_1\; p_2$ \\
-		$p_1$ OR $p_2$            & $p_1|p_2$ \\
-		$p\{\ast\}$               & $p^*$ \\
-		$p[t]$                    & $p[t]$ \\ 
-		\bottomrule
-	\end{tabularx}
+		VEPL operator             & Regular Expression \\ \midrule
+		$p_1$ $\rightarrow$ $p_2$ & $p_1\; p_2$        \\
+		$p_1$ OR $p_2$            & $p_1|p_2$          \\
+		$p\{\ast\}$               & $p^*$              \\
+		$p[t]$                    & $p[t]$             \\ \bottomrule
+	\end{tabular}
 \end{table}
 
 \begin{table}
 	\caption{Basic VEPL operators in chronicle context, expressed with regular expressions}		
 	\label{tab:cep:vepl_regex_chronicle}
 	\centering
-	\begin{tabularx}{0.5\textwidth}{llX}
+	\begin{tabular}{@{}ll@{}}
 		\toprule
-		VEPL operator             &	Regular Expression \\
-		\midrule
+		VEPL operator             & Regular Expression               \\ \midrule
 		$p_1$ $\rightarrow$ $p_2$ & $p_1 \; (\Sigma/(p_2))^* \; p_2$ \\
-		$p_1$ OR $p_2$            & $p_1|p_2$ \\
-		$p\{\ast\}$               & nothing\\
-		$p[t]$                    & $p[t]$ \\
-		\bottomrule
-	\end{tabularx}
+		$p_1$ OR $p_2$            & $p_1|p_2$                        \\
+		$p\{\ast\}$               & nothing                          \\
+		$p[t]$                    & $p[t]$                           \\ \bottomrule
+	\end{tabular}
 \end{table}
 
 \section{Automaton Executor}
+	Two approaches exist on executing an automaton; a deterministic and a nondeterministic way.
+	In  both ways there are multiple tokens in the automaton with one parameter relation each.
+	
+	\paragraph{Deterministic Execution}
+	In the deterministic approach the automaton should not contain any $\varepsilon$-edges and a ``token can go only one way'', or more formally, there is only one transition for each token to fire. 
+	In this case every token moves exactly one on each event, splitting the potential bindings to two part, one which matched the event's parameter, and one which did not.
+	
+	\paragraph{Nondeterministic Execution}
+	In the nondeterministic way, the automaton can contain $\varepsilon$-edges, and a token can move through multiple transitions each. This solution implies an another way to handle the parameters, as the executor should do the following steps:
+	\begin{enumerate}
+		\item Save each token in a list,
+		\item Find the enabled transitions,
+		\item For each of the enabled transitions, create a parameter relation according to the event,
+		\item Compute the intersection of each token with each enabled transitions which is an outgoing transition of the state which the token is on,
+		\item Move each intersected token parameter binding to the state where the transitions point,
+		\item Move these tokens through the $\varepsilon$-closure, applying any actions to the moved parameters,
+		\item And remove the old tokens which were saved in the first step.
+	\end{enumerate}
+
+
+	\todo{Maybe an example execution?}
+
+
+%	The algorithm first searches for all the activated transitions.
+%	If it finds an activated transition, it iterates over the tokens which in on that state. The first token with matching (non-confronting) parameter list will be split to the next state if there are new parameter bindings from the event, or moved if there are no new bindings.
+%	If a token enters an acceptor state it will trigger a callback function.
+	
 
 	\subsection{Parameter Handling}
 	\label{section:algo:paramhandling}
+	
+%	Parameter handling can be done with two approach, either we consider the execution deterministic or nondeterministic.
+%	In both cases each token requires a ``ParameterRelation''.
+%	But these parameter relation requires different Interface depending on the style of the execution:
+
+	The required operations on the Parameter Relations are:
+	\begin{itemize}
+		\item If the execution is deterministic, the following operations are required:
+			\begin{itemize}
+				\item $P_1 \mathrel{{\cup}{=}} P_2$, i.e.~a relation can be added to another with mutating the first one,
+				\item $P_1 \mathrel{{\setminus}{=}} P_2$, i.e.~a relation can be removed from an another with mutating the first one,
+				\item can be checked if it is empty,
+				\item and add every possible parameter value with $\forall$.
+			\end{itemize}
+		\item However if the execution is considered nondeterministic, an other set of operation is required:
+			\begin{itemize}
+				\item $P_1 \cup P_2$, i.e.~two relation's union can be computed,
+				\item $P_1 \cap P_2$, i.e.~two relation's intersection can be computed,
+				\item can be checked if it is empty,
+				\item and add every possible parameter value with $\forall$.
+			\end{itemize}
+	\end{itemize}
+
+	The ``add every possible parameter value'' is only required upon the initialization of the automaton, and considering that the relations are empty on construction this operation can be changed to a complementer operation, which is more general.
+	In both cases the union is required for further optimization, and not an absolute necessity.
 
 	\subsection{Most Na\"ive approach}
 	
@@ -116,22 +162,20 @@ Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processin
 	\centering
 	\begin{tabular}{ccccc}
 		\toprule
-		$i_1$ &	$i_2$ & $i_3$ & \dots & $i_n$ \\
-		\midrule
-		1 	  & 0     & 0     & \dots & 0 \\
-		1     & 1     & 0     & \dots & 0 \\
-		1     & 0     & 1     & \dots & 0 \\ 
-		1     & 1     & 1     & \dots & 0 \\ 
-		      &       &\vdots &       &   \\
-		1     & 1     & 1     & \dots & 1 \\
-		1 	  & 2     & 0     & \dots & 0 \\
-		1     & 2     & 1     & \dots & 0 \\
-	  	      &       &\vdots &       &   \\
-		1     & 2     & 1     & \dots & 1 \\ 
-		1     & 2     & 2     & \dots & 0 \\ 
-		      &       &\vdots &       &   \\
-		1     &$2^{32}$ &$2^{32}$ & \dots & $2^{32}$\\
-		\bottomrule
+		$i_1$ &  $i_2$   &  $i_3$   & \dots &  $i_n$   \\ \midrule
+		  1   &    0     &    0     & \dots &    0     \\
+		  1   &    1     &    0     & \dots &    0     \\
+		  1   &    0     &    1     & \dots &    0     \\
+		  1   &    1     &    1     & \dots &    0     \\
+		      &          &  \vdots  &       &  \\
+		  1   &    1     &    1     & \dots &    1     \\
+		  1   &    2     &    0     & \dots &    0     \\
+		  1   &    2     &    1     & \dots &    0     \\
+		      &          &  \vdots  &       &  \\
+		  1   &    2     &    1     & \dots &    1     \\
+		  1   &    2     &    2     & \dots &    0     \\
+		      &          &  \vdots  &       &  \\
+		  1   & $2^{32}$ & $2^{32}$ & \dots & $2^{32}$ \\ \bottomrule
 	\end{tabular}
 	\end{table}
 	
@@ -144,15 +188,66 @@ Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processin
 		\item A list of excluded values which shows that for that token the given parameters values have been reduced by them, i.e.~the given parameter must not be any of the excluded values
 	\end{itemize}
 
-	With this approach, every operation seems to be plausible, however a simple counter-example easily shows that the solution is wrong.
+	With this approach, every operation seems to be plausible, however a simple counter-example easily shows that the solution can not support the deterministic approach.
 	
-	Consider the following pattern: $\Sigma^*$ $a[i]$ $\Sigma^*$ $b[i,j]$, i.e.~there must happen an event $a$ with a parameter $i$, and after that there can be any number of events with the functor $b$ with the same first parameter as it was in the first $a$ event. To ease the understanding, the notation will be: The state where the outgoing transition with label $a$ originates will be called $s_0$, the state where the outgoing transition with label $b$ originates will be called $s_1$.
+	Consider the following pattern: $\Sigma^*$ $a[i,j]$ $\Sigma^*$ $b[i,j,k]$, i.e.~there must happen an event $a$ with a parameter $i$ and $j$, and after that there can be any number of events with the functor $b$ with the same first two parameter as it was in the first $a$ event. To ease the understanding, the notation will be: The state where the outgoing transition with label $a$ originates will be called $s_0$, the state where the outgoing transition with label $b$ originates will be called $s_1$.
 	
-	If we would use the na\"ive approach with the input sequence of $a[1]$ $b[1,2]$ $b[1,3]$ the following would happen on reading the inputs one by one:
+	If we would use the na\"ive approach with the input sequence of $a[1,2]\;a[2,1]\;b[2,2,2]$ the following would happen on reading the inputs one by one:
 	\begin{enumerate}
 		\item A token would be created on $s_0$ with the binding $i=1$
-		\item The token would be split into two, 
+		\item The token would be split into two, \todo{How to finish? :D}
 	\end{enumerate}
 
+	\subsection{Decision List}
 	
+	A decision list is a list of data, where each cell contains either a concrete value or the symbol $\ast$ which stands
+	for ``anything''. To find out if a values in the relation the rows must be read in order, and find the first row which conforms the values you are searching for \todo{algorithm} \dots and return the containment.
+	An example of a decision list is shown on \cref{tab:cep:decision_list}
+	
+	\begin{table}
+		\centering
+		\caption{An example of a Decision List}		
+		\label{tab:cep:decision_list}
+		\begin{tabular}{cccc}
+			\toprule
+			\# & containment &  $A$   &  $B$   \\ \midrule
+			1  &     $+$     &  $2$   & $\ast$ \\
+			2  &     $+$     &  $3$   &  $5$   \\
+			3  &     $-$     & $\ast$ & $\ast$ \\ \bottomrule
+		\end{tabular}
+	\end{table}
+
+	\subsection{Disjunctive Decision Set}
+
+	An event -- in a more formal way -- is a conjunction of a logical statement. When we think of $\mathit{Allocate}(1,2)$ we actually mean that we have an event called $\mathit{Allocate}$ where $\mathit{Task} = 1 $ $\with$ $\mathit{Resource} = 2$.
+	With this mindset we can assume that a Parameter Binding Relation is actually only a disjunction of such statements.
+	
+	An example of Disjunctive Decision Set is shown on \cref{tab:cep:dds}.
+	
+	\begin{table}
+		\centering
+		\caption{An example of a Disjunctive Decision Set}		
+		\label{tab:cep:dds}
+		\begin{tabular}{ccc}
+			\toprule
+			containment &  $A$   &          $B$           \\ \midrule
+			    $+$     &  $2$   & $\ast\setminus\{1,2\}$ \\
+			    $+$     &  $3$   &          $5$           \\
+			    $-$     & $\ast$ &         $\ast$         \\ \bottomrule
+		\end{tabular}
+	\end{table}
+
+	\subsection{MDDe}
+	
+	MDDe is a Multiple-value Decision Diagram with else branches. We could use simple MDD's with intervals, but in many cases the parameters do not have a supremum and infimum and they are not in a sequence.
+	
+
+	
+	\subsection{Trie}
+	
+	\todo{Trie}
+	
+	\subsection{BDD}
+	
+	\todo{BDD}
 	

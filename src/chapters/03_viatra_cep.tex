@@ -122,9 +122,9 @@ These event contexts set the properties execution as of noise-reduction, and the
 
 \subsection{Matching and partial matches}
 When a pattern is not matched yet, but the current trace is a possible prefix of the pattern, the trace will cause a partial match.
-For example, if the pattern is $A \rightarrow B \rightarrow C$, and the trace is $A\,B$ then the pattern matcher only waits for an event $C$.
+For example, if the pattern is $A \rightarrow B \rightarrow C$, and the trace is $A\;B$ then the pattern matcher only waits for an event $C$.
 The event context defines the maximal amount of these partial matches.
-For example, if there are multiple matches allowed at the same time, and the pattern is $A \rightarrow B$, the trace $A\,A\,B\,B$ will cause two matches, one at the reception of the first event of type $B$, and one after the reception of the second event of type $B$. 
+For example, if there are multiple matches allowed at the same time, and the pattern is $A \rightarrow B$, the trace $A\;A\;B\;B$ will cause two matches, one at the reception of the first event of type $B$, and one after the reception of the second event of type $B$. 
 If only one partial match would be used at the same time, the occurrence  first event of type $B$ would cause a match, but the second occurrence  would not.
 
 
@@ -132,7 +132,7 @@ If only one partial match would be used at the same time, the occurrence  first 
 In most cases, where a Complex Event Processor is used, there are multiple event sources, with vast amount of event types.
 Even in these cases, there are many pattern, which does not use all of these event types.
 In VIATRA-CEP, the noise is defined as following: An incoming event, which will not increase the size of the currently non-contradictory postfix of the trace.
-For example, if the pattern is $A \rightarrow B \rightarrow C$, and the previous trace is $A\,B$, an event $B$ is considered noise. Note that in this example, an event $A$ would not be noise, as it will either start a new partial match, if it is allowed, or restart the matching depending on the chosen context.
+For example, if the pattern is $A \rightarrow B \rightarrow C$, and the previous trace is $A\;B$, an event $B$ is considered noise. Note that in this example, an event $A$ would not be noise, as it will either start a new partial match, if it is allowed, or restart the matching depending on the chosen context.
 
 \subsection{Overview of the event contexts}
 
@@ -164,15 +164,14 @@ The accepted parts of the traces are under- and overlined from their start to th
 	\centering
 	\begin{tabular}{@{}clcc@{}}
 		\toprule
-		VEPL pattern & Context & Trace & Accepted \\
+		VEPL pattern      & Context          & Trace                                                         & Accepted \\
 		\midrule
-		$A \rightarrow B$ & Strict Immediate & $A\,C\,B$ & $-$ \\[1ex]
-		& Immediate & $A\,C\,B$ & $-$ \\[1ex ]
-		& Chronicle & $\underline{A\,C\,B}$ & $\checkmark$ \\[4ex]
-		%
-		& Strict Immediate & $A\,\underline{A\,B}\,B$ & $\checkmark$ \\[1ex]
-		& Immediate & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
-		& Chronicle & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
+		$A \rightarrow B$ & Strict Immediate & $A\,C\,B$                                                     & $-$ \\[1ex]
+		                  & Immediate        & $A\,C\,B$                                                     & $-$ \\[1ex ]
+		                  & Chronicle        & $\underline{A\,C\,B}$                                         & $\checkmark$ \\[4ex]
+		                  & Strict Immediate & $A\,\underline{A\,B}\,B$                                      & $\checkmark$ \\[1ex]
+	                      & Immediate        & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
+		                  & Chronicle        & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
 		\bottomrule
 	\end{tabular}
 \end{table}

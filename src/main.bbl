@@ -186,7 +186,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Complex Event Processing based on Automata theory}
-      \field{type}{mathesis}
+      \field{type}{Bachelor's Thesis}
       \field{year}{2015}
     \endentry
     \entry{bergmann2010incremental}{incollection}{}
@@ -674,6 +674,45 @@
       \field{year}{2014}
       \field{pages}{178\bibrangedash 192}
       \range{pages}{15}
+    \endentry
+    \entry{Kam98mdd}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,hash=3505c209e7608ce007595bb1c30516fe}{%
+           family={Kam},
+           familyi={K\bibinitperiod},
+           given={Timothy},
+           giveni={T\bibinitperiod}}}%
+        {{uniquename=0,hash=d45fe5776cbfa976a151313df8636698}{%
+           family={Villa},
+           familyi={V\bibinitperiod},
+           given={Tiziano},
+           giveni={T\bibinitperiod}}}%
+        {{uniquename=0,hash=4fb487f81f57d4c6d7412fa6fec1b9d0}{%
+           family={Brayton},
+           familyi={B\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{uniquename=0,hash=b405dddc14f0193e800658e2bfd4179f}{%
+           family={{Sangiovanni-Vincentelli}},
+           familyi={S\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{678616f886821382780ae046938623fa}
+      \strng{fullhash}{41c5c2dafeb9d94e92294ef592cebbd8}
+      \strng{authornamehash}{678616f886821382780ae046938623fa}
+      \strng{authorfullhash}{41c5c2dafeb9d94e92294ef592cebbd8}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Int.\ J.\ Multiple-Valued Logic}
+      \field{number}{1--2}
+      \field{title}{Multi-valued decision diagrams: theory and applications}
+      \field{volume}{4}
+      \field{year}{1998}
+      \field{pages}{9\bibrangedash 62}
+      \range{pages}{54}
     \endentry
     \entry{Klose2003}{thesis}{}
       \name{author}{1}{}{%

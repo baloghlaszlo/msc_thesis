@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.27)  5 DEC 2017 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.27)  11 DEC 2017 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2559,7 +2559,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 60.
 Package biblatex Info: Reference segment=0 on input line 60.
-<thesis_topic.pdf, id=288, 597.55246pt x 845.07718pt>
+<thesis_topic.pdf, id=316, 597.55246pt x 845.07718pt>
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf>
 Package pdftex.def Info: thesis_topic.pdf used on input line 65.
@@ -2568,7 +2568,7 @@ File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf>
 Package pdftex.def Info: thesis_topic.pdf used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<thesis_topic.pdf, id=291, page=1, 597.55246pt x 845.07718pt>
+<thesis_topic.pdf, id=319, page=1, 597.55246pt x 845.07718pt>
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf, page 1>
 Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
@@ -2593,7 +2593,7 @@ Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
 ]
 \openout2 = `include/titlepage.aux'.
 
-(./include/titlepage.tex <include/figures/bme_logo.pdf, id=331, 705.63625pt x 1
+(./include/titlepage.tex <include/figures/bme_logo.pdf, id=359, 705.63625pt x 1
 88.705pt>
 File: include/figures/bme_logo.pdf Graphic file (type pdf)
 <use include/figures/bme_logo.pdf>
@@ -2632,13 +2632,13 @@ LaTeX Font Info:    Font shape `T1/FiraSans-TLF/sb/n' will be
 (Font)              scaled to size 9.96452pt on input line 5.
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/b/n' will be
 (Font)              scaled to size 10.6215pt on input line 5.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 51.
 [5
 
 ]
-Underfull \vbox (badness 1540) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `T1/FiraSans-TLF/l/n' will be
-(Font)              scaled to size 9.96452pt on input line 155.
+(Font)              scaled to size 9.96452pt on input line 165.
 [6]) [7]
 \openout2 = `abstract.aux'.
 
@@ -2667,8 +2667,6 @@ LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
 (Font)              scaled to size 20.11783pt on input line 1.
 LaTeX Font Info:    Font shape `T1/FiraSans-TLF/l/n' will be
 (Font)              scaled to size 18.87347pt on input line 1.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 19.
 )
 
 LaTeX Warning: Marginpar on page 1 moved by 6.97296pt.
@@ -2689,16 +2687,16 @@ LaTeX Font Info:    Font shape `T1/FiraSans-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/FiraSans-TLF/sb/n' will be
 (Font)              scaled to size 13.10403pt on input line 6.
 
-Overfull \hbox (1.29073pt too wide) in paragraph at lines 73--73
+Overfull \hbox (1.29073pt too wide) in paragraph at lines 31--31
  [][][][]\T1/erewhon-TLF/m/n/10.95 (-20) Implementation 
  []
 
 LaTeX Font Info:    Font shape `T1/FiraSans-TLF/m/n' will be
-(Font)              scaled to size 10.92004pt on input line 98.
+(Font)              scaled to size 10.92004pt on input line 56.
 LaTeX Font Info:    Font shape `T1/FiraSans-TLF/sb/n' will be
-(Font)              scaled to size 10.92004pt on input line 98.
+(Font)              scaled to size 10.92004pt on input line 56.
 [3]
-Overfull \hbox (8.90561pt too wide) in paragraph at lines 160--161
+Overfull \hbox (8.90561pt too wide) in paragraph at lines 111--112
  [][] 
  []
 
@@ -2710,42 +2708,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [5] [6] [7]
 LaTeX Font Info:    Try loading font information for TS1+erewhon-TLF on input l
-ine 222.
+ine 171.
 (c:/texlive/2016/texmf-dist/tex/latex/erewhon/ts1erewhon-tlf.fd
 File: TS1erewhon-TLF.fd 2014/09/11 (autoinst) Font definitions for TS1/erewhon-
 TLF.
 )
 LaTeX Font Info:    Font shape `TS1/erewhon-TLF/m/n' will be
-(Font)              scaled to size 10.6215pt on input line 222.
+(Font)              scaled to size 10.6215pt on input line 171.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `erewhon-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures/chapter_2/CEP.pdf, id=528, 365.62497pt x 212.43666pt>
+<figures/chapter_2/CEP.pdf, id=564, 365.62497pt x 212.43666pt>
 File: figures/chapter_2/CEP.pdf Graphic file (type pdf)
 <use figures/chapter_2/CEP.pdf>
-Package pdftex.def Info: figures/chapter_2/CEP.pdf used on input line 233.
+Package pdftex.def Info: figures/chapter_2/CEP.pdf used on input line 180.
 (pdftex.def)             Requested size: 238.80243pt x 138.75319pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\todo' on input line 200.
+
+
 Underfull \vbox (badness 3386) has occurred while \output is active []
 
-[9 <./figures/chapter_2/CEP.pdf>] [10] [11] [12]) [13]
+[9 <./figures/chapter_2/CEP.pdf>] [10] [11] [12] [13]) [14]
 \openout2 = `chapters/03_viatra_cep.aux'.
 
-(./chapters/03_viatra_cep.tex [14
-
-
-
-]
+(./chapters/03_viatra_cep.tex
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
 (Font)              scaled to size 8.73001pt on input line 47.
 
 Underfull \vbox (badness 1817) has occurred while \output is active []
 
-[15]
+[15
+
+
+
+]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 67.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -2772,50 +2775,50 @@ Underfull \hbox (badness 10000) in alignment at lines 114--114
  []
 
 [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3907) has occurred while \output is active []
 
 [17]
 Underfull \hbox (badness 10000) in alignment at lines 150--150
 [][][] 
  []
 
-<figures/chapter_3/oldcep.pdf, id=638, 192.7742pt x 120.33557pt>
+<figures/chapter_3/oldcep.pdf, id=680, 192.7742pt x 120.33557pt>
 File: figures/chapter_3/oldcep.pdf Graphic file (type pdf)
 <use figures/chapter_3/oldcep.pdf>
-Package pdftex.def Info: figures/chapter_3/oldcep.pdf used on input line 196.
+Package pdftex.def Info: figures/chapter_3/oldcep.pdf used on input line 195.
 (pdftex.def)             Requested size: 159.19757pt x 99.37904pt.
 [18]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 210.
-[19 <./figures/chapter_3/oldcep.pdf>]
+nput line 209.
 LaTeX Font Info:    Try loading font information for T1+FiraMono-TOsF on input 
-line 210.
+line 209.
 (c:/texlive/2016/texmf-dist/tex/latex/fira/t1firamono-tosf.fd
 File: T1FiraMono-TOsF.fd 2015/05/23 (autoinst) Font definitions for T1/FiraMono
 -TOsF.
 )
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
-(Font)              scaled to size 9.96452pt on input line 210.
+(Font)              scaled to size 9.96452pt on input line 209.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `FiraMono-TOsF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+[19 <./figures/chapter_3/oldcep.pdf>]
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
-(Font)              scaled to size 7.76001pt on input line 211.
+(Font)              scaled to size 7.76001pt on input line 210.
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/b/n' will be
-(Font)              scaled to size 9.96452pt on input line 212.
-<figures/chapter_3/newcep.pdf, id=663, 198.45744pt x 202.47142pt>
+(Font)              scaled to size 9.96452pt on input line 211.
+<figures/chapter_3/newcep.pdf, id=705, 198.45744pt x 202.47142pt>
 File: figures/chapter_3/newcep.pdf Graphic file (type pdf)
 <use figures/chapter_3/newcep.pdf>
-Package pdftex.def Info: figures/chapter_3/newcep.pdf used on input line 238.
+Package pdftex.def Info: figures/chapter_3/newcep.pdf used on input line 237.
 (pdftex.def)             Requested size: 159.19757pt x 162.41914pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/chapter_3/newinput.pdf, id=665, 678.53702pt x 246.01309pt>
+<figures/chapter_3/newinput.pdf, id=707, 678.53702pt x 246.01309pt>
 File: figures/chapter_3/newinput.pdf Graphic file (type pdf)
 <use figures/chapter_3/newinput.pdf>
-Package pdftex.def Info: figures/chapter_3/newinput.pdf used on input line 250.
+Package pdftex.def Info: figures/chapter_3/newinput.pdf used on input line 249.
 
 (pdftex.def)             Requested size: 358.19757pt x 129.86827pt.
 
@@ -2828,7 +2831,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-] [23] <figures/chapter_4/folyamatabra.pdf, id=722, 638.64299pt x 156.99654pt>
+] [23] <figures/chapter_4/folyamatabra.pdf, id=765, 638.64299pt x 156.99654pt>
 File: figures/chapter_4/folyamatabra.pdf Graphic file (type pdf)
 <use figures/chapter_4/folyamatabra.pdf>
 Package pdftex.def Info: figures/chapter_4/folyamatabra.pdf used on input line 
@@ -2844,106 +2847,110 @@ FML/futm/m/it/10.95 ^^F$\T1/erewhon-TLF/m/n/10.95 (+20) -
  []
 
 [24 <./figures/chapter_4/folyamatabra.pdf>] [25] <figures/chapter_4/allocating_
-simple.pdf, id=756, 440.94334pt x 102.53506pt>
+simple.pdf, id=798, 440.94334pt x 102.53506pt>
 File: figures/chapter_4/allocating_simple.pdf Graphic file (type pdf)
 <use figures/chapter_4/allocating_simple.pdf>
 Package pdftex.def Info: figures/chapter_4/allocating_simple.pdf used on input 
 line 141.
 (pdftex.def)             Requested size: 278.59879pt x 64.7836pt.
-[26 <./figures/chapter_4/allocating_simple.pdf>] [27]
-
-LaTeX Warning: Marginpar on page 28 moved by 48.7927pt.
-
-<figures/chapter_4/subexpression_event.png, id=818, 225.84375pt x 69.25874pt>
+[26 <./figures/chapter_4/allocating_simple.pdf>] [27] <figures/chapter_4/subexp
+ression_event.png, id=860, 225.84375pt x 69.25874pt>
 File: figures/chapter_4/subexpression_event.png Graphic file (type png)
 <use figures/chapter_4/subexpression_event.png>
 Package pdftex.def Info: figures/chapter_4/subexpression_event.png used on inpu
-t line 209.
+t line 208.
 (pdftex.def)             Requested size: 119.40121pt x 36.61711pt.
 
-<figures/chapter_4/subexpression_sequence.png, id=820, 402.75468pt x 91.84312pt
+<figures/chapter_4/subexpression_sequence.png, id=862, 402.75468pt x 91.84312pt
 >
 File: figures/chapter_4/subexpression_sequence.png Graphic file (type png)
 <use figures/chapter_4/subexpression_sequence.png>
 Package pdftex.def Info: figures/chapter_4/subexpression_sequence.png used on i
-nput line 216.
+nput line 215.
 (pdftex.def)             Requested size: 199.0pt x 45.37909pt.
 
-<figures/chapter_4/subexpression_choice.png, id=821, 344.03531pt x 202.50656pt>
+<figures/chapter_4/subexpression_choice.png, id=863, 344.03531pt x 202.50656pt>
 File: figures/chapter_4/subexpression_choice.png Graphic file (type png)
 <use figures/chapter_4/subexpression_choice.png>
 Package pdftex.def Info: figures/chapter_4/subexpression_choice.png used on inp
-ut line 223.
+ut line 222.
 (pdftex.def)             Requested size: 199.0pt x 117.1356pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<figures/chapter_4/subexpression_asterisk.png, id=822, 485.56406pt x 214.55156p
+<figures/chapter_4/subexpression_asterisk.png, id=864, 485.56406pt x 214.55156p
 t>
 File: figures/chapter_4/subexpression_asterisk.png Graphic file (type png)
 <use figures/chapter_4/subexpression_asterisk.png>
 Package pdftex.def Info: figures/chapter_4/subexpression_asterisk.png used on i
-nput line 230.
+nput line 229.
 (pdftex.def)             Requested size: 199.0pt x 87.92741pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28 <./figures/chapter_4/subexpression_event.png> <./figures/chapter_4/subexpre
-ssion_sequence.png>] [29 <./figures/chapter_4/subexpression_choice.png> <./figu
-res/chapter_4/subexpression_asterisk.png>] [30]
+ssion_sequence.png>] [29] [30 <./figures/chapter_4/subexpression_choice.png> <.
+/figures/chapter_4/subexpression_asterisk.png>]
 Overfull \hbox (8.70573pt too wide) in paragraph at lines 319--320
 []\T1/erewhon-TLF/m/n/10.95 (-20) From now on, the no-ta-tion $[]$ will be used
  for re-gions, which is a set of states, i.e. $[]  \FMS/futm/m/n/10.95 ^^R  \FM
 L/futmi/m/it/10.95 Q$ 
  []
 
+
+Underfull \hbox (badness 1418) in paragraph at lines 331--332
+[]\T1/erewhon-TLF/m/n/10.95 (+20) and $\FML/futmi/m/it/10.95 ^^N[]$ \T1/erewhon
+-TLF/m/n/10.95 (+20) rep-re-sents timed tran-si-tions and de-fined as the set o
+f tu-ples
+ []
+
+[31]
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/it' will be
-(Font)              scaled to size 10.6215pt on input line 371.
-[31] <figures/chapter_4/allocating_timed.pdf, id=891, 437.66211pt x 135.49823pt
->
+(Font)              scaled to size 10.6215pt on input line 370.
+<figures/chapter_4/allocating_timed.pdf, id=932, 437.66211pt x 135.49823pt>
 File: figures/chapter_4/allocating_timed.pdf Graphic file (type pdf)
 <use figures/chapter_4/allocating_timed.pdf>
 Package pdftex.def Info: figures/chapter_4/allocating_timed.pdf used on input l
-ine 395.
+ine 394.
 (pdftex.def)             Requested size: 278.59879pt x 86.25336pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--408
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
 []\T1/erewhon-TLF/m/n/10.95 (+20) A Non-de-ter-min-is-tic Time-out Event Au-tom
 a-ton is a tu-ple
  []
 
 [32 <./figures/chapter_4/allocating_timed.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 426--429
+Underfull \hbox (badness 10000) in paragraph at lines 425--428
 []\T1/erewhon-TLF/m/n/10.95 (+20) A trace in a Time-out Event Au-toma-ton is a 
 se-quence
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--432
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
 
  []
 
 [33]
 
 LaTeX Warning: Reference `Intentionally broken' on page 1 undefined on input li
-ne 485.
+ne 484.
 
 [34] [35]
-<figures/chapter_4/allocating_timed_parametric.pdf, id=962, 439.58832pt x 142.6
-8407pt>
+<figures/chapter_4/allocating_timed_parametric.pdf, id=1003, 439.58832pt x 142.
+68407pt>
 File: figures/chapter_4/allocating_timed_parametric.pdf Graphic file (type pdf)
 
 <use figures/chapter_4/allocating_timed_parametric.pdf>
 Package pdftex.def Info: figures/chapter_4/allocating_timed_parametric.pdf used
- on input line 569.
+ on input line 568.
 (pdftex.def)             Requested size: 278.59879pt x 90.43353pt.
 ) [36 <./figures/chapter_4/allocating_timed_parametric.pdf>]
 \openout2 = `chapters/05_algo.aux'.
 
 (./chapters/05_algo.tex
-<figures/chapter_5/Basic_automaton_diagram.pdf, id=985, 458.46281pt x 424.58624
-pt>
+<figures/chapter_5/Basic_automaton_diagram.pdf, id=1027, 458.46281pt x 424.5862
+4pt>
 File: figures/chapter_5/Basic_automaton_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Basic_automaton_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Basic_automaton_diagram.pdf used on 
@@ -2954,47 +2961,37 @@ input line 26.
 
 
 ] [38 <./figures/chapter_5/Basic_automaton_diagram.pdf>] <figures/chapter_5/Tim
-ing_diagram.pdf, id=1583, 630.85687pt x 355.3275pt>
+ing_diagram.pdf, id=1625, 630.85687pt x 355.3275pt>
 File: figures/chapter_5/Timing_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Timing_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Timing_diagram.pdf used on input lin
 e 40.
 (pdftex.def)             Requested size: 398.0pt x 224.17197pt.
 [39 <./figures/chapter_5/Timing_diagram.pdf>]
-<figures/chapter_5/Parameters_diagram.pdf, id=2170, 683.55376pt x 393.72093pt>
+<figures/chapter_5/Parameters_diagram.pdf, id=2212, 683.55376pt x 393.72093pt>
 File: figures/chapter_5/Parameters_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Parameters_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Parameters_diagram.pdf used on input
- line 52.
+ line 56.
 (pdftex.def)             Requested size: 398.0pt x 229.24744pt.
-
-Underfull \hbox (badness 10000) in alignment at lines 85--85
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) in alignment at lines 101--101
-[][][]
- []
-
-[40 <./figures/chapter_5/Parameters_diagram.pdf>] [41]) [42]
+[40 <./figures/chapter_5/Parameters_diagram.pdf>] [41] [42] [43] [44]) [45]
 \openout2 = `chapters/06_conclusion.aux'.
 
-(./chapters/06_conclusion.tex) [43
+(./chapters/06_conclusion.tex [46
 
 
 
-]
+]) [47]
 \openout2 = `chapters/07_ack.aux'.
 
-(./chapters/07_ack.tex [44
+(./chapters/07_ack.tex [48
 
 
 
-]) [45]
+]) [49]
 \openout2 = `chapters/10_appendix.aux'.
 
-(./chapters/10_appendix.tex [46
+(./chapters/10_appendix.tex [50
 
 
 
@@ -3004,27 +3001,27 @@ Overfull \hbox (0.65189pt too wide) in paragraph at lines 3--5
 ][][][][][][]  
  []
 
-[47]
+[51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[48])) [49] [50
+[52])) [53] [54
 
 
 ]
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/sc' will be
 (Font)              scaled to size 10.6215pt on input line 89.
-[51]
+[55]
 Overfull \hbox (6.80484pt too wide) in paragraph at lines 90--90
 []\T1/erewhon-TLF/m/n/10.95 (-20) Dejan Ni£kovi¢ and Nir Piter-man. \T1/erewhon
 -TLF/m/it/10.95 (-20) From MTL to de-ter-min-is-tic timed au-tomata\T1/erewhon-
 TLF/m/n/10.95 (-20) . Springer,
  []
 
-[52]
+[56]
 \tf@thm=\write8
 \openout8 = `main.thm'.
 
-[53]
+[57]
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
@@ -3038,7 +3035,7 @@ aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B4A3D24F9EE274FB45700409875549E5;4586.
+(rerunfilecheck)             Checksum: FD8D6F37131DCCD158FC80DBD9AB8306;5085.
 
 LaTeX Warning: There were undefined references.
 
@@ -3051,13 +3048,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 43101 strings out of 493013
- 786710 string characters out of 6136993
- 1414597 words of memory out of 5000000
- 45083 multiletter control sequences out of 15000+600000
+ 43208 strings out of 493013
+ 788810 string characters out of 6136993
+ 1416790 words of memory out of 5000000
+ 45159 multiletter control sequences out of 15000+600000
  344749 words of font info for 361 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,18n,87p,1248b,13915s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,18n,87p,1571b,13987s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/erewhon/zut1_7onvyn
 .enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/erewhon/zut1_5gd3w7.enc}{c:/te
 xlive/2016/texmf-dist/fonts/enc/dvips/fira/fir_xbqiro.enc}{c:/texlive/2016/texm
@@ -3080,10 +3077,10 @@ ve/2016/texmf-dist/fonts/type1/public/fourier/fourier-mlitb.pfb><c:/texlive/201
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2016/texmf-dist/
 fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/ado
 be/utopia/putri8a.pfb>
-Output written on main.pdf (65 pages, 2099808 bytes).
+Output written on main.pdf (69 pages, 2104649 bytes).
 PDF statistics:
- 3234 PDF objects out of 3580 (max. 8388607)
- 2338 compressed objects within 24 object streams
- 397 named destinations out of 1000 (max. 500000)
- 75985 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 3316 PDF objects out of 3580 (max. 8388607)
+ 2415 compressed objects within 25 object streams
+ 428 named destinations out of 1000 (max. 500000)
+ 76041 words of extra memory for PDF output out of 89155 (max. 10000000)
 

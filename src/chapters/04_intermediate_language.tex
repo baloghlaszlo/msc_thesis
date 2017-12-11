@@ -202,7 +202,6 @@ The horizontal arrows show that each formalism can be extended with the required
 		\end{itemize}
 	
 		\todo{Missing the AND, probably just don't tell the reader about it?}
-		\todo{Missing text for the images}
 		
 		\begin{figure}[h]
 			\centering
@@ -286,9 +285,7 @@ The horizontal arrows show that each formalism can be extended with the required
 	\section{Timed Languages}	
 		\subsection{Timeout Regular Expression}
 	
-		Using the previously defined semantics timed properties can not be expressed,
-		but regular expressions can be extended to a formalism which can do so: 
-		the timeout regular expressions.
+		Using the previously defined semantics timed properties can not be expressed, but regular expressions can be extended to a formalism which can do so: the timeout regular expressions.
 		\begin{dfn}
 			\label{dfn:cep:tre}
 			Timeout Regular Expressions over an alphabet $\Sigma$ (also referred to as $\Sigma$-expressions)
@@ -297,7 +294,7 @@ The horizontal arrows show that each formalism can be extended with the required
 				\item $a$ for every letter $a \in \Sigma$ and the special symbol $\varepsilon$ are expressions.
 				\item If $\varphi, \varphi_1, \varphi_2$ are $\Sigma$-expressions then %
 					$ %
-					\varphi_1 \varphi_2,
+					\varphi_1 \; \varphi_2,
 					\varphi_1 | \varphi_2,
 					\varphi^\ast,$ and 
 					$\langle \varphi \rangle_I$, 
@@ -309,9 +306,12 @@ The horizontal arrows show that each formalism can be extended with the required
 		The implementation and algorithmization with intervals instead of timeouts as in \citep{tre} are considered future work.
 
 		With the timed regular expression formalism the example can be extended with timing, and adding the concept timeout becomes possible.
-		The new expression will be: $(a (a)^\ast r(r)^\ast a)|( \langle a(a)^\ast r \rangle_{10 s})$
+		The new expression will be: $(a \; (a)^\ast \; r \; (r)^\ast \; a)|( \langle a \; (a)^\ast \; r \rangle_{10 s})$
 		
-		\subsection{Timed Region Automaton}
+		\subsection{Timeout Region Automaton}
+		
+		Timeout Region Automaton is introduced as an intermediate step between the Timeout Regular Expression and the Timeout Automaton as it is a step closer to the regular expression.
+		However the Timeout Region Automaton has the same expressive power as the Timeout Regular Expression the more general and better known Timeout Automaton is more expressive. In the future it could be an additional  and might be used as an intermediate language in the future.
 		
 		We add a syntactic sugar to ease the compilation of high level languages to this intermediate language.
 		Using timed regions in our automaton language has the same motivation as the application of regions in state chart formalisms.
@@ -324,14 +324,13 @@ The horizontal arrows show that each formalism can be extended with the required
 			A Timed Region Event Automaton $\langle Q,\Sigma,\delta,q_0, F, t, T \rangle$ where
 			\begin{itemize}
 				\item $Q, \Sigma, q_0, F,$ and  $t$ are the same as in \cref{dfn:cep:tea},
-				\item $T$ is a set of timeout clock variables for sets of states, i.e.~a set of tuples $\langle \mathit{Reg}, \RR \rangle$
+				\item $T$ is a set of timeout clock variables for sets of states, i.e.~a set of tuples $\langle \mathit{Reg}, \RR \rangle$,
 				\item and $\delta$ is the union of discrete and timed transitions i.e.~$\delta_t \cup \delta_d$ where
 				\begin{itemize}
 					\item $\delta_d$ is defined as in \cref{dfn:cep:tea},
-					\item and $\delta_t$ represents timed transitions and defined as the set of tuples $\langle \mathit{Reg} , \mathbb{R} , Q \rangle$ 
+					\item and $\delta_t$ represents timed transitions and defined as the set of tuples $\langle \mathit{Reg} , \mathbb{R} , Q \rangle$,
 				\end{itemize}
-				\item  the set of which have outgoing timed transitions 
-				i.e.~$ \forall R_i \in \mathit{Reg}, \exists t, \exists q  \subseteq \delta_t \langle R_i, t, q \rangle$ 
+				\item  the set of which have outgoing timed transitions i.e.~$ \forall R_i \in \mathit{Reg}, \exists t, \exists q  \subseteq \delta_t \langle R_i, t, q \rangle$ 
 			\end{itemize}
 		\end{dfn}
 		
@@ -427,7 +426,7 @@ The horizontal arrows show that each formalism can be extended with the required
 			$(r_0, \langle a_1, t_1, v_1\rangle, \dots, \langle a_n, t_n, v_n \rangle, r_n)$, where $\forall r_i \in Q, \forall a_i \in \Sigma', \forall t_i \in \RR^+$ i.e.~a sequence of states, the elapsed time between them, and the clock assignments. The trace corresponds to to the timed input sequence $(e_0, t_1, e_1, \dots, t_n, e_n)$ if:
 			\begin{itemize}
 				\item $r_0 = q_0$, i.e.~the first state of the trace is the initial state of the Automaton,
-				\item $\forall i \in [1,n] \colon \langle r_i, a_{i+1}, r_{i+1}, u, \mathit{Res} \rangle \in \delta$, \\
+				\item $\forall i \in [1,n - 1] \colon \langle r_i, a_{i+1}, r_{i+1}, u, \mathit{Res} \rangle \in \delta$, \\
 					${v_i}' = v_i + t_{i+1}$, $\forall c \in C \colon {v_i}'(c) < u(c)$,\\
 					$$v_{i+1} = \begin{cases}
 									0      & \text{if\ } c \in    \mathit{Res} \\

@@ -5,49 +5,7 @@ System development is a complex process, therefore it needs to be supported by v
 
 \section{Development methods}
 
-
 Traditional software development methods often use informal specifications to support system, architecture and component level designs -- which may also be informal. This can easily result in higher verification costs or faulty systems, making them suboptimal choices for safety critical software development. In order to introduce some level of formality and allow manageable, hierarchical software testing procedures, the V model was developed.
-
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.8\linewidth]{figures/chapter_2/vmodel}
-%	\caption{The traditional V model\citep{vmodel} \redraw }
-%	\label{fig:intro:vmodel}
-%\end{figure}
-
-%\begin{figure}[h]
-%	\noindent
-%	\makebox[\textwidth]{ %
-%		\centering
-%		\begin{tikzpicture}[
-%		edge/.style={thick, ->}
-%		]
-%		%
-%		\small{
-%%			\node[rect] (spec) {Specification};
-%%			\node[rect, below right=of spec] (archdesign) {Architectural\\design};
-%%			\node[rect, below right=of archdesign] (compdesign) {Component\\design};
-%%			\node[rect, right=of compdesign] (ut) {Unit\\Test};
-%%			\node[rect, right=of archdesign] (it) {Integration\\Test};
-%%			\node[rect, right=of spec] (st){System\\Test};
-%%			\node[rect, below right=of compdesign, left=of ut] (impl) {Implementation};
-%%
-%			\node[rect, minimum width=20mm] (spec) {Specification};
-%			\node[rect, minimum width=20mm, below=of spec.east] (archdesign) {Architectural\\design};
-%			\node[rect, minimum width=20mm, below=of archdesign.east] (compdesign) {Component\\design};
-%			\node[rect, minimum width=20mm, right=of compdesign, xshift=10mm] (ut) {Unit\\Test};
-%			\node[rect, minimum width=20mm, above=of ut.east] (it) {Integration\\Test};
-%			\node[rect, minimum width=20mm, above=of it.east] (st){System\\Test};
-%			\path ($(compdesign)!0.5!(ut)$) |- node[rect, minimum width=20mm] {Implementation} ($(compdesign)!0.5!(ut) +(5,0)$);
-%%			
-%%			\node[rect, minimum width=20mm, below=of compdesign.east, xshift=8mm] (impl) {Implementation};
-%%
-%		}
-%		\end{tikzpicture}%	
-%	}
-%	\caption{The traditional V model\citep{vmodel}}
-%	\label{fig:intro:vmodel}
-%\end{figure}%
 
 \begin{figure}
 	\centering
@@ -107,13 +65,6 @@ MDSD will usually result in a software life cycle model for component based syst
 
 \subsection{Y model} 
 
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.8\linewidth]{figures/chapter_2/YModel}
-%	\caption{A section of the Y model \redraw }
-%	\label{fig:intro:ymodel}
-%\end{figure}
-
 \begin{figure}
 	\centering
 	\begin{tikzpicture}[
@@ -172,11 +123,9 @@ but since the domain specific languages are tailored exactly to the problem, the
 
 Standardized modeling languages were developed like the UML (Unified Modeling Language\citep{uml}) and SysML (Systems Modeling Language\citep{sysml1}\citep{sysml2}).
 
-
 \subsubsection{Class diagram}
 
 In software engineering, a class diagram in the Unified Modeling Language (UML) is a type of static structure diagram that describes the structure of a system by depicting the system's classes, their attributes, operations (or methods), and the relationships among objects. It is also often applied at the system level design, as multiple components and their connection can be visualized with Class diagrams.
-
 
 \subsubsection{Message Sequence Chart}
 
@@ -224,8 +173,6 @@ The main advantages of runtime verification are the following:
 	\item Detection of previously not defined errors.
 \end{itemize}
 
-
-
 \section{Complex event processing}
 
 \begin{figure}[h]
@@ -242,7 +189,7 @@ There are many Complex Event Processing Frameworks in the industry.
 
 One of these tools is Drools\citep{drools} which is the leading Java based open-source rule engine. It is a hybrid chaining engine meaning it can react to changes in data and also provides advanced query capabilities. Drools provides built in temporal reasoning for complex event processing and is fully integrated with the jBPM project for BPMN2 based workflows.
 
-Another well-known tool in the industry is Esper\citep{esper} which is an Event Stream Processing (ESP) and event correlation engine. %(CEP, Complex Event Processing\todo{WHAT?}). 
+Another well-known tool in the industry is Esper\citep{esper} which is an Event Stream Processing (ESP) and event correlation engine.
 Targeted to real-time Event Driven Architectures (EDA), Esper is capable of triggering custom actions written as Plain Old Java Objects (POJO) when event conditions occur among event streams. It is designed for high-volume event correlation where millions of events coming in seconds. This amount of input would make it impossible to store all event in a classical database architecture and query them later.
 
 \section{Runtime verification with CEP}
@@ -250,11 +197,27 @@ In this section the application of CEP into runtime verification is overviewed.
 In general, system level runtime verification can be provided with the help of complex event processing. A complex event processing framework can monitor either the messaging between components and also the current state of the system and detected errors based on the specification of valid message sequences and valid states. 
 The approach uses pattern matching to detect faulty operation of the system. Should illegal sequences occur, error handling operations (e.g.~restart or shutdown of a component or the whole system) can be applied to avoid the violation of safety criteria.
 
-\subsubsection{Finite automaton \todo{How the fuck did this get here?}}
-
+\subsection{Finite automaton \todo{How the fuck did this get here?}}
 
 The modeling of systems with finite state space is often done by using finite automata -- also known as finite state machines. A finite automaton accepts a (finite) list of symbols and produces a computation of the automaton for each input list.
 Although finite automata can be easily visualized, this formalism describes a simple, flat transition system and lacks the support for higher level concepts. The development of finite automata models are supported by many tools (e.g.: Finite State Machine Designer \citep{fsmd}).
+
+\subsection{Data structures aiding parametric decision}
+As most of the Complex Event Processing tools support some sort of parametric approach, such as parametric events.
+To support such functionalities some sort of data structure is required which can decide which parameters are in them and which of them are not.
+
+\subsubsection{BDD and MDD}
+
+Many problems can be stated naturally using variables that have multiple values (i.e., take their values from a discrete set). Functions defined on these variables can also take on values from a discrete set. Examples of such problems range from combinatorial optimization such as routing and resource scheduling, to logic simulation and formal verification, and to logic synthesis such as state minimization and state assignment. In many cases these problems are NP-complete or coNP-complete. Compact representation and efficient manipulation of such multi-valued functions are key to the design of efficient algorithms that advance the frontier of the problems that can be solved exactly. Binary decision diagrams (BDDs) are such a compact representation for problems involving binary variables. In this paper, we define the multi-valued decision diagram (MDD), which is a canonical representation of a multi-valued function as a directed acyclic graph. We analyze its properties and provide algorithms for constructing and manipulating MDDs. With our MDD package, an MDD is mapped into a BDD using either a logarithmic encoding or a 1-hot encoding, each suitable for a different class of applications. We have applied both kinds of MDD to many different applications, and this paper serves as a summary of the work done so far. Furthermore, general problem solving techniques, such as binate table covering and other graph algorithms, have been formulated using MDDs.\citep{Kam98mdd}
+
+\subsubsection{BDD}
+
+\todo{Steal an abstract and add a reference}
+
+\subsubsection{Trie}
+
+
+\todo{Steal an abstract and add a reference}
 
 \section{Model based tools}
 In this section I introduce the basic model based tools and technologies I used in my work. The motivation of using models, and model based technologies are:
@@ -294,7 +257,7 @@ The VIATRA-CEP is using the EMF models, and the VIATRA-Query graph search engine
 I will introduce more details about VIATRA-CEP in~\cref{chap:viatra_cep}.
 
 
-\todo{New related work}
+\todo{New related work?}
 
 \section{Related work}
 \todo{This is actually not related work, maybe remove this?}
