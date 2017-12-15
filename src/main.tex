@@ -1,7 +1,9 @@
  \input{include/twoside}
 %\input{include/oneside}
 
-\usepackage{include/tdk} % dafuq
+
+%TeXstudio doesn't find this and causes many errors :(
+\usepackage{include/tdk}
 
 \usepackage{ amssymb }
 
@@ -36,6 +38,9 @@
 % Comment in this line to remove todos
 %\renewcommand{\todo}{}
 
+%My favorite tikz libraries must be included.
+\usetikzlibrary{automata, fit, shapes.geometric}
+
 %Tikz stuff 
 \tikzstyle{rect} = [
 	thick,
@@ -47,13 +52,6 @@
 	rectangle
 ]
 
-
-%\usetikzlibrary{
-%	arrows,arrows.meta,
-%	shapes,shapes.geometric,shapes.misc,
-%	chains, trees,
-%	positioning,decorations.pathreplacing	
-%}
 
 \bibliography{references}
 
@@ -82,8 +80,6 @@
 \include{chapters/05_algo}
 \include{chapters/06_conclusion}
 \include{chapters/07_ack}
-
-
 \include{chapters/10_appendix}
 
 \printbibliography

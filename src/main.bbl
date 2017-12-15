@@ -998,6 +998,41 @@
       \field{pages}{2\bibrangedash 2}
       \range{pages}{1}
     \endentry
+    \entry{marq}{incollection}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=daad3f9438807920ae7ca5d4be1067aa}{%
+           family={Reger},
+           familyi={R\bibinitperiod},
+           given={Giles},
+           giveni={G\bibinitperiod}}}%
+        {{uniquename=0,hash=37cda0f15470e45920afe61692a8e2e6}{%
+           family={Cruz},
+           familyi={C\bibinitperiod},
+           given={Helena\bibnamedelima Cuenca},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{uniquename=0,hash=bb69a430a614c8bb36611abbbe44f771}{%
+           family={Rydeheard},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{17f37631328dc6a7e862f2f1b66e4bd5}
+      \strng{fullhash}{6eefc8c4f15522e1080e60b609d92c50}
+      \strng{authornamehash}{17f37631328dc6a7e862f2f1b66e4bd5}
+      \strng{authorfullhash}{6eefc8c4f15522e1080e60b609d92c50}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Tools and Algorithms for the Construction and Analysis of Systems}
+      \field{title}{MARQ: Monitoring at Runtime with QEA}
+      \field{year}{2015}
+      \field{pages}{596\bibrangedash 610}
+      \range{pages}{15}
+    \endentry
     \entry{reinbacher2011past}{incollection}{}
       \name{author}{5}{}{%
         {{uniquename=0,hash=04496c97830daceeee954530b8d9c5aa}{%

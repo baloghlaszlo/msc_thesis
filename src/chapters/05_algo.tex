@@ -5,7 +5,7 @@ The currently implemented and algorithmized parts of the intermediate language a
 \section{Parametric Timeout Regular Expression}
 
 Currently the regular expression has a grammar implemented in Xtext, which generates a textual editor, and can parse textual input to an EMF model. This EMF model can be transformed later. 
-The grammar is shown on \cref{lst:grammar}.
+The grammar is shown on \cref{lst:grammar}. \todo{Wrong cref}
 
 Note that the parameter listing is inside with square brackets ``[]'' to make the language context free. If we would use the simple round brackets, then A(B) would be ambiguous -- it could be either an A event with a B parameter, or a simple sequence of event A and event B with an unnecessary bracket.
 \todo{Do we require additional explanation?}
@@ -60,12 +60,11 @@ The deeper analysis of these parameter relations can are discussed in \cref{sect
 
 \section{Transformation from VEPL to the intermediate language}
 
-
-\subsection{VEPL to Regular expressions}
 Regular expressions can be built from VEPL patterns, taking the event contexts into consideration
 Strict immediate is show on \cref{tab:cep:vepl_regex_strict}, and Chronicle is shown on \cref{tab:cep:vepl_regex_chronicle}.
 Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processing every pattern might have arbitrary prefix.
 
+Note that the semantics introduced in the previous chapter for the OR operator of Regular Expression, and the semantics of VEPL defined in\citep{davidi} are not exactly the same.
 
 \begin{table}
 	\caption{Basic VEPL operators in strict immediate context, expressed with regular expressions}		
@@ -96,14 +95,17 @@ Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processin
 \end{table}
 
 \section{Automaton Executor}
-	Two approaches exist on executing an automaton; a deterministic and a nondeterministic way.
-	In  both ways there are multiple tokens in the automaton with one parameter relation each.
+	Two approaches exist on executing a parametric timed automaton, and in both ways there are multiple tokens in each automaton, so in some sense both can be considered nondeterministic.
+	However from the token's point of view we can consider the two approaches deterministic and a nondeterministic.
+	
+%	In  both ways there are multiple tokens in the automaton with one parameter relation each, therefore they can be both considered nondeterministic.
 	
 	\paragraph{Deterministic Execution}
 	In the deterministic approach the automaton should not contain any $\varepsilon$-edges and a ``token can go only one way'', or more formally, there is only one transition for each token to fire. 
 	In this case every token moves exactly one on each event, splitting the potential bindings to two part, one which matched the event's parameter, and one which did not.
 	
 	\paragraph{Nondeterministic Execution}
+	\todo{Maybe pseudocode}
 	In the nondeterministic way, the automaton can contain $\varepsilon$-edges, and a token can move through multiple transitions each. This solution implies an another way to handle the parameters, as the executor should do the following steps:
 	\begin{enumerate}
 		\item Save each token in a list,
@@ -115,6 +117,7 @@ Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processin
 		\item And remove the old tokens which were saved in the first step.
 	\end{enumerate}
 
+	On the implementation level the Nondeterministic Executor has been implemented as it is more general can execute any automaton generated from the regular expressions.
 
 	\todo{Maybe an example execution?}
 
@@ -135,8 +138,8 @@ Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processin
 	\begin{itemize}
 		\item If the execution is deterministic, the following operations are required:
 			\begin{itemize}
-				\item $P_1 \mathrel{{\cup}{=}} P_2$, i.e.~a relation can be added to another with mutating the first one,
-				\item $P_1 \mathrel{{\setminus}{=}} P_2$, i.e.~a relation can be removed from an another with mutating the first one,
+				\item $P_1 = P_1 \cup P_2$, i.e.~a relation can be added to another with mutating the first one,
+				\item $P_1 = P_1 \setminus P_2$, i.e.~a relation can be removed from an another with mutating the first one,
 				\item can be checked if it is empty,
 				\item and add every possible parameter value with $\forall$.
 			\end{itemize}

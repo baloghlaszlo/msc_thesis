@@ -28,12 +28,12 @@ temporal statements of these patterns. A simplified outline of this architecture
 	]
 	\small{
 	\node[rect, minimum height=30mm] (cep) {Complex\\Event\\Processing};
-	\node[rect, left=of cep, yshift=9mm] (es) {Event stream\\adapter};
+	\node[rect, left=of cep, yshift=9mm, xshift=10mm] (es) {Event stream\\adapter};
 	\node[rect, left=of es] (vp) {VIATRA-Query\\graph patterns};
-	\node[rect, left=of vp] (emf) {EMF Model};
+	\node[rect, left=of vp, xshift=4mm] (emf) {EMF Model};
 	\node[rect, below=of emf] (jes) {Java\\Event Source};
 	\node[rect, below=of cep] (vql) {VEPL pattern};
-	\node[right=of cep] (fakeNode){};
+	\node[right=of cep, xshift=-3.5mm] (fakeNode){};
 	}
 	\footnotesize{
 		\draw[edge](emf) -- (vp) node[midway, above, align=center]{EMF\\notification};
@@ -47,7 +47,7 @@ temporal statements of these patterns. A simplified outline of this architecture
 }
 	\caption{A brief outline of the live model integration in VIATRA-CEP}
 	\label{fig:viatracep:oldinputs}
-\end{figure}%
+\end{figure}
 
 
 \section{Event Pattern Language}
@@ -74,13 +74,11 @@ The semantics of the operators ``OR'' and ``AND'' are the following:
 	\label{tab:cep:veplop}
 	\begin{tabularx}{\textwidth}{llX}
 		\toprule
-		Operator name &	Denotation & Meaning \\
-		\midrule
-		followed by & $p_1$ $\rightarrow$ $p_2$ & Both patterns have to appear in the specified order. \\
-		or & $p_1$ OR $p_2$ &	One of the patterns has to appear. \\
-		``infinite'' multiplicity & $p\{{\ast}\}$ & The pattern can appear 0 to infinite times. \\
-		within timewindow &	$p[t]$ & Once the first element of the complex pattern $p$ is observed (i.e. the patterns ``starts to build up''), the rest of the pattern has to be observed within $t$ milliseconds. \\
-		\bottomrule
+		Operator name             & Denotation                & Meaning                                                                                                                                                                       \\ \midrule
+		followed by               & $p_1$ $\rightarrow$ $p_2$ & Both patterns have to appear in the specified order.                                                                                                                          \\
+		or                        & $p_1$ OR $p_2$            & One of the patterns has to appear.                                                                                                                                            \\
+		``infinite'' multiplicity & $p\{{\ast}\}$             & The pattern can appear 0 to infinite times.                                                                                                                                   \\
+		within timewindow         & $p[t]$                    & Once the first element of the complex pattern $p$ is observed (i.e. the patterns ``starts to build up''), the rest of the pattern has to be observed within $t$ milliseconds. \\ \bottomrule
 	\end{tabularx}
 \end{table}
 
@@ -89,13 +87,11 @@ The semantics of the operators ``OR'' and ``AND'' are the following:
 	\label{tab:cep:veplsugar}
 	\begin{tabularx}{\textwidth}{llX}
 		\toprule
-		Operator name &	Denotation & Meaning \\
-		\midrule
-		and & $p_1$ AND $p_2$ & Both of the patterns has to appear, but the order does not matter.\\
-		negation & NOT $p$ & On atomic pattern: event instance with the given type must not occur. On complex pattern: the pattern must not match. \\
-		multiplicity & $p\{n\}$ & The pattern has to appear $n$ times, where n is a positive integer.\\
-		``at least once'' multiplicity & $p\{+\}$ & The pattern has to appear at least once. \\
-		\bottomrule
+		Operator name                  & Denotation      & Meaning                                                                                                               \\ \midrule
+		and                            & $p_1$ AND $p_2$ & Both of the patterns has to appear, but the order does not matter.                                                    \\
+		negation                       & NOT $p$         & On atomic pattern: event instance with the given type must not occur. On complex pattern: the pattern must not match. \\
+		multiplicity                   & $p\{n\}$        & The pattern has to appear $n$ times, where n is a positive integer.                                                   \\
+		``at least once'' multiplicity & $p\{+\}$        & The pattern has to appear at least once.                                                                              \\ \bottomrule
 	\end{tabularx}
 \end{table}
 
@@ -104,13 +100,11 @@ The semantics of the operators ``OR'' and ``AND'' are the following:
 	\label{tab:cep:veplsugartobasic}
 	\begin{tabularx}{\textwidth}{llX}
 		\toprule
-		Operator name & Denotation & Equivalent \\
-		\midrule
-		and & $p_1$ AND $p_2$ & ($(p_1 \rightarrow p_2)$ OR $(p_2 \rightarrow p_1)$). \\
-		negation & NOT $p$ & $\Sigma \setminus p$, where $\Sigma$ is the set of all the possible events. \mytodo{And complex NEG?} \\
-		multiplicity & $p$\{n\} & $p \rightarrow p \rightarrow \dots p$, n times. \\
-		``at least once'' multiplicity & $p$\{+\} & $p \rightarrow p\{\ast\}$ \\
-		\bottomrule
+		Operator name                  & Denotation      & Equivalent                                                                                            \\ \midrule
+		and                            & $p_1$ AND $p_2$ & ($(p_1 \rightarrow p_2)$ OR $(p_2 \rightarrow p_1)$).                                                 \\
+		negation                       & NOT $p$         & $\Sigma \setminus p$, where $\Sigma$ is the set of all the possible events. \mytodo{And complex NEG?} \\
+		multiplicity                   & $p$\{n\}        & $p \rightarrow p \rightarrow \dots p$, n times.                                                       \\
+		``at least once'' multiplicity & $p$\{+\}        & $p \rightarrow p\{\ast\}$                                                                             \\ \bottomrule
 	\end{tabularx}
 \end{table}
 
@@ -141,12 +135,10 @@ For example, if the pattern is $A \rightarrow B \rightarrow C$, and the previous
 	\label{tab:cep:contexts}
 	\begin{tabularx}{\textwidth}{lcc}
 		\toprule
-		Context & Noise-reduction & Partial matches at the same time \\
-		\midrule
-		Strict Immediate & $-$ & Single \\
-		Immediate & $-$ & Multiple \\
-		Chronicle & $\checkmark$ & Multiple \\
-		\bottomrule
+		Context          & Noise-reduction & Partial matches at the same time \\ \midrule
+		Strict Immediate &       $-$       &              Single              \\
+		Immediate        &       $-$       &             Multiple             \\
+		Chronicle        &  $\checkmark$   &             Multiple             \\ \bottomrule
 	\end{tabularx}
 \end{table}
 
@@ -164,15 +156,13 @@ The accepted parts of the traces are under- and overlined from their start to th
 	\centering
 	\begin{tabular}{@{}clcc@{}}
 		\toprule
-		VEPL pattern      & Context          & Trace                                                         & Accepted \\
-		\midrule
-		$A \rightarrow B$ & Strict Immediate & $A\,C\,B$                                                     & $-$ \\[1ex]
-		                  & Immediate        & $A\,C\,B$                                                     & $-$ \\[1ex ]
-		                  & Chronicle        & $\underline{A\,C\,B}$                                         & $\checkmark$ \\[4ex]
-		                  & Strict Immediate & $A\,\underline{A\,B}\,B$                                      & $\checkmark$ \\[1ex]
-	                      & Immediate        & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
-		                  & Chronicle        & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
-		\bottomrule
+		  VEPL pattern    & Context          &                             Trace                             &      Accepted       \\ \midrule
+		$A \rightarrow B$ & Strict Immediate &                           $A\,C\,B$                           &         $-$         \\[1ex]
+		                  & Immediate        &                           $A\,C\,B$                           &         $-$         \\[1ex]
+		                  & Chronicle        &                     $\underline{A\,C\,B}$                     &    $\checkmark$     \\[4ex]
+		                  & Strict Immediate &                   $A\,\underline{A\,B}\,B$                    &    $\checkmark$     \\[1ex]
+		                  & Immediate        & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex]
+		                  & Chronicle        & $\mathrlap{\overline{\phantom{AAB}}} A\, \underline{A\,B\,B}$ & $2\times\checkmark$ \\[1ex] \bottomrule
 	\end{tabular}
 \end{table}
 
@@ -200,7 +190,7 @@ A well defined formal intermediate representation supports the formal verificati
 \section{Prefiltering functionalities}
 In the new (0.13) version of the VIATRA-CEP the traits and the check expression has been introduced to help the user automatize some of the prefiltering functions.
 
-These functionalities will be described here, however these are not in the scope of this thesis, as their implementation require a different approach.
+These functionalities are be described here, however these are not in the scope of this thesis, as their implementation is not strictly related to the complex event processing.
 
 \paragraph{Traits}
 Traits provide abstraction mechanism to Atomic event patterns. Currently, it supports abstraction of event parameters. For example if the user want to handle all events with coordinateX and coordinateY fields the user can create an abstraction with traits as shown on \cref{fig:viatracep:trait}.
@@ -220,7 +210,7 @@ Check expressions are helpful to filter the incoming events without unnecessary 
 
 \begin{lstlisting}[caption={Example of the Check expression in VIATRA-CEP},label={fig:viatracep:check}]
 	atomicEvent object with position {
-		check{
+		check {
 			coordinateX > 0 && coordinateY > 0
 		}
 	}

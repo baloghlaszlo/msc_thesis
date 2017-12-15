@@ -138,10 +138,10 @@ A Sequence Diagram is an interaction diagram that shows how processes operate wi
 
 \subsubsection{Statechart}
 
-Statecharts, also known as state machines are an extension of finite automata. There are various available syntaxes for statecharts (e.g. the one defined by UML\citep{stcuml}). The higher level concepts that were introduced include variables, actions, and hierarchically nested states. Event-driven execution is also possible by using signals as the triggers of transitions. Available variable types heavily depend on the concrete semantics of the chosen statechart language. Actions can usually be variable assignments, signal raises or the setting of timers. Hierarchy lets users organize system descriptions using a top-down approach. Support for hierarchy is introduced via nested states and parallel regions. States can also have entry and exit actions, which allows the description of common functionality in parent states\citep{stcmove}.%\\
+Statecharts, also known as state machines are an extension of finite Automata. There are various available syntaxes for statecharts (e.g. the one defined by UML\citep{stcuml}). The higher level concepts that were introduced include variables, actions, and hierarchically nested states. Event-driven execution is also possible by using signals as the triggers of transitions. Available variable types heavily depend on the concrete semantics of the chosen statechart language. Actions can usually be variable assignments, signal raises or the setting of timers. Hierarchy lets users organize system descriptions using a top-down approach. Support for hierarchy is introduced via nested states and parallel regions. States can also have entry and exit actions, which allows the description of common functionality in parent states\citep{stcmove}.%\\
 
 Statecharts are usually developed in tools that support the graphical design of the model (e.g.: Yakindu\citep{yakinduu}, an Eclipse based editor).
-Statecharts are commonly used as a form of component description, as it can represent the behaviour of components depending on its state.
+Statecharts are commonly used as a form of component description, as it can represent the behavior of components depending on its state.
 
 \subsubsection{Activity Diagram}
 
@@ -197,12 +197,13 @@ In this section the application of CEP into runtime verification is overviewed.
 In general, system level runtime verification can be provided with the help of complex event processing. A complex event processing framework can monitor either the messaging between components and also the current state of the system and detected errors based on the specification of valid message sequences and valid states. 
 The approach uses pattern matching to detect faulty operation of the system. Should illegal sequences occur, error handling operations (e.g.~restart or shutdown of a component or the whole system) can be applied to avoid the violation of safety criteria.
 
-\subsection{Finite automaton \todo{How the fuck did this get here?}}
+\subsection{Finite automaton }
 
+\todo{How the fuck did this get here?}
 The modeling of systems with finite state space is often done by using finite automata -- also known as finite state machines. A finite automaton accepts a (finite) list of symbols and produces a computation of the automaton for each input list.
 Although finite automata can be easily visualized, this formalism describes a simple, flat transition system and lacks the support for higher level concepts. The development of finite automata models are supported by many tools (e.g.: Finite State Machine Designer \citep{fsmd}).
 
-\subsection{Data structures aiding parametric decision}
+\subsection{Data structures supporting parametric decision}
 As most of the Complex Event Processing tools support some sort of parametric approach, such as parametric events.
 To support such functionalities some sort of data structure is required which can decide which parameters are in them and which of them are not.
 
@@ -212,7 +213,7 @@ Many problems can be stated naturally using variables that have multiple values 
 
 \subsubsection{BDD}
 
-\todo{Steal an abstract and add a reference}
+\todo{Steal an abstract and add a reference? Or the previous is enough?}
 
 \subsubsection{Trie}
 

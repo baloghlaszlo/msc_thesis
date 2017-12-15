@@ -1,71 +1,71 @@
 \BOOKMARK [0][-]{section*.2}{Contents}{}% 1
-\BOOKMARK [0][-]{section*.5}{Kivonat}{}% 2
-\BOOKMARK [0][-]{section*.8}{Abstract}{}% 3
-\BOOKMARK [0][-]{section*.11}{Hallgat\363i nyilatkozat}{}% 4
-\BOOKMARK [0][-]{chapter.12}{Introduction}{}% 5
-\BOOKMARK [0][-]{chapter.15}{Background}{}% 6
-\BOOKMARK [1][-]{section.16}{Development methods}{chapter.15}% 7
-\BOOKMARK [2][-]{subsection.18}{Model driven software development}{section.16}% 8
-\BOOKMARK [2][-]{subsection.19}{Y model}{section.16}% 9
-\BOOKMARK [2][-]{subsection.21}{Modeling languages on different levels of abstraction}{section.16}% 10
-\BOOKMARK [1][-]{section.27}{Verification techniques}{chapter.15}% 11
-\BOOKMARK [2][-]{subsection.28}{Design time verification}{section.27}% 12
-\BOOKMARK [2][-]{subsection.29}{Runtime verification}{section.27}% 13
-\BOOKMARK [1][-]{section.30}{Complex event processing}{chapter.15}% 14
-\BOOKMARK [2][-]{subsection.32}{Complex Event Processing Frameworks}{section.30}% 15
-\BOOKMARK [1][-]{section.33}{Runtime verification with CEP}{chapter.15}% 16
-\BOOKMARK [2][-]{section*.35}{Finite automaton How the fuck did this get here?}{section.33}% 17
-\BOOKMARK [2][-]{subsection.36}{Data structures aiding parametric decision}{section.33}% 18
-\BOOKMARK [1][-]{section.42}{Model based tools}{chapter.15}% 19
-\BOOKMARK [2][-]{subsection.43}{Eclipse Modeling Framework}{section.42}% 20
-\BOOKMARK [2][-]{subsection.44}{VIATRA}{section.42}% 21
-\BOOKMARK [2][-]{subsection.45}{VIATRA-CEP}{section.42}% 22
-\BOOKMARK [1][-]{section.47}{Related work}{chapter.15}% 23
-\BOOKMARK [0][-]{chapter.49}{VIATRA-CEP}{}% 24
-\BOOKMARK [1][-]{section.50}{Live model integration}{chapter.49}% 25
-\BOOKMARK [1][-]{section.52}{Event Pattern Language}{chapter.49}% 26
-\BOOKMARK [1][-]{section.57}{Contexts}{chapter.49}% 27
-\BOOKMARK [2][-]{subsection.58}{Matching and partial matches}{section.57}% 28
-\BOOKMARK [2][-]{subsection.59}{Noise and noise-reduction}{section.57}% 29
-\BOOKMARK [2][-]{subsection.60}{Overview of the event contexts}{section.57}% 30
-\BOOKMARK [1][-]{section.63}{Overview of the architecture}{chapter.49}% 31
-\BOOKMARK [1][-]{section.65}{Prefiltering functionalities}{chapter.49}% 32
-\BOOKMARK [1][-]{section.79}{Intermediate modeling layer}{chapter.49}% 33
-\BOOKMARK [0][-]{chapter.82}{Intermediate Language}{}% 34
-\BOOKMARK [1][-]{section.87}{Overview of Formalisms}{chapter.82}% 35
-\BOOKMARK [1][-]{section.90}{Regular Languages}{chapter.82}% 36
-\BOOKMARK [2][-]{subsection.91}{Regular Expression}{section.90}% 37
-\BOOKMARK [2][-]{subsection.95}{Deterministic Finite Event Automaton}{section.90}% 38
-\BOOKMARK [2][-]{subsection.103}{Nondeterministic Finite Event Automaton}{section.90}% 39
-\BOOKMARK [2][-]{subsection.108}{Transformation from Regular Expression to Deterministic Finite Automaton}{section.90}% 40
-\BOOKMARK [1][-]{section.147}{Timed Languages}{chapter.82}% 41
-\BOOKMARK [2][-]{subsection.148}{Timeout Regular Expression}{section.147}% 42
-\BOOKMARK [2][-]{subsection.152}{Timeout Region Automaton}{section.147}% 43
-\BOOKMARK [2][-]{subsection.160}{Nondeterministic Timeout Event Automaton}{section.147}% 44
-\BOOKMARK [2][-]{subsection.173}{Transformation from Timed Regular Expressions to Timed Automata}{section.147}% 45
-\BOOKMARK [1][-]{section.175}{Parametric Timed Languages}{chapter.82}% 46
-\BOOKMARK [2][-]{subsection.176}{Parametric Timed Regular Expression}{section.175}% 47
-\BOOKMARK [2][-]{subsection.178}{Parametric Timed Region Automaton}{section.175}% 48
-\BOOKMARK [2][-]{subsection.187}{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{section.175}% 49
-\BOOKMARK [0][-]{chapter.189}{Algorithms and Implementation}{}% 50
-\BOOKMARK [1][-]{section.190}{Parametric Timeout Regular Expression}{chapter.189}% 51
-\BOOKMARK [1][-]{section.192}{Parametric Timed Event Automaton}{chapter.189}% 52
-\BOOKMARK [2][-]{subsection.193}{Finite Automaton}{section.192}% 53
-\BOOKMARK [2][-]{subsection.195}{Timeout Event Automaton}{section.192}% 54
-\BOOKMARK [2][-]{subsection.197}{Parameters and Bindings}{section.192}% 55
-\BOOKMARK [1][-]{section.199}{Transformation from VEPL to the intermediate language}{chapter.189}% 56
-\BOOKMARK [2][-]{subsection.200}{VEPL to Regular expressions}{section.199}% 57
+\BOOKMARK [0][-]{section*.4}{Kivonat}{}% 2
+\BOOKMARK [0][-]{section*.7}{Abstract}{}% 3
+\BOOKMARK [0][-]{section*.10}{Hallgat\363i nyilatkozat}{}% 4
+\BOOKMARK [0][-]{chapter.11}{Introduction}{}% 5
+\BOOKMARK [0][-]{chapter.14}{Background}{}% 6
+\BOOKMARK [1][-]{section.15}{Development methods}{chapter.14}% 7
+\BOOKMARK [2][-]{subsection.17}{Model driven software development}{section.15}% 8
+\BOOKMARK [2][-]{subsection.18}{Y model}{section.15}% 9
+\BOOKMARK [2][-]{subsection.20}{Modeling languages on different levels of abstraction}{section.15}% 10
+\BOOKMARK [1][-]{section.26}{Verification techniques}{chapter.14}% 11
+\BOOKMARK [2][-]{subsection.27}{Design time verification}{section.26}% 12
+\BOOKMARK [2][-]{subsection.28}{Runtime verification}{section.26}% 13
+\BOOKMARK [1][-]{section.29}{Complex event processing}{chapter.14}% 14
+\BOOKMARK [2][-]{subsection.31}{Complex Event Processing Frameworks}{section.29}% 15
+\BOOKMARK [1][-]{section.32}{Runtime verification with CEP}{chapter.14}% 16
+\BOOKMARK [2][-]{subsection.33}{Finite automaton }{section.32}% 17
+\BOOKMARK [2][-]{subsection.35}{Data structures supporting parametric decision}{section.32}% 18
+\BOOKMARK [1][-]{section.41}{Model based tools}{chapter.14}% 19
+\BOOKMARK [2][-]{subsection.42}{Eclipse Modeling Framework}{section.41}% 20
+\BOOKMARK [2][-]{subsection.43}{VIATRA}{section.41}% 21
+\BOOKMARK [2][-]{subsection.44}{VIATRA-CEP}{section.41}% 22
+\BOOKMARK [1][-]{section.46}{Related work}{chapter.14}% 23
+\BOOKMARK [0][-]{chapter.48}{VIATRA-CEP}{}% 24
+\BOOKMARK [1][-]{section.49}{Live model integration}{chapter.48}% 25
+\BOOKMARK [1][-]{section.51}{Event Pattern Language}{chapter.48}% 26
+\BOOKMARK [1][-]{section.56}{Contexts}{chapter.48}% 27
+\BOOKMARK [2][-]{subsection.57}{Matching and partial matches}{section.56}% 28
+\BOOKMARK [2][-]{subsection.58}{Noise and noise-reduction}{section.56}% 29
+\BOOKMARK [2][-]{subsection.59}{Overview of the event contexts}{section.56}% 30
+\BOOKMARK [1][-]{section.62}{Overview of the architecture}{chapter.48}% 31
+\BOOKMARK [1][-]{section.64}{Prefiltering functionalities}{chapter.48}% 32
+\BOOKMARK [1][-]{section.78}{Intermediate modeling layer}{chapter.48}% 33
+\BOOKMARK [0][-]{chapter.81}{Intermediate Language}{}% 34
+\BOOKMARK [1][-]{section.85}{Overview of Formalisms}{chapter.81}% 35
+\BOOKMARK [1][-]{section.87}{Regular Languages}{chapter.81}% 36
+\BOOKMARK [2][-]{subsection.88}{Regular Expression}{section.87}% 37
+\BOOKMARK [2][-]{subsection.92}{Deterministic Finite Event Automaton}{section.87}% 38
+\BOOKMARK [2][-]{subsection.100}{Nondeterministic Finite Event Automaton}{section.87}% 39
+\BOOKMARK [2][-]{subsection.105}{Transformation from Regular Expression to Deterministic Finite Automaton}{section.87}% 40
+\BOOKMARK [1][-]{section.144}{Timed Regular Languages}{chapter.81}% 41
+\BOOKMARK [2][-]{subsection.145}{Timeout Regular Expression}{section.144}% 42
+\BOOKMARK [2][-]{subsection.149}{Timeout Region Automaton}{section.144}% 43
+\BOOKMARK [2][-]{subsection.157}{Nondeterministic Timeout Event Automaton}{section.144}% 44
+\BOOKMARK [2][-]{subsection.168}{Transformation from Timed Regular Expressions to Timed Automata}{section.144}% 45
+\BOOKMARK [1][-]{section.171}{Parametric Timed Languages}{chapter.81}% 46
+\BOOKMARK [2][-]{subsection.172}{Parametric Timed Regular Expression}{section.171}% 47
+\BOOKMARK [2][-]{subsection.176}{Parametric Timed Region Event Automaton}{section.171}% 48
+\BOOKMARK [2][-]{subsection.180}{Parametric Timed Event Automaton}{section.171}% 49
+\BOOKMARK [2][-]{subsection.188}{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{section.171}% 50
+\BOOKMARK [0][-]{chapter.189}{Algorithms and Implementation}{}% 51
+\BOOKMARK [1][-]{section.190}{Parametric Timeout Regular Expression}{chapter.189}% 52
+\BOOKMARK [1][-]{section.193}{Parametric Timed Event Automaton}{chapter.189}% 53
+\BOOKMARK [2][-]{subsection.194}{Finite Automaton}{section.193}% 54
+\BOOKMARK [2][-]{subsection.196}{Timeout Event Automaton}{section.193}% 55
+\BOOKMARK [2][-]{subsection.198}{Parameters and Bindings}{section.193}% 56
+\BOOKMARK [1][-]{section.200}{Transformation from VEPL to the intermediate language}{chapter.189}% 57
 \BOOKMARK [1][-]{section.203}{Automaton Executor}{chapter.189}% 58
-\BOOKMARK [2][-]{subsection.214}{Parameter Handling}{section.203}% 59
-\BOOKMARK [2][-]{subsection.215}{Most Na\357ve approach}{section.203}% 60
-\BOOKMARK [2][-]{subsection.217}{Na\357ve approach}{section.203}% 61
-\BOOKMARK [2][-]{subsection.221}{Decision List}{section.203}% 62
-\BOOKMARK [2][-]{subsection.224}{Disjunctive Decision Set}{section.203}% 63
-\BOOKMARK [2][-]{subsection.226}{MDDe}{section.203}% 64
-\BOOKMARK [2][-]{subsection.227}{Trie}{section.203}% 65
-\BOOKMARK [2][-]{subsection.229}{BDD}{section.203}% 66
-\BOOKMARK [0][-]{chapter.231}{Conclusion}{}% 67
-\BOOKMARK [0][-]{chapter.232}{Acknowledgment}{}% 68
-\BOOKMARK [0][-]{appendix*.233}{Appendix}{}% 69
-\BOOKMARK [1][-]{section.234}{Grammar}{appendix*.233}% 70
-\BOOKMARK [0][-]{section*.316}{References}{}% 71
+\BOOKMARK [2][-]{subsection.215}{Parameter Handling}{section.203}% 59
+\BOOKMARK [2][-]{subsection.216}{Most Na\357ve approach}{section.203}% 60
+\BOOKMARK [2][-]{subsection.218}{Na\357ve approach}{section.203}% 61
+\BOOKMARK [2][-]{subsection.222}{Decision List}{section.203}% 62
+\BOOKMARK [2][-]{subsection.225}{Disjunctive Decision Set}{section.203}% 63
+\BOOKMARK [2][-]{subsection.227}{MDDe}{section.203}% 64
+\BOOKMARK [2][-]{subsection.228}{Trie}{section.203}% 65
+\BOOKMARK [2][-]{subsection.230}{BDD}{section.203}% 66
+\BOOKMARK [0][-]{chapter.232}{Conclusion}{}% 67
+\BOOKMARK [0][-]{chapter.233}{Acknowledgment}{}% 68
+\BOOKMARK [0][-]{appendix*.234}{Appendix}{}% 69
+\BOOKMARK [1][-]{section.235}{Xtext grammar for the Parametric Timeout Regular Expression}{appendix*.234}% 70
+\BOOKMARK [0][-]{section*.317}{References}{}% 71
