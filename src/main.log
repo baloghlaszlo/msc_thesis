@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.27)  16 DEC 2017 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.27)  16 DEC 2017 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2577,7 +2577,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 60.
 Package biblatex Info: Reference segment=0 on input line 60.
-<thesis_topic.pdf, id=312, 597.55246pt x 845.07718pt>
+<thesis_topic.pdf, id=324, 597.55246pt x 845.07718pt>
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf>
 Package pdftex.def Info: thesis_topic.pdf used on input line 65.
@@ -2586,7 +2586,7 @@ File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf>
 Package pdftex.def Info: thesis_topic.pdf used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<thesis_topic.pdf, id=315, page=1, 597.55246pt x 845.07718pt>
+<thesis_topic.pdf, id=327, page=1, 597.55246pt x 845.07718pt>
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf, page 1>
 Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
@@ -2611,7 +2611,7 @@ Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
 ]
 \openout2 = `include/titlepage.aux'.
 
-(./include/titlepage.tex <include/figures/bme_logo.pdf, id=355, 705.63625pt x 1
+(./include/titlepage.tex <include/figures/bme_logo.pdf, id=367, 705.63625pt x 1
 88.705pt>
 File: include/figures/bme_logo.pdf Graphic file (type pdf)
 <use include/figures/bme_logo.pdf>
@@ -2737,7 +2737,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `erewhon-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures/chapter_2/CEP.pdf, id=558, 365.62497pt x 212.43666pt>
+<figures/chapter_2/CEP.pdf, id=573, 365.62497pt x 212.43666pt>
 File: figures/chapter_2/CEP.pdf Graphic file (type pdf)
 <use figures/chapter_2/CEP.pdf>
 Package pdftex.def Info: figures/chapter_2/CEP.pdf used on input line 180.
@@ -2799,7 +2799,7 @@ Underfull \hbox (badness 10000) in alignment at lines 142--142
 [][][] 
  []
 
-<figures/chapter_3/oldcep.pdf, id=674, 192.7742pt x 120.33557pt>
+<figures/chapter_3/oldcep.pdf, id=689, 192.7742pt x 120.33557pt>
 File: figures/chapter_3/oldcep.pdf Graphic file (type pdf)
 <use figures/chapter_3/oldcep.pdf>
 Package pdftex.def Info: figures/chapter_3/oldcep.pdf used on input line 185.
@@ -2824,7 +2824,7 @@ LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
 (Font)              scaled to size 7.76001pt on input line 200.
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/b/n' will be
 (Font)              scaled to size 9.96452pt on input line 201.
-<figures/chapter_3/newcep.pdf, id=699, 198.45744pt x 202.47142pt>
+<figures/chapter_3/newcep.pdf, id=714, 198.45744pt x 202.47142pt>
 File: figures/chapter_3/newcep.pdf Graphic file (type pdf)
 <use figures/chapter_3/newcep.pdf>
 Package pdftex.def Info: figures/chapter_3/newcep.pdf used on input line 227.
@@ -2832,7 +2832,7 @@ Package pdftex.def Info: figures/chapter_3/newcep.pdf used on input line 227.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/chapter_3/newinput.pdf, id=701, 678.53702pt x 246.01309pt>
+<figures/chapter_3/newinput.pdf, id=716, 678.53702pt x 246.01309pt>
 File: figures/chapter_3/newinput.pdf Graphic file (type pdf)
 <use figures/chapter_3/newinput.pdf>
 Package pdftex.def Info: figures/chapter_3/newinput.pdf used on input line 239.
@@ -2898,13 +2898,13 @@ f tu-ples
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/it' will be
 (Font)              scaled to size 10.6215pt on input line 487.
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 558--560
+Underfull \hbox (badness 10000) in paragraph at lines 560--562
 []\T1/erewhon-TLF/m/n/10.95 (+20) A Non-de-ter-min-is-tic Time-out Event Au-tom
 a-ton is a tu-ple
  []
 
 [33] [34] [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 799--801
+Underfull \hbox (badness 10000) in paragraph at lines 801--803
 
  []
 
@@ -2916,7 +2916,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 799--801
 
 
 ]
-<figures/chapter_5/Basic_automaton_diagram.pdf, id=973, 458.46281pt x 424.58624
+<figures/chapter_5/Basic_automaton_diagram.pdf, id=988, 458.46281pt x 424.58624
 pt>
 File: figures/chapter_5/Basic_automaton_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Basic_automaton_diagram.pdf>
@@ -2924,27 +2924,42 @@ Package pdftex.def Info: figures/chapter_5/Basic_automaton_diagram.pdf used on
 input line 26.
 (pdftex.def)             Requested size: 398.0pt x 368.6096pt.
 [41] [42 <./figures/chapter_5/Basic_automaton_diagram.pdf>] <figures/chapter_5/
-Timing_diagram.pdf, id=1570, 630.85687pt x 355.3275pt>
+Timing_diagram.pdf, id=1585, 630.85687pt x 355.3275pt>
 File: figures/chapter_5/Timing_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Timing_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Timing_diagram.pdf used on input lin
 e 40.
 (pdftex.def)             Requested size: 398.0pt x 224.17197pt.
 [43 <./figures/chapter_5/Timing_diagram.pdf>]
-<figures/chapter_5/Parameters_diagram.pdf, id=2159, 683.55376pt x 393.72093pt>
+<figures/chapter_5/Parameters_diagram.pdf, id=2174, 683.55376pt x 393.72093pt>
 File: figures/chapter_5/Parameters_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Parameters_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Parameters_diagram.pdf used on input
  line 56.
 (pdftex.def)             Requested size: 398.0pt x 229.24744pt.
-[44 <./figures/chapter_5/Parameters_diagram.pdf>] [45] [46] [47] [48]) [49]
+[44 <./figures/chapter_5/Parameters_diagram.pdf>] [45] [46] [47] [48]
+Overfull \hbox (15.49652pt too wide) in paragraph at lines 264--265
+\T1/erewhon-TLF/m/n/10.95 (-20) for one pro-cess. There-fore the ex-tended pat-
+tern will be $\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 a\T1/futs/m/n/10.95 [\F
+ML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ] \FML/futmi/m/it/10.95 a\T1/futs/m/n/1
+0.95 [\FML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ][] \FML/futmi/m/it/10.95 r\T1/
+futs/m/n/10.95 [\FML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ] \FML/futmi/m/it/10.
+95 r\T1/futs/m/n/10.95 [\FML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ][] \FML/futm
+i/m/it/10.95 a\T1/futs/m/n/10.95 [\FML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ])\
+FMS/futm/m/n/10.95 j\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 a\T1/futs/m/n/10.
+95 [\FML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ]\FML/futmi/m/it/10.95 ; [] ; a\T
+1/futs/m/n/10.95 [\FML/futmi/m/it/10.95 i\T1/futs/m/n/10.95 ])$\T1/erewhon-TLF/
+m/n/10.95 (-20) ,
+ []
+
+[49]) [50]
 \openout2 = `chapters/06_conclusion.aux'.
 
-(./chapters/06_conclusion.tex [50
+(./chapters/06_conclusion.tex) [51
 
 
 
-]) [51]
+]
 \openout2 = `chapters/07_ack.aux'.
 
 (./chapters/07_ack.tex [52
@@ -2998,7 +3013,7 @@ aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 51F95B01AB5584CDB614BF2CE8C72A97;5098.
+(rerunfilecheck)             Checksum: 2AFB41AE9CF0B8DF31960D8DD5984EBC;5311.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -3008,10 +3023,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44059 strings out of 493013
- 808021 string characters out of 6136993
- 1441251 words of memory out of 5000000
- 46002 multiletter control sequences out of 15000+600000
+ 44074 strings out of 493013
+ 808204 string characters out of 6136993
+ 1441256 words of memory out of 5000000
+ 46008 multiletter control sequences out of 15000+600000
  344857 words of font info for 362 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,18n,84p,1574b,14157s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3037,10 +3052,10 @@ ve/2016/texmf-dist/fonts/type1/public/fourier/fourier-mlitb.pfb><c:/texlive/201
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2016/texmf-dist/
 fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/ado
 be/utopia/putri8a.pfb>
-Output written on main.pdf (73 pages, 1268610 bytes).
+Output written on main.pdf (73 pages, 1271261 bytes).
 PDF statistics:
- 3265 PDF objects out of 3580 (max. 8388607)
- 2404 compressed objects within 25 object streams
- 432 named destinations out of 1000 (max. 500000)
- 75993 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 3291 PDF objects out of 3580 (max. 8388607)
+ 2430 compressed objects within 25 object streams
+ 441 named destinations out of 1000 (max. 500000)
+ 76017 words of extra memory for PDF output out of 89155 (max. 10000000)
 

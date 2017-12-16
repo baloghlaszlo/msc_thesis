@@ -101,7 +101,7 @@
 			\end{itemize}
 			
 	
-			To illustrate the usage of the regular expressions in the two phase locking example, the behavior ``After a task has released a resource, it's not allowed to allocate again'' is described with the regular expression : $a (a)^* r (r)^* a $, where $a$ is short for allocation and $r$ is short for release.
+			To illustrate the usage of the regular expressions in the two phase locking example, the behavior ``After a task has released a resource, it's not allowed to allocate again'' is described with the regular expression : $a \; (a)^* \; r \; (r)^* \; a $, where $a$ is short for allocation and $r$ is short for release.
 	
 	
 		\subsection{Deterministic Finite Event Automaton}
@@ -426,7 +426,7 @@
 			The implementation and algorithmization with intervals instead of timeouts as in \citep{tre} are considered future work.
 	
 			With the timed regular expression formalism the example can be extended with timing, and adding the concept timeout becomes possible.
-			The new expression will be: $(a \; (a)^\ast \; r \; (r)^\ast \; a)|( \langle a \; (a)^\ast \; r \rangle_{10 s})$
+			The new expression will be: $ \langle a \; (a)^\ast \rangle_{t > 10} \; r \; (r)^\ast \; a$
 			
 			\subsection{Timeout Region Automaton}
 			
@@ -504,7 +504,9 @@
 			\end{enumerate}
 			
 			
-			We can generate from the expression $(a (a)^\ast r (r)^\ast a)|( \langle a (a)^\ast r \rangle_{t < 10 s})$ the automaton of~\cref{fig:cep:trea}.
+			We can generate from the expression % $(a (a)^\ast r (r)^\ast a)|( \langle a (a)^\ast r \rangle_{t < 10 s})$
+			$(\langle a (a)^\ast \rangle_{t > 10} r (r)^\ast a)$
+			the automaton of~\cref{fig:cep:trea}.
 			Note the additional timed region which contains the ``allocating phase'' state.
 			
 			\begin{figure}[h]
@@ -530,7 +532,7 @@
 %				, inner xsep = 0mm
 				] (timing) {};
 				
-				\node [rect, minimum height=0mm ,anchor=south east] at (timing.south east) { $t > 10$};
+				\node [rect, minimum height=0mm ,anchor=south east] at (timing.south east) { $t < 10$};
 				
 				\path[->]
 				(initial) edge[bend left = 45] node[above] {$a$}  (alloc)
@@ -701,7 +703,7 @@
 			\end{dfn}
 			
 			With parametric timed regular expressions the example can be extended regular expression with parameters:
-			$(a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]) | (\langle a[i] \; a[i]^\ast \; r[i]\rangle_{t > 10} )$.
+			$ \langle a[i] \; a[i]^\ast \rangle_{t > 10} \; r[i] \; r[i]^\ast \; a[i]$ %| (\langle a[i] \; a[i]^\ast \; r[i]\rangle_{t > 10} )$.
 			Note that this allows us to have only one instance of the automaton even for multiple tasks, each with its own ID.
 		
 		\subsection{Parametric Timed Region Event Automaton}
@@ -728,7 +730,7 @@
 			\end{itemize}
 	
 			Using the parametric timed region automaton we can compile our timed regular expression 
-			$(a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]) | (\langle a[i] \; a[i]^\ast \; r[i]\rangle_{t > 10} )$ into the automaton on \cref{fig:cep:ptrea}.
+			$(\langle a[i] \;  a[i]^\ast \rangle_{t > 10} \; r[i] \; r[i]^\ast \; a[i]) )$ into the automaton on \cref{fig:cep:ptrea}.
 	
 	
 			\begin{figure}[h]

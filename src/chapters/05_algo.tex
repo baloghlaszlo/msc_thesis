@@ -249,3 +249,43 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	
 	There are many more data structures which can be used for the underlying implementation of a Parameter Relation. Two more was under consideration, Trie, and BDD. Both are somewhat similar to MDD, however Trie is a mutable data structure, which theoretically seems to be more efficient in the case of the Deterministic Execution, as the operations are always mutating the data structure. The other one was BDD which is the Binary version of MDD, but thanks to that, the tree structure would be higher, however with a lower branching factor, and updating such data structures could be cheaper than using MDDs.
 	
+	\section{Preliminary measurements}
+	To analyze the efficiency of the implementation some measurements were done, using the example from \cref{chap:cep}.
+	
+	\subsection{Measurement setup}
+	As the current implementation lacks of logical clocks, and the timed properties can only be evaluated by elapsing the required time, the pattern $a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]$ will be the parametric and not temporal example.
+	The scalability is viewed from two points:
+	
+	\begin{enumerate}
+		\item How well does the implementation scale with the size of the pattern?
+		\item How well does the implementation scale with the size of the input sequence?
+		\item With a given pattern and a given size for the input sequence, does it matter how many times the automaton accepts?
+	\end{enumerate}
+	
+	To answer the first question, the pattern must be extended. The extension was with adding one more requirement to the pattern: How much is the maximum allocation allowed for one process. Therefore the extended pattern will be $ ( a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i] ) | (a[i],\dots,a[i])$, where on the right side of the pattern the length sequence of $a[i]$ events will be expanded to one, ten, one hundred, one thousand, and ten thousand.
+	
+	To answer the second question, input sequences were generated in five sizes: one long, ten long, one hundred long, one thousand long and ten thousand long ones.
+	However to measure multiple cases, these inputs are generated with the following logic:
+	\begin{enumerate}
+		\item A randomly generated sequence,
+		\item only events $a[1]$ and $a[2]$ but on a random sequence to not a match, in other words to generate less than the required $a[1]$ events and $a[2]$ events,
+		\item only sequences of $a[1] r[1] a[1]$ and $a[2] r[2] a[2]$ to have as much matches as possible.
+	\end{enumerate}
+
+	The measurements were done with two underlying parametric data structures MDDe, and the  Disjunctive Decision Set.
+	
+	
+		\subsubsection{Threats to validity}
+		Every measurement was done twelve times. The first two measurement result was dropped as it was considered as the warm up for the JVM. From the remaining ten, the median was calculated, to have a stable value which is the least affected by the noises of the measurement and the extremely high or low values.
+		
+		The measurements were aimed to cover some part of most use cases, however they are not exhausting every potential use case to think of.
+		
+		
+	
+	\subsection{Measurement Results}
+	
+		\todo{Diagram}
+		
+		\todo{Explanation}
+	
+	

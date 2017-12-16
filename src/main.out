@@ -63,8 +63,11 @@
 \BOOKMARK [2][-]{subsection.226}{Disjunctive Decision Set}{section.203}% 63
 \BOOKMARK [2][-]{subsection.228}{MDDe}{section.203}% 64
 \BOOKMARK [2][-]{subsection.229}{Additional Data Structures}{section.203}% 65
-\BOOKMARK [0][-]{chapter.230}{Conclusion}{}% 66
-\BOOKMARK [0][-]{chapter.231}{Acknowledgment}{}% 67
-\BOOKMARK [0][-]{appendix*.232}{Appendix}{}% 68
-\BOOKMARK [1][-]{section.233}{Xtext grammar for the Parametric Timeout Regular Expression}{appendix*.232}% 69
-\BOOKMARK [0][-]{section*.315}{References}{}% 70
+\BOOKMARK [1][-]{section.230}{Preliminary measurements}{chapter.189}% 66
+\BOOKMARK [2][-]{subsection.231}{Measurement setup}{section.230}% 67
+\BOOKMARK [2][-]{subsection.238}{Measurement Results}{section.230}% 68
+\BOOKMARK [0][-]{chapter.239}{Conclusion}{}% 69
+\BOOKMARK [0][-]{chapter.240}{Acknowledgment}{}% 70
+\BOOKMARK [0][-]{appendix*.241}{Appendix}{}% 71
+\BOOKMARK [1][-]{section.242}{Xtext grammar for the Parametric Timeout Regular Expression}{appendix*.241}% 72
+\BOOKMARK [0][-]{section*.324}{References}{}% 73
