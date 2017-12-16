@@ -755,9 +755,6 @@ INPUT c:/texlive/2016/texmf-dist/fonts/vf/public/fourier/futmii.vf
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/fourier-mlit.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/fourier-ml.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/futri8r.tfm
-INPUT figures/chapter_4/allocating_simple.pdf
-INPUT ./figures/chapter_4/allocating_simple.pdf
-INPUT ./figures/chapter_4/allocating_simple.pdf
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/futri8t.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/futri8t.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/futri8t.tfm
@@ -773,14 +770,11 @@ INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/erewhon/Erewhon-Italic-tlf-t1.
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/erewhon/Erewhon-Italic-tlf-t1.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/vf/public/erewhon/Erewhon-Italic-tlf-t1.vf
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/erewhon/Erewhon-Italic-tlf-t1--base.tfm
-INPUT figures/chapter_4/allocating_timed.pdf
-INPUT ./figures/chapter_4/allocating_timed.pdf
-INPUT ./figures/chapter_4/allocating_timed.pdf
+INPUT c:/texlive/2016/texmf-dist/fonts/vf/public/fourier/futr8t.vf
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/futr8r.tfm
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/fourier-alt.tfm
 INPUT c:/texlive/2016/texmf-dist/fonts/vf/public/erewhon/Erewhon-Italic-tlf-t1.vf
 INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/erewhon/Erewhon-Italic-tlf-t1--base.tfm
-INPUT figures/chapter_4/allocating_timed_parametric.pdf
-INPUT ./figures/chapter_4/allocating_timed_parametric.pdf
-INPUT ./figures/chapter_4/allocating_timed_parametric.pdf
 OUTPUT chapters/05_algo.aux
 INPUT chapters/05_algo.tex
 INPUT chapters/05_algo.tex
@@ -790,9 +784,6 @@ INPUT ./figures/chapter_5/Basic_automaton_diagram.pdf
 INPUT figures/chapter_5/Timing_diagram.pdf
 INPUT ./figures/chapter_5/Timing_diagram.pdf
 INPUT ./figures/chapter_5/Timing_diagram.pdf
-INPUT c:/texlive/2016/texmf-dist/fonts/vf/public/fourier/futr8t.vf
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/futr8r.tfm
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/fourier/fourier-alt.tfm
 INPUT figures/chapter_5/Parameters_diagram.pdf
 INPUT ./figures/chapter_5/Parameters_diagram.pdf
 INPUT ./figures/chapter_5/Parameters_diagram.pdf

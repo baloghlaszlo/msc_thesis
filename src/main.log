@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.27)  15 DEC 2017 19:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.27)  16 DEC 2017 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2376,13 +2376,13 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
 LaTeX Font Info:    Try loading font information for T1+erewhon-TLF on input li
-ne 58.
+ne 60.
 (c:/texlive/2016/texmf-dist/tex/latex/erewhon/t1erewhon-tlf.fd
 File: T1erewhon-TLF.fd 2014/09/11 (autoinst) Font definitions for T1/erewhon-TL
 F.
 )
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
-(Font)              scaled to size 9.70001pt on input line 58.
+(Font)              scaled to size 9.70001pt on input line 60.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 (c:/texlive/2016/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -2392,7 +2392,7 @@ Package biblatex Info: Trying to load language 'magyar'...
 Package biblatex Info: ... file 'magyar.lbx' not found.
 
 Package biblatex Warning: Language 'magyar' not supported.
-(biblatex)                Using fallback language 'english' on input line 58.
+(biblatex)                Using fallback language 'english' on input line 60.
 
 (./main.aux (./include/titlepage.aux) (./abstract.aux) (./declaration.aux) (./c
 hapters/01_introduction.aux) (./chapters/02_background.aux) (./chapters/03_viat
@@ -2401,58 +2401,58 @@ ra_cep.aux) (./chapters/04_intermediate_language.aux) (./chapters/05_algo.aux)
 aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 58.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 60.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 60.
 
 (c:/texlive/2016/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 60.
 
 (c:/texlive/2016/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 60.
 
 (c:/texlive/2016/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for LY1+ptm on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for LY1+ptm on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
-(Font)              scaled to size 10.6215pt on input line 58.
+(Font)              scaled to size 10.6215pt on input line 60.
 \c@mv@tabular=\count457
 \c@mv@boldtabular=\count458
-LaTeX Info: Redefining \microtypecontext on input line 58.
+LaTeX Info: Redefining \microtypecontext on input line 60.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2470,7 +2470,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 \AtBeginShipoutBox=\box89
-Package hyperref Info: Link coloring OFF on input line 58.
+Package hyperref Info: Link coloring OFF on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -2481,18 +2481,18 @@ LaTeX Info: Redefining \Ref on input line 515.
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 58.
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
-LaTeX Info: Redefining \Ref on input line 58.
+LaTeX Info: Redefining \Ref on input line 60.
 ABD: EveryShipout initializing macros
 \autonum@environmentWidth=\skip310
-LaTeX Font Info:    Try loading font information for T1+futs on input line 58.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
@@ -2500,41 +2500,41 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `futs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 58
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 60
 .
 (c:/texlive/2016/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 58.
+(Font)              scaled to size 10.07397pt on input line 60.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 58.
+(Font)              scaled to size 7.63599pt on input line 60.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 58.
+(Font)              scaled to size 5.51999pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 58.
+(Font)              scaled to size 10.07397pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 58.
+(Font)              scaled to size 7.63599pt on input line 60.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 58.
+(Font)              scaled to size 5.51999pt on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/texlive/2016/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/texlive/2016/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+cmllr on input line 58.
+LaTeX Font Info:    Try loading font information for U+cmllr on input line 60.
 (c:/texlive/2016/texmf-dist/tex/latex/cmll/ucmllr.fd)
-Overfull \hbox (1.53928pt too wide) detected at line 58
+Overfull \hbox (1.53928pt too wide) detected at line 60
  []$[]   $    
  []
 
@@ -2575,33 +2575,33 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 58.
-Package biblatex Info: Reference segment=0 on input line 58.
-<thesis_topic.pdf, id=316, 597.55246pt x 845.07718pt>
+Package biblatex Info: Reference section=0 on input line 60.
+Package biblatex Info: Reference segment=0 on input line 60.
+<thesis_topic.pdf, id=312, 597.55246pt x 845.07718pt>
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf>
-Package pdftex.def Info: thesis_topic.pdf used on input line 63.
+Package pdftex.def Info: thesis_topic.pdf used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf>
-Package pdftex.def Info: thesis_topic.pdf used on input line 63.
+Package pdftex.def Info: thesis_topic.pdf used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-<thesis_topic.pdf, id=319, page=1, 597.55246pt x 845.07718pt>
+<thesis_topic.pdf, id=315, page=1, 597.55246pt x 845.07718pt>
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf, page 1>
-Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 63.
-(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
-File: thesis_topic.pdf Graphic file (type pdf)
-<use thesis_topic.pdf, page 1>
-Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 63.
+Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf, page 1>
-Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 63.
+Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: thesis_topic.pdf Graphic file (type pdf)
 <use thesis_topic.pdf, page 1>
-Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 63.
+Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+File: thesis_topic.pdf Graphic file (type pdf)
+<use thesis_topic.pdf, page 1>
+Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 65.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 [1
 
@@ -2611,7 +2611,7 @@ Package pdftex.def Info: thesis_topic.pdf, page1 used on input line 63.
 ]
 \openout2 = `include/titlepage.aux'.
 
-(./include/titlepage.tex <include/figures/bme_logo.pdf, id=359, 705.63625pt x 1
+(./include/titlepage.tex <include/figures/bme_logo.pdf, id=355, 705.63625pt x 1
 88.705pt>
 File: include/figures/bme_logo.pdf Graphic file (type pdf)
 <use include/figures/bme_logo.pdf>
@@ -2737,7 +2737,7 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `erewhon-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures/chapter_2/CEP.pdf, id=563, 365.62497pt x 212.43666pt>
+<figures/chapter_2/CEP.pdf, id=558, 365.62497pt x 212.43666pt>
 File: figures/chapter_2/CEP.pdf Graphic file (type pdf)
 <use figures/chapter_2/CEP.pdf>
 Package pdftex.def Info: figures/chapter_2/CEP.pdf used on input line 180.
@@ -2799,7 +2799,7 @@ Underfull \hbox (badness 10000) in alignment at lines 142--142
 [][][] 
  []
 
-<figures/chapter_3/oldcep.pdf, id=679, 192.7742pt x 120.33557pt>
+<figures/chapter_3/oldcep.pdf, id=674, 192.7742pt x 120.33557pt>
 File: figures/chapter_3/oldcep.pdf Graphic file (type pdf)
 <use figures/chapter_3/oldcep.pdf>
 Package pdftex.def Info: figures/chapter_3/oldcep.pdf used on input line 185.
@@ -2824,7 +2824,7 @@ LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/n' will be
 (Font)              scaled to size 7.76001pt on input line 200.
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/b/n' will be
 (Font)              scaled to size 9.96452pt on input line 201.
-<figures/chapter_3/newcep.pdf, id=704, 198.45744pt x 202.47142pt>
+<figures/chapter_3/newcep.pdf, id=699, 198.45744pt x 202.47142pt>
 File: figures/chapter_3/newcep.pdf Graphic file (type pdf)
 <use figures/chapter_3/newcep.pdf>
 Package pdftex.def Info: figures/chapter_3/newcep.pdf used on input line 227.
@@ -2832,7 +2832,7 @@ Package pdftex.def Info: figures/chapter_3/newcep.pdf used on input line 227.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/chapter_3/newinput.pdf, id=706, 678.53702pt x 246.01309pt>
+<figures/chapter_3/newinput.pdf, id=701, 678.53702pt x 246.01309pt>
 File: figures/chapter_3/newinput.pdf Graphic file (type pdf)
 <use figures/chapter_3/newinput.pdf>
 Package pdftex.def Info: figures/chapter_3/newinput.pdf used on input line 239.
@@ -2848,30 +2848,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-] [23] [24]
-Package hyperref Info: bookmark level for unknown dfn defaults to 0 on input li
-ne 89.
+] [23]
+Underfull \vbox (badness 1052) has occurred while \output is active []
 
-Underfull \hbox (badness 3849) in paragraph at lines 90--93
+[24]
+Package hyperref Info: bookmark level for unknown dfn defaults to 0 on input li
+ne 82.
+
+Underfull \hbox (badness 3849) in paragraph at lines 83--86
 []\T1/erewhon-TLF/m/n/10.95 (+20) Regular Ex-pres-sions over an al-pha-bet $\FM
 L/futm/m/it/10.95 ^^F$ \T1/erewhon-TLF/m/n/10.95 (+20) (also re-ferred to as $\
 FML/futm/m/it/10.95 ^^F$\T1/erewhon-TLF/m/n/10.95 (+20) -
  []
 
-[25] <figures/chapter_4/allocating_simple.pdf, id=788, 440.94334pt x 102.53506p
-t>
-File: figures/chapter_4/allocating_simple.pdf Graphic file (type pdf)
-<use figures/chapter_4/allocating_simple.pdf>
-Package pdftex.def Info: figures/chapter_4/allocating_simple.pdf used on input 
-line 181.
-(pdftex.def)             Requested size: 278.59879pt x 64.7836pt.
+[25]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[27 <./figures/chapter_4/allocating_simple.pdf>]
+[27]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2881,103 +2878,86 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28] [29] [30]
-Overfull \hbox (8.70573pt too wide) in paragraph at lines 420--421
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28] [29] [30] [31]
+Overfull \hbox (8.70573pt too wide) in paragraph at lines 440--441
 []\T1/erewhon-TLF/m/n/10.95 (-20) From now on, the no-ta-tion $[]$ will be used
  for re-gions, which is a set of states, i.e. $[]  \FMS/futm/m/n/10.95 ^^R  \FM
 L/futmi/m/it/10.95 Q$ 
  []
 
-[31]
-Underfull \hbox (badness 1418) in paragraph at lines 434--435
+
+Underfull \hbox (badness 1418) in paragraph at lines 454--455
 []\T1/erewhon-TLF/m/n/10.95 (+20) and $\FML/futmi/m/it/10.95 ^^N[]$ \T1/erewhon
 -TLF/m/n/10.95 (+20) rep-re-sents timed tran-si-tions and de-fined as the set o
 f tu-ples
  []
 
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/it' will be
-(Font)              scaled to size 10.6215pt on input line 467.
-[32] <figures/chapter_4/allocating_timed.pdf, id=924, 437.66211pt x 135.49823pt
->
-File: figures/chapter_4/allocating_timed.pdf Graphic file (type pdf)
-<use figures/chapter_4/allocating_timed.pdf>
-Package pdftex.def Info: figures/chapter_4/allocating_timed.pdf used on input l
-ine 492.
-(pdftex.def)             Requested size: 278.59879pt x 86.25336pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+(Font)              scaled to size 10.6215pt on input line 487.
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 557--559
 []\T1/erewhon-TLF/m/n/10.95 (+20) A Non-de-ter-min-is-tic Time-out Event Au-tom
 a-ton is a tu-ple
  []
 
-[33 <./figures/chapter_4/allocating_timed.pdf>] [34]
+[33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Marginpar on page 35 moved by 6.97296pt.
-
-[35]
-<figures/chapter_4/allocating_timed_parametric.pdf, id=985, 439.58832pt x 142.6
-8407pt>
-File: figures/chapter_4/allocating_timed_parametric.pdf Graphic file (type pdf)
-
-<use figures/chapter_4/allocating_timed_parametric.pdf>
-Package pdftex.def Info: figures/chapter_4/allocating_timed_parametric.pdf used
- on input line 646.
-(pdftex.def)             Requested size: 278.59879pt x 90.43353pt.
-[36 <./figures/chapter_4/allocating_timed_parametric.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 678--680
+[34] [35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 795--797
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[37]) [38]
+[38]) [39]
 \openout2 = `chapters/05_algo.aux'.
 
-(./chapters/05_algo.tex
-<figures/chapter_5/Basic_automaton_diagram.pdf, id=1025, 458.46281pt x 424.5862
-4pt>
+(./chapters/05_algo.tex [40
+
+
+
+]
+<figures/chapter_5/Basic_automaton_diagram.pdf, id=973, 458.46281pt x 424.58624
+pt>
 File: figures/chapter_5/Basic_automaton_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Basic_automaton_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Basic_automaton_diagram.pdf used on 
 input line 26.
 (pdftex.def)             Requested size: 398.0pt x 368.6096pt.
-[39
-
-
-
-] [40 <./figures/chapter_5/Basic_automaton_diagram.pdf>] <figures/chapter_5/Tim
-ing_diagram.pdf, id=1623, 630.85687pt x 355.3275pt>
+[41] [42 <./figures/chapter_5/Basic_automaton_diagram.pdf>] <figures/chapter_5/
+Timing_diagram.pdf, id=1570, 630.85687pt x 355.3275pt>
 File: figures/chapter_5/Timing_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Timing_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Timing_diagram.pdf used on input lin
 e 40.
 (pdftex.def)             Requested size: 398.0pt x 224.17197pt.
-[41 <./figures/chapter_5/Timing_diagram.pdf>]
-<figures/chapter_5/Parameters_diagram.pdf, id=2210, 683.55376pt x 393.72093pt>
+[43 <./figures/chapter_5/Timing_diagram.pdf>]
+<figures/chapter_5/Parameters_diagram.pdf, id=2159, 683.55376pt x 393.72093pt>
 File: figures/chapter_5/Parameters_diagram.pdf Graphic file (type pdf)
 <use figures/chapter_5/Parameters_diagram.pdf>
 Package pdftex.def Info: figures/chapter_5/Parameters_diagram.pdf used on input
  line 56.
 (pdftex.def)             Requested size: 398.0pt x 229.24744pt.
-[42 <./figures/chapter_5/Parameters_diagram.pdf>] [43] [44] [45] [46]) [47]
+[44 <./figures/chapter_5/Parameters_diagram.pdf>] [45] [46] [47] [48]) [49]
 \openout2 = `chapters/06_conclusion.aux'.
 
-(./chapters/06_conclusion.tex [48
-
-
-
-]) [49]
-\openout2 = `chapters/07_ack.aux'.
-
-(./chapters/07_ack.tex [50
+(./chapters/06_conclusion.tex [50
 
 
 
 ]) [51]
+\openout2 = `chapters/07_ack.aux'.
+
+(./chapters/07_ack.tex [52
+
+
+
+]) [53]
 \openout2 = `chapters/10_appendix.aux'.
 
-(./chapters/10_appendix.tex [52
+(./chapters/10_appendix.tex [54
 
 
 
@@ -2987,41 +2967,41 @@ Overfull \hbox (0.65189pt too wide) in paragraph at lines 3--5
 ][][][][][][]  
  []
 
-[53]
+[55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[54])) [55] [56
+[56])) [57] [58
 
 
 ]
 LaTeX Font Info:    Font shape `T1/erewhon-TLF/m/sc' will be
-(Font)              scaled to size 10.6215pt on input line 85.
-[57]
-Overfull \hbox (6.80484pt too wide) in paragraph at lines 86--86
+(Font)              scaled to size 10.6215pt on input line 87.
+[59]
+Overfull \hbox (6.80484pt too wide) in paragraph at lines 88--88
 []\T1/erewhon-TLF/m/n/10.95 (-20) Dejan Ni£kovi¢ and Nir Piter-man. \T1/erewhon
 -TLF/m/it/10.95 (-20) From MTL to de-ter-min-is-tic timed au-tomata\T1/erewhon-
 TLF/m/n/10.95 (-20) . Springer,
  []
 
-[58]
+[60]
 \tf@thm=\write8
 \openout8 = `main.thm'.
 
-[59]
+[61]
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
 (./main.aux (./include/titlepage.aux) (./abstract.aux) (./declaration.aux) (./c
 hapters/01_introduction.aux) (./chapters/02_background.aux) (./chapters/03_viat
 ra_cep.aux) (./chapters/04_intermediate_language.aux) (./chapters/05_algo.aux) 
 (./chapters/06_conclusion.aux) (./chapters/07_ack.aux) (./chapters/10_appendix.
 aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6D73F834002B9B8329B992EF673A049F;5131.
+(rerunfilecheck)             Checksum: 48687B62754FAFA5F0ACEA6EBFAA338A;5098.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -3031,13 +3011,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 44039 strings out of 493013
- 808186 string characters out of 6136993
- 1443716 words of memory out of 5000000
- 45978 multiletter control sequences out of 15000+600000
+ 44074 strings out of 493013
+ 808371 string characters out of 6136993
+ 1442487 words of memory out of 5000000
+ 46016 multiletter control sequences out of 15000+600000
  344857 words of font info for 362 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,18n,84p,1571b,14213s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,18n,84p,1571b,14185s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/erewhon/zut1_7onvyn
 .enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/erewhon/zut1_5gd3w7.enc}{c:/te
 xlive/2016/texmf-dist/fonts/enc/dvips/fira/fir_xbqiro.enc}{c:/texlive/2016/texm
@@ -3060,10 +3040,10 @@ ve/2016/texmf-dist/fonts/type1/public/fourier/fourier-mlitb.pfb><c:/texlive/201
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2016/texmf-dist/
 fonts/type1/adobe/utopia/putr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/ado
 be/utopia/putri8a.pfb>
-Output written on main.pdf (71 pages, 2040910 bytes).
+Output written on main.pdf (73 pages, 1269056 bytes).
 PDF statistics:
- 3316 PDF objects out of 3580 (max. 8388607)
- 2423 compressed objects within 25 object streams
- 432 named destinations out of 1000 (max. 500000)
- 76016 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 3268 PDF objects out of 3580 (max. 8388607)
+ 2407 compressed objects within 25 object streams
+ 433 named destinations out of 1000 (max. 500000)
+ 75993 words of extra memory for PDF output out of 89155 (max. 10000000)
 

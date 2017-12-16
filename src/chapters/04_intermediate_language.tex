@@ -1,6 +1,8 @@
 	\chapter{Intermediate Language}
 	\label{chap:cep}
 	
+	\todo{Check the chapter for mixing Timeout and timed!}
+	
 	Regular languages are widely used in computer science as they can be represented efficiently by finite state machines.		
 	In our research according to \citep{davidi} I found out, that using regular expressions with timing extensions and parameters we are able to express the temporal patterns of VIATRA-CEP.
 	Since regular expressions are widely used by the engineers and finite state automata provide clear semantics they are a good candidate as an intermediate language.
@@ -24,16 +26,7 @@
 	Each resource can be allocated once before every release, and can be released once before every allocation.
 		
 	\section{Overview of Formalisms}
-	
-	%\todo{The figure needs the not region automaton}
-	%
-	%\begin{figure}[h]
-	%	\centering
-	%	\includegraphics[width=0.95\linewidth]{figures/chapter_4/folyamatabra}
-	%	\caption{Overview of the formalisms \redraw}
-	%	\label{fig:cep:folyamatabra}
-	%\end{figure}
-	
+
 	\begin{figure}[h]
 			\begin{tikzpicture}[ edge/.style={thick, ->}]
 			\small{
@@ -176,13 +169,40 @@
 	
 			Note that the automaton only accepts the incorrect traces as our complex event processing framework allows to define reactions when the automaton enters an acceptor state.
 			
-			\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.7\linewidth]{figures/chapter_4/allocating_simple}
-			\caption{Event automaton of the two phase locking example \redraw}
-			\label{fig:cep:fa}
-			\end{figure}
-		
+				
+				\begin{figure}[h]
+					\centering
+					\begin{tikzpicture}[
+					edge/.style={
+						->
+					},
+					every loop/.style={
+						looseness=2,
+						min distance = 2cm,
+						in = -120,
+						out = -60
+					}
+					]
+					\node[elliptic state, initial, align = center] (initial) {initial\\state};
+					\node[elliptic state, right=of initial, align = center] (alloc) {allocating\\phase};
+					\node[elliptic state, right=of alloc, align = center] (release) {releasing\\phase};
+					\node[elliptic state, accepting, right=of release, align = center] (error) {error\\state};
+					
+					\path[->]
+					(initial) edge[bend left = 45] node[above] {$a$}  (alloc)
+					(alloc) edge[bend left = 45] node[above]{$r$} (release)
+					(release) edge[bend left = 45] node[above] {$a$} (error)
+%					
+					(alloc) edge[loop below] node{$a$} ()
+					(release) edge[loop below] node{$r$} ();
+					
+					\end{tikzpicture}
+					\caption{Event automaton of the two phase locking example}
+					\label{fig:cep:fa}
+				\end{figure}
+
+			
+
 		\subsection{Nondeterministic Finite Event Automaton}
 		
 		\begin{dfn}	
@@ -489,10 +509,43 @@
 			
 			\begin{figure}[h]
 				\centering
-				\includegraphics[width=0.7\linewidth]{figures/chapter_4/allocating_timed}
-				\caption{Timed region event automaton of the two phase locking example \redraw}
+				\begin{tikzpicture}[
+				edge/.style={
+					->
+				},
+				every loop/.style={
+					looseness=2,
+					min distance = 15mm,
+					in = -120,
+					out = -60
+				}
+				]
+				\node[elliptic state, initial, align = center] (initial) {initial\\state};
+				\node[elliptic state, right=of initial, align = center] (alloc) {allocating\\phase};
+				\node[rect, below = of alloc, align = right, minimum width=0.15\linewidth, yshift=-15mm, anchor = south west] (fake below) {$t>10$ \hspace*{-\pgfkeysvalueof{/pgf/inner xsep}}};
+				\node[elliptic state, right=of alloc, align = center] (release) {releasing\\phase};
+				\node[elliptic state, accepting, right=of release, align = center] (error) {error\\state};
+				
+				\node[draw, rect, fit = (fake below) (alloc)
+%				, inner xsep = 0mm
+				] (timing) {shit};
+				
+				\path[->]
+				(initial) edge[bend left = 45] node[above] {$a$}  (alloc)
+				(alloc) edge[bend left = 45] node[above]{$r$} (release)
+				(release) edge[bend left = 45] node[above] {$a$} (error)
+				%					
+				(alloc) edge[loop below] node{$a$} ()
+				(release) edge[loop below] node{$r$} ();
+				%
+				\draw [->] (timing.south east) to [out=0,in=-90] (error);
+				
+				\end{tikzpicture}
+				\caption{Timed region event automaton of the two phase locking example}
 				\label{fig:cep:trea}
 			\end{figure}
+		
+		\todo{Less disgusting figure and more consistency}
 			
 			\subsection{Nondeterministic Timeout Event Automaton}
 			
@@ -574,10 +627,43 @@
 		\subsection{Transformation from Timed Regular Expressions to Timed Automata}
 			\label{section:tre2tnfa}	
 			Constructing a Timeout Region Automaton from a Timeout Regular expression depends on the steps described in \cref{section:re2nfa} as only one new operator has been added to the language.
-			This operator can be compiled to a Nondeterministic Timeout Region Automaton as show on %\cref{Intentionally broken}. 
-			.\todo{Draw this!}
+			This operator can be compiled to a Nondeterministic Timeout Region Automaton as show on \cref{fig:cep:nfatimed}. 
 			
-			The timeout regions can be compiled into a \todo{Text}
+			
+			\begin{figure}[h]
+				\centering
+				\begin{tikzpicture}[
+				edge/.style={->}, auto
+				]
+				\node[state, initial] (initial) {$i$};
+				%
+				\node[state, right=of initial, xshift = 10mm] (nsi) {};
+				\node[right=of nsi] (ns) {$N(s)$};
+				\node[below=of ns,anchor = south east] (fake below) {Text};
+				\node[state, right=of ns] (nsf) {};
+				\node[draw, ellipse, inner xsep=-3mm, fit = (nsi) (ns) (nsf)] (nsi ellipse) {};
+				\node[draw, rect, fit = (nsi ellipse) (fake below)] (nsi timed) {};
+				%
+				\node[state, accepting, right=of nsf, xshift = 10mm] (final) {$f$};
+				\node[state, below=of final, yshift=-7.5mm] (trap) {$t$};
+				
+				\path[->]
+				(initial) edge node[near start] {$\varepsilon$}  (nsi)
+				(nsf)     edge node[near end] {$\varepsilon$}                (final);
+				
+				\draw [->] (nsi timed.south) to [out=-90,in=180] (trap);
+				
+				\end{tikzpicture}
+				\caption{Constructed NFA from the timeout expression $\langle N(s) \rangle_{t<t_0}$}
+				\label{fig:cep:nfatimed}
+			\end{figure}
+			
+			\todo{When I find the solution to write text on the SE corner, fix this}
+			
+			Automata with timeout regions can be compiled into simple timeout automata without any regions. 
+			For each region, the incoming and the outgoing transitions must be collected and a clock must be added to the set of clocks.
+			The incoming transitions must start the given clock, with the timeout value of the timed region, and the outgoing transitions must reset the clock.
+			
 		
 			This construction yields an automaton with $\varepsilon$-transitions. Determinizing the nondeterministic automaton constructed from a timed regular expression is not a solved problem \emph{yet}. However, there are some results regarding the transformation from a subset of MTL to deterministic timed automaton~\citep{nivckovic2010mtl}.
 			
@@ -612,8 +698,8 @@
 %			where $\Sigma$ is defined as formerly and $P$ is a set of parameters.
 			\end{dfn}
 			
-			With parametric timed regular expressions the example can be extended regular expression with parameters. \\
-			$(a[i] a[i]^\ast  r[i] r[i]^\ast a[i]) | (\langle a[i] a[i]^\ast r[i]\rangle_{t > 10} )$ \\ \todo{Spacing}
+			With parametric timed regular expressions the example can be extended regular expression with parameters:
+			$(a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]) | (\langle a[i] \; a[i]^\ast \; r[i]\rangle_{t > 10} )$.
 			Note that this allows us to have only one instance of the automaton even for multiple tasks, each with its own ID.
 		
 		\subsection{Parametric Timed Region Event Automaton}
@@ -642,8 +728,39 @@
 	
 	
 			\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.7\linewidth]{figures/chapter_4/allocating_timed_parametric}
+				\centering
+				\begin{tikzpicture}[
+					edge/.style={
+						->
+					},
+					every loop/.style={
+						looseness=2,
+						min distance = 15mm,
+						in = -120,
+						out = -60
+					}
+					]
+					\node[elliptic state, initial, align = center] (initial) {initial\\state};
+					\node[elliptic state, right=of initial, align = center] (alloc) {allocating\\phase};
+					\node[below = of alloc, align = right, xshift=5mm, minimum width=0.125\linewidth, yshift=-10mm] (fake below) {$t>10$};
+					\node[elliptic state, right=of alloc, align = center] (release) {releasing\\phase};
+					\node[elliptic state, accepting, right=of release, align = center] (error) {error\\state};
+					
+					\node[draw, rect, fit = (fake below) (alloc)
+					%				, inner xsep = 0mm
+					] (timing) {};
+					
+					\path[->]
+					(initial) edge[bend left = 45] node[above] {$a[i]$}  (alloc)
+					(alloc) edge[bend left = 45] node[above]{$r[i]$} (release)
+					(release) edge[bend left = 45] node[above] {$a[i]$} (error)
+					%					
+					(alloc) edge[loop below] node{$a[i]$} ()
+					(release) edge[loop below] node{$r[i]$} ();
+					%
+					\draw [->] (timing.south east) to [out=0,in=-90] (error);
+				
+				\end{tikzpicture}
 			\caption{Parametric timed region event automaton of the two phase locking example \redraw}
 			\label{fig:cep:ptrea}
 			\end{figure}

@@ -32,40 +32,39 @@
 \BOOKMARK [1][-]{section.64}{Prefiltering functionalities}{chapter.48}% 32
 \BOOKMARK [1][-]{section.78}{Intermediate modeling layer}{chapter.48}% 33
 \BOOKMARK [0][-]{chapter.81}{Intermediate Language}{}% 34
-\BOOKMARK [1][-]{section.85}{Overview of Formalisms}{chapter.81}% 35
-\BOOKMARK [1][-]{section.87}{Regular Languages}{chapter.81}% 36
-\BOOKMARK [2][-]{subsection.88}{Regular Expression}{section.87}% 37
-\BOOKMARK [2][-]{subsection.92}{Deterministic Finite Event Automaton}{section.87}% 38
-\BOOKMARK [2][-]{subsection.100}{Nondeterministic Finite Event Automaton}{section.87}% 39
-\BOOKMARK [2][-]{subsection.105}{Transformation from Regular Expression to Deterministic Finite Automaton}{section.87}% 40
-\BOOKMARK [1][-]{section.144}{Timed Regular Languages}{chapter.81}% 41
-\BOOKMARK [2][-]{subsection.145}{Timeout Regular Expression}{section.144}% 42
-\BOOKMARK [2][-]{subsection.149}{Timeout Region Automaton}{section.144}% 43
-\BOOKMARK [2][-]{subsection.157}{Nondeterministic Timeout Event Automaton}{section.144}% 44
-\BOOKMARK [2][-]{subsection.168}{Transformation from Timed Regular Expressions to Timed Automata}{section.144}% 45
-\BOOKMARK [1][-]{section.171}{Parametric Timed Languages}{chapter.81}% 46
-\BOOKMARK [2][-]{subsection.172}{Parametric Timed Regular Expression}{section.171}% 47
-\BOOKMARK [2][-]{subsection.176}{Parametric Timed Region Event Automaton}{section.171}% 48
-\BOOKMARK [2][-]{subsection.180}{Parametric Timed Event Automaton}{section.171}% 49
-\BOOKMARK [2][-]{subsection.188}{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{section.171}% 50
-\BOOKMARK [0][-]{chapter.189}{Algorithms and Implementation}{}% 51
-\BOOKMARK [1][-]{section.190}{Parametric Timeout Regular Expression}{chapter.189}% 52
-\BOOKMARK [1][-]{section.193}{Parametric Timed Event Automaton}{chapter.189}% 53
-\BOOKMARK [2][-]{subsection.194}{Finite Automaton}{section.193}% 54
-\BOOKMARK [2][-]{subsection.196}{Timeout Event Automaton}{section.193}% 55
-\BOOKMARK [2][-]{subsection.198}{Parameters and Bindings}{section.193}% 56
-\BOOKMARK [1][-]{section.200}{Transformation from VEPL to the intermediate language}{chapter.189}% 57
-\BOOKMARK [1][-]{section.203}{Automaton Executor}{chapter.189}% 58
-\BOOKMARK [2][-]{subsection.215}{Parameter Handling}{section.203}% 59
-\BOOKMARK [2][-]{subsection.216}{Most Na\357ve approach}{section.203}% 60
-\BOOKMARK [2][-]{subsection.218}{Na\357ve approach}{section.203}% 61
-\BOOKMARK [2][-]{subsection.222}{Decision List}{section.203}% 62
-\BOOKMARK [2][-]{subsection.225}{Disjunctive Decision Set}{section.203}% 63
-\BOOKMARK [2][-]{subsection.227}{MDDe}{section.203}% 64
-\BOOKMARK [2][-]{subsection.228}{Trie}{section.203}% 65
-\BOOKMARK [2][-]{subsection.230}{BDD}{section.203}% 66
-\BOOKMARK [0][-]{chapter.232}{Conclusion}{}% 67
-\BOOKMARK [0][-]{chapter.233}{Acknowledgment}{}% 68
-\BOOKMARK [0][-]{appendix*.234}{Appendix}{}% 69
-\BOOKMARK [1][-]{section.235}{Xtext grammar for the Parametric Timeout Regular Expression}{appendix*.234}% 70
-\BOOKMARK [0][-]{section*.317}{References}{}% 71
+\BOOKMARK [1][-]{section.86}{Overview of Formalisms}{chapter.81}% 35
+\BOOKMARK [1][-]{section.88}{Regular Languages}{chapter.81}% 36
+\BOOKMARK [2][-]{subsection.89}{Regular Expression}{section.88}% 37
+\BOOKMARK [2][-]{subsection.93}{Deterministic Finite Event Automaton}{section.88}% 38
+\BOOKMARK [2][-]{subsection.101}{Nondeterministic Finite Event Automaton}{section.88}% 39
+\BOOKMARK [2][-]{subsection.106}{Transformation from Regular Expression to Deterministic Finite Automaton}{section.88}% 40
+\BOOKMARK [1][-]{section.145}{Timed Regular Languages}{chapter.81}% 41
+\BOOKMARK [2][-]{subsection.146}{Timeout Regular Expression}{section.145}% 42
+\BOOKMARK [2][-]{subsection.150}{Timeout Region Automaton}{section.145}% 43
+\BOOKMARK [2][-]{subsection.159}{Nondeterministic Timeout Event Automaton}{section.145}% 44
+\BOOKMARK [2][-]{subsection.170}{Transformation from Timed Regular Expressions to Timed Automata}{section.145}% 45
+\BOOKMARK [1][-]{section.173}{Parametric Timed Languages}{chapter.81}% 46
+\BOOKMARK [2][-]{subsection.174}{Parametric Timed Regular Expression}{section.173}% 47
+\BOOKMARK [2][-]{subsection.177}{Parametric Timed Region Event Automaton}{section.173}% 48
+\BOOKMARK [2][-]{subsection.181}{Parametric Timed Event Automaton}{section.173}% 49
+\BOOKMARK [2][-]{subsection.189}{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{section.173}% 50
+\BOOKMARK [0][-]{chapter.190}{Algorithms and Implementation}{}% 51
+\BOOKMARK [1][-]{section.191}{Parametric Timeout Regular Expression}{chapter.190}% 52
+\BOOKMARK [1][-]{section.194}{Parametric Timed Event Automaton}{chapter.190}% 53
+\BOOKMARK [2][-]{subsection.195}{Finite Automaton}{section.194}% 54
+\BOOKMARK [2][-]{subsection.197}{Timeout Event Automaton}{section.194}% 55
+\BOOKMARK [2][-]{subsection.199}{Parameters and Bindings}{section.194}% 56
+\BOOKMARK [1][-]{section.201}{Transformation from VEPL to the intermediate language}{chapter.190}% 57
+\BOOKMARK [1][-]{section.204}{Automaton Executor}{chapter.190}% 58
+\BOOKMARK [2][-]{subsection.216}{Parameter Handling}{section.204}% 59
+\BOOKMARK [2][-]{subsection.217}{Most Na\357ve approach}{section.204}% 60
+\BOOKMARK [2][-]{subsection.219}{Na\357ve approach}{section.204}% 61
+\BOOKMARK [2][-]{subsection.224}{Decision List}{section.204}% 62
+\BOOKMARK [2][-]{subsection.227}{Disjunctive Decision Set}{section.204}% 63
+\BOOKMARK [2][-]{subsection.229}{MDDe}{section.204}% 64
+\BOOKMARK [2][-]{subsection.230}{Additional Data Structures}{section.204}% 65
+\BOOKMARK [0][-]{chapter.231}{Conclusion}{}% 66
+\BOOKMARK [0][-]{chapter.232}{Acknowledgment}{}% 67
+\BOOKMARK [0][-]{appendix*.233}{Appendix}{}% 68
+\BOOKMARK [1][-]{section.234}{Xtext grammar for the Parametric Timeout Regular Expression}{appendix*.233}% 69
+\BOOKMARK [0][-]{section*.316}{References}{}% 70

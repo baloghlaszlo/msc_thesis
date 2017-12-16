@@ -188,17 +188,16 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	where the abstract value can be either be
 	\begin{itemize}
 		\item A concrete value, which shows that for that token the given parameter is bound to that value, i.e.~the given parameter must be exactly that value, or
-		\item A list of excluded values which shows that for that token the given parameters values have been reduced by them, i.e.~the given parameter must not be any of the excluded values
+		\item a list of excluded values which shows that for that token the given parameters values have been reduced by them, i.e.~the given parameter must not be any of the excluded values
 	\end{itemize}
 
 	With this approach, every operation seems to be plausible, however a simple counter-example easily shows that the solution can not support the deterministic approach.
-	
-	Consider the following pattern: $\Sigma^*$ $a[i,j]$ $\Sigma^*$ $b[i,j,k]$, i.e.~there must happen an event $a$ with a parameter $i$ and $j$, and after that there can be any number of events with the functor $b$ with the same first two parameter as it was in the first $a$ event. To ease the understanding, the notation will be: The state where the outgoing transition with label $a$ originates will be called $s_0$, the state where the outgoing transition with label $b$ originates will be called $s_1$.
-	
-	If we would use the na\"ive approach with the input sequence of $a[1,2]\;a[2,1]\;b[2,2,2]$ the following would happen on reading the inputs one by one:
+	Consider the following example:
 	\begin{enumerate}
-		\item A token would be created on $s_0$ with the binding $i=1$
-		\item The token would be split into two, \todo{How to finish? :D}
+		\item At first we have a parameter relation $P$, where $\langle p_1 = \forall, p_2 = \forall \rangle$, i.e.~with two excluded values with empty exclusion list.
+		\item If the relation $R$, $\langle p_1 = 1, p_2 = 1 \rangle$ is subtracted from $P$, $P$ would be reduced to $\langle p_1 = \forall \setminus \{1\}, p_2 = \forall \setminus \{1\} \rangle$.
+		\item If the relation $S$, $\langle p_1 = 2, p_2 = 2 \rangle$ is subtracted from $P$, $P$ would be reduced to $\langle p_1 = \forall \setminus \{1, 2\}, p_2 = \forall \setminus \{1, 2\} \rangle$.
+		\item The problem occurs when we would try to subtract the relation $\langle p_1 = 2, p_2 = 1 \rangle$ as it \emph{should} be in the relation, but it is not. 
 	\end{enumerate}
 
 	\subsection{Decision List}
@@ -246,11 +245,7 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	
 
 	
-	\subsection{Trie}
+	\subsection{Additional Data Structures}
 	
-	\todo{Trie}
-	
-	\subsection{BDD}
-	
-	\todo{BDD}
+	There are many more data structures which can be used for the underlying implementation of a Parameter Relation. Two more was under consideration, Trie, and BDD. Both are somewhat similar to MDD, however Trie is a mutable data structure, which theoretically seems to be more efficient in the case of the Deterministic Execution, as the operations are always mutating the data structure. The other one was BDD which is the Binary version of MDD, but thanks to that, the tree structure would be higher, however with a lower branching factor, and updating such data structures could be cheaper than using MDDs.
 	
