@@ -522,13 +522,15 @@
 				]
 				\node[elliptic state, initial, align = center] (initial) {initial\\state};
 				\node[elliptic state, right=of initial, align = center] (alloc) {allocating\\phase};
-				\node[rect, below = of alloc, align = right, minimum width=0.15\linewidth, yshift=-15mm, anchor = south west] (fake below) {$t>10$ \hspace*{-\pgfkeysvalueof{/pgf/inner xsep}}};
+				\node[below = of alloc, align = right, minimum width=0.15\linewidth, yshift=-7.5mm] (fake below) {};
 				\node[elliptic state, right=of alloc, align = center] (release) {releasing\\phase};
 				\node[elliptic state, accepting, right=of release, align = center] (error) {error\\state};
 				
 				\node[draw, rect, fit = (fake below) (alloc)
 %				, inner xsep = 0mm
-				] (timing) {shit};
+				] (timing) {};
+				
+				\node [rect, minimum height=0mm ,anchor=south east] at (timing.south east) { $t > 10$};
 				
 				\path[->]
 				(initial) edge[bend left = 45] node[above] {$a$}  (alloc)
@@ -545,7 +547,6 @@
 				\label{fig:cep:trea}
 			\end{figure}
 		
-		\todo{Less disgusting figure and more consistency}
 			
 			\subsection{Nondeterministic Timeout Event Automaton}
 			
@@ -639,13 +640,14 @@
 				%
 				\node[state, right=of initial, xshift = 10mm] (nsi) {};
 				\node[right=of nsi] (ns) {$N(s)$};
-				\node[below=of ns,anchor = south east] (fake below) {Text};
+				\node[below=of ns,anchor = south east] (fake below) {};
 				\node[state, right=of ns] (nsf) {};
 				\node[draw, ellipse, inner xsep=-3mm, fit = (nsi) (ns) (nsf)] (nsi ellipse) {};
 				\node[draw, rect, fit = (nsi ellipse) (fake below)] (nsi timed) {};
+				\node [rect, minimum height=0mm ,anchor=south east] at (nsi timed.south east) { $t < t_0$};
 				%
 				\node[state, accepting, right=of nsf, xshift = 10mm] (final) {$f$};
-				\node[state, below=of final, yshift=-7.5mm] (trap) {$t$};
+				\node[state, below=of final, yshift=-10mm] (trap) {$t$};
 				
 				\path[->]
 				(initial) edge node[near start] {$\varepsilon$}  (nsi)
@@ -716,6 +718,8 @@
 				\end{itemize}
 			\end{dfn}
 
+			\subsubsection{Semantics}
+			\label{cep:trea:semantics}
 
 			The semantics are only changed in the transition rules, described as:
 			\begin{itemize}
@@ -742,13 +746,13 @@
 					]
 					\node[elliptic state, initial, align = center] (initial) {initial\\state};
 					\node[elliptic state, right=of initial, align = center] (alloc) {allocating\\phase};
-					\node[below = of alloc, align = right, xshift=5mm, minimum width=0.125\linewidth, yshift=-10mm] (fake below) {$t>10$};
+					\node[below = of alloc, align = right, minimum width=0.15\linewidth, yshift=-7.5mm] (fake below) {};
 					\node[elliptic state, right=of alloc, align = center] (release) {releasing\\phase};
 					\node[elliptic state, accepting, right=of release, align = center] (error) {error\\state};
 					
-					\node[draw, rect, fit = (fake below) (alloc)
-					%				, inner xsep = 0mm
-					] (timing) {};
+					\node[draw, rect, fit = (fake below) (alloc)] (timing) {};
+					
+					\node [rect, minimum height=0mm ,anchor=south east] at (timing.south east) { $t > 10$};
 					
 					\path[->]
 					(initial) edge[bend left = 45] node[above] {$a[i]$}  (alloc)
@@ -759,9 +763,9 @@
 					(release) edge[loop below] node{$r[i]$} ();
 					%
 					\draw [->] (timing.south east) to [out=0,in=-90] (error);
-				
-				\end{tikzpicture}
-			\caption{Parametric timed region event automaton of the two phase locking example \redraw}
+
+			\end{tikzpicture}
+			\caption{Parametric timed region event automaton of the two phase locking example}
 			\label{fig:cep:ptrea}
 			\end{figure}
 	
@@ -813,7 +817,7 @@
 			A token in a Parametric Timeout Event Automaton is a set of the active states with their timer values.
 		\end{dfn}
 		
-		The semantics are changed as in the case of the Parametric Timeout Region Automaton.\todo{Ehunn egy link}
+		The semantics are changed as in the case of the Parametric Timeout Region Automaton. \cref{cep:trea:semantics}
 		
 		\subsection{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}
 		\label{section:ptre2tnfa}	

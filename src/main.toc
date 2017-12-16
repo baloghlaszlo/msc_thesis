@@ -118,60 +118,62 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english} \contentsline {subsection}{\numberline {4.3.2}Timeout Region Automaton}{31}{subsection.150}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {4.3.3}Nondeterministic Timeout Event Automaton}{33}{subsection.159}
+\select@language {english} \contentsline {subsection}{\numberline {4.3.3}Nondeterministic Timeout Event Automaton}{33}{subsection.158}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {4.3.4}Transformation from Timed Regular Expressions to Timed Automata}{35}{subsection.170}
+\select@language {english} \contentsline {subsection}{\numberline {4.3.4}Transformation from Timed Regular Expressions to Timed Automata}{35}{subsection.169}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {section}{\numberline {4.4}Parametric Timed Languages}{36}{section.173}
+\select@language {english} \contentsline {section}{\numberline {4.4}Parametric Timed Languages}{36}{section.172}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {4.4.1}Parametric Timed Regular Expression}{36}{subsection.174}
+\select@language {english} \contentsline {subsection}{\numberline {4.4.1}Parametric Timed Regular Expression}{36}{subsection.173}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {4.4.2}Parametric Timed Region Event Automaton}{36}{subsection.177}
+\select@language {english} \contentsline {subsection}{\numberline {4.4.2}Parametric Timed Region Event Automaton}{36}{subsection.176}
+\defcounter {refsection}{0}\relax 
+\select@language {english} \contentsline {subsubsection}{Semantics}{37}{section*.179}
 \defcounter {refsection}{0}\relax 
 \select@language {english} \contentsline {subsection}{\numberline {4.4.3}Parametric Timed Event Automaton}{37}{subsection.181}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {4.4.4}Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{38}{subsection.189}
+\select@language {english} \contentsline {subsection}{\numberline {4.4.4}Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}{38}{subsection.188}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {chapter}{\chapternumberline {5}Algorithms and Implementation}{41}{chapter.190}
+\select@language {english} \contentsline {chapter}{\chapternumberline {5}Algorithms and Implementation}{41}{chapter.189}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {section}{\numberline {5.1}Parametric Timeout Regular Expression}{41}{section.191}
+\select@language {english} \contentsline {section}{\numberline {5.1}Parametric Timeout Regular Expression}{41}{section.190}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {section}{\numberline {5.2}Parametric Timed Event Automaton}{41}{section.194}
+\select@language {english} \contentsline {section}{\numberline {5.2}Parametric Timed Event Automaton}{41}{section.193}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.2.1}Finite Automaton}{41}{subsection.195}
+\select@language {english} \contentsline {subsection}{\numberline {5.2.1}Finite Automaton}{41}{subsection.194}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.2.2}Timeout Event Automaton}{42}{subsection.197}
+\select@language {english} \contentsline {subsection}{\numberline {5.2.2}Timeout Event Automaton}{42}{subsection.196}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.2.3}Parameters and Bindings}{43}{subsection.199}
+\select@language {english} \contentsline {subsection}{\numberline {5.2.3}Parameters and Bindings}{43}{subsection.198}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {section}{\numberline {5.3}Transformation from VEPL to the intermediate language}{44}{section.201}
+\select@language {english} \contentsline {section}{\numberline {5.3}Transformation from VEPL to the intermediate language}{44}{section.200}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {section}{\numberline {5.4}Automaton Executor}{44}{section.204}
+\select@language {english} \contentsline {section}{\numberline {5.4}Automaton Executor}{44}{section.203}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {paragraph}{Deterministic Execution}{45}{section*.205}
+\select@language {english} \contentsline {paragraph}{Deterministic Execution}{45}{section*.204}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {paragraph}{Nondeterministic Execution}{45}{section*.207}
+\select@language {english} \contentsline {paragraph}{Nondeterministic Execution}{45}{section*.206}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.1}Parameter Handling}{46}{subsection.216}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.1}Parameter Handling}{46}{subsection.215}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.2}Most Na\"ive approach}{46}{subsection.217}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.2}Most Na\"ive approach}{46}{subsection.216}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.3}Na\"ive approach}{47}{subsection.219}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.3}Na\"ive approach}{47}{subsection.218}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.4}Decision List}{48}{subsection.224}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.4}Decision List}{48}{subsection.223}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.5}Disjunctive Decision Set}{48}{subsection.227}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.5}Disjunctive Decision Set}{48}{subsection.226}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.6}MDDe}{48}{subsection.229}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.6}MDDe}{48}{subsection.228}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {subsection}{\numberline {5.4.7}Additional Data Structures}{49}{subsection.230}
+\select@language {english} \contentsline {subsection}{\numberline {5.4.7}Additional Data Structures}{49}{subsection.229}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {chapter}{\chapternumberline {6}Conclusion}{51}{chapter.231}
+\select@language {english} \contentsline {chapter}{\chapternumberline {6}Conclusion}{51}{chapter.230}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {chapter}{\chapternumberline {7}Acknowledgment}{53}{chapter.232}
+\select@language {english} \contentsline {chapter}{\chapternumberline {7}Acknowledgment}{53}{chapter.231}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {chapter}{Appendix}{55}{appendix*.233}
+\select@language {english} \contentsline {chapter}{Appendix}{55}{appendix*.232}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {section}{\numberline {A.1}Xtext grammar for the Parametric Timeout Regular Expression}{55}{section.234}
+\select@language {english} \contentsline {section}{\numberline {A.1}Xtext grammar for the Parametric Timeout Regular Expression}{55}{section.233}
 \defcounter {refsection}{0}\relax 
-\select@language {english} \contentsline {chapter}{References}{59}{section*.316}
+\select@language {english} \contentsline {chapter}{References}{59}{section*.315}
