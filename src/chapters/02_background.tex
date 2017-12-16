@@ -5,7 +5,7 @@ System development is a complex process, therefore it needs to be supported by v
 
 \section{Development methods}
 
-Traditional software development methods often use informal specifications to support system, architecture and component level designs -- which may also be informal. This can easily result in higher verification costs or faulty systems, making them suboptimal choices for safety critical software development. In order to introduce some level of formality and allow manageable, hierarchical software testing procedures, the V model was developed.
+Traditional software development methods often use informal specifications to support system, architecture and component level designs -- which may also be informal. This can easily result in higher verification costs or faulty systems, making them suboptimal choices for safety-critical software development. In order to introduce some level of formality and allow manageable, hierarchical software testing procedures, the V model was developed.
 
 \begin{figure}
 	\centering
@@ -51,17 +51,17 @@ Traditional software development methods often use informal specifications to su
 
 \cref{fig:intro:vmodel} shows the stages of development, where a symbolic ``V'' shows the progress of the workflow. The project definition stages on the left side begin with the development of a concept of operations, continue with requirements and architecture, and detailed design. The implementation stage is shown across the base of the ``V''. The right side shows the testing and implementation stages of a system, with an upward-pointing arrow for progress of the workflow\citep{vmodel}. 
 
-The V model is the basic scheme of software development. In the left of the figure, we proceed by decomposing the specification into an architecture level design, and the architectural design into component level designs. Every level of decomposition has it's own specification. After the implementation process, each level of the implementation is verified with respect to the corresponding specification. This verification can be done incrementally, parallel  with the implementation process.
+The V model is the basic scheme of software development. In the left of the figure, we proceed by decomposing the specification into an architecture level design, and the architectural design into component-level designs. Every level of decomposition has it's own specification. After the implementation process, each level of the implementation is verified with respect to the corresponding specification. This verification can be done incrementally, parallel  with the implementation process.
 
 \subsection{Model driven software development}
 
-Model driven software development (MDSD) emphasizes problem solving by the development and maintenance of models describing the system being designed. MDSD heavily relies on automated code and documentation generation based on the models of components or the overall model of the system. 
+Model-driven software development (MDSD) emphasizes problem solving by the development and maintenance of models describing the system being designed. MDSD heavily relies on automated code and documentation generation based on the models of components or the overall model of the system. 
 
-Modeling has the advantage of introducing abstractions, thus reducing the complexity of the development process, by dividing it into smaller phases. Code generation guarantees that the code will inherit the properties that can be directly derived from the model, while reducing the costs by eliminating unnecessary round-trip engineering. The generation of documentation also results in the always up-to-date description of components, stored together with the requirements and the model. Furthermore, model based approaches have the advantage of easier testability, or if the model is formal enough then formal verification might be applicable. This is especially important for the development of safety critical systems, making MDSD notably widespread in such areas.
+Modeling has the advantage of introducing abstractions, thus reducing the complexity of the development process, by dividing it into smaller phases. Code generation guarantees that the code will inherit the properties that can be directly derived from the model, while reducing the costs by eliminating unnecessary round-trip engineering. The generation of documentation also results in the always up-to-date description of components, stored together with the requirements and the model. Furthermore, model-based approaches have the advantage of easier testability, or if the model is formal enough then formal verification might be applicable. This is especially important for the development of safety-critical systems, making MDSD notably widespread in such areas.
 
 Various methods and tools are available for the generation of test cases and monitoring components from models, as well as for formally verifying certain properties. These tools usually support the modeling formalisms used in their application domain.
 
-MDSD will usually result in a software life cycle model for component based systems\citep{ymodel}, which is based on the V model.
+MDSD will usually result in a software life cycle model for component-based systems\citep{ymodel}, which is based on the V model.
 
 \subsection{Y model} 
 
@@ -113,13 +113,13 @@ MDSD will usually result in a software life cycle model for component based syst
 	\label{fig:intro:ymodel}
 \end{figure}
 
-The Y model\citep{ymodel} is an extension of the V model\citep{randomwikipedialink3}, by automating code and test case generation. Much like the V model, the development process is partitioned vertically. Each level has its own modeling languages and models that are transformed to a verification model, on which verification methods such as testing can be applied. The results of the verification process can be traced back to the original models making iterative improvement possible. The top level is for high level system models, while the second level contains architectural models, and the third one is for component based models. The component model provides input for the source code and configuration generation for the individual components. Test cases are paired with the source code and can be generated from the component verification models.
+The Y model\citep{ymodel} is an extension of the V model\citep{randomwikipedialink3}, by automating code and test case generation. Much like the V model, the development process is partitioned vertically. Each level has its own modeling languages and models that are transformed to a verification model, on which verification methods such as testing can be applied. The results of the verification process can be traced back to the original models making iterative improvement possible. The top level is for high level system models, while the second level contains architectural models, and the third one is for component-based models. The component model provides input for the source code and configuration generation for the individual components. Test cases are paired with the source code and can be generated from the component verification models.
 
 
 \subsection{Modeling languages on different levels of abstraction}
 
-Model Driven Software Development methods require modeling languages to describe the behavior of systems and components. Engineering practices resulted a wide range of such languages over the years to support efficient product development. This allows the use of domain specific languages, which leads to a shorter modeling process. The result is the need for complex model transformations before the verification can begin,
-but since the domain specific languages are tailored exactly to the problem, their usage is more efficient -- but requires expertise in the domain.  
+Model Driven Software Development methods require modeling languages to describe the behavior of systems and components. Engineering practices resulted a wide range of such languages over the years to support efficient product development. This allows the use of domain-specific languages, which leads to a shorter modeling process. The result is the need for complex model transformations before the verification can begin,
+but since the domain-specific languages are tailored exactly to the problem, their usage is more efficient -- but requires expertise in the domain.  
 
 Standardized modeling languages were developed like the UML (Unified Modeling Language\citep{uml}) and SysML (Systems Modeling Language\citep{sysml1}\citep{sysml2}).
 
@@ -129,18 +129,18 @@ In software engineering, a class diagram in the Unified Modeling Language (UML) 
 
 \subsubsection{Message Sequence Chart}
 
-The formalism of Message Sequence Charts (MSC) describes the communication between components -- the order in which messages can occur\citep{msc}\citep{msc2}\citep{Klose2003}. The message interchange is usually represented by a graphical model. These charts can be used for high level specification, design, trace based testing or documentation. A collection of possible sequence charts can also describe a complete communication protocol between components. UML sequence diagrams were inspired by MSCs, but their semantics differs regarding some of the basic elements of the language such as lifelines and arrows\citep{mscuml}.
+The formalism of Message Sequence Charts (MSC) describes the communication between components -- the order in which messages can occur\citep{msc}\citep{msc2}\citep{Klose2003}. The message interchange is usually represented by a graphical model. These charts can be used for high-level specification, design, trace-based testing or documentation. A collection of possible sequence charts can also describe a complete communication protocol between components. UML sequence diagrams were inspired by MSCs, but their semantics differs regarding some of the basic elements of the language such as lifelines and arrows\citep{mscuml}.
 
 \subsubsection{Sequence diagram}
 
-A Sequence Diagram is an interaction diagram that shows how processes operate with one another and in what order. It is a construct of a Message Sequence Chart. A Sequence Diagram shows object interactions arranged in time sequence. It depicts the objects and classes involved in the scenario and the sequence of messages exchanged between the objects needed to carry out the functionality of the scenario. Sequence diagrams are typically associated with use case realizations in the logical view of the system under development. Sequence diagrams are sometimes called event diagrams or event scenarios. Sequence diagrams can be used for system level modeling, as it can represent the communication between the components. 
+A Sequence Diagram is an interaction diagram that shows how processes operate with one another and in what order. It is a construct of a Message Sequence Chart. A Sequence Diagram shows object interactions arranged in time sequence. It depicts the objects and classes involved in the scenario and the sequence of messages exchanged between the objects needed to carry out the functionality of the scenario. Sequence diagrams are typically associated with use case realizations in the logical view of the system under development. Sequence diagrams are sometimes called event diagrams or event scenarios. Sequence diagrams can be used for system-level modeling, as it can represent the communication between the components. 
 
 
 \subsubsection{Statechart}
 
-Statecharts, also known as state machines are an extension of finite Automata. There are various available syntaxes for statecharts (e.g. the one defined by UML\citep{stcuml}). The higher level concepts that were introduced include variables, actions, and hierarchically nested states. Event-driven execution is also possible by using signals as the triggers of transitions. Available variable types heavily depend on the concrete semantics of the chosen statechart language. Actions can usually be variable assignments, signal raises or the setting of timers. Hierarchy lets users organize system descriptions using a top-down approach. Support for hierarchy is introduced via nested states and parallel regions. States can also have entry and exit actions, which allows the description of common functionality in parent states\citep{stcmove}.%\\
+Statecharts, also known as state machines are an extension of finite automata. There are various available syntaxes for statecharts (e.g. the one defined by UML\citep{stcuml}). The higher level concepts that were introduced include variables, actions, and hierarchically nested states. Event-driven execution is also possible by using signals as the triggers of transitions. Available variable types heavily depend on the concrete semantics of the chosen statechart language. Actions can usually be variable assignments, signal raises or the setting of timers. Hierarchy lets users organize system descriptions using a top-down approach. Support for hierarchy is introduced via nested states and parallel regions. States can also have entry and exit actions, which allows the description of common functionality in parent states\citep{stcmove}.%\\
 
-Statecharts are usually developed in tools that support the graphical design of the model (e.g.: Yakindu\citep{yakinduu}, an Eclipse based editor).
+Statecharts are usually developed in tools that support the graphical design of the model (e.g.: Yakindu\citep{yakinduu}, an Eclipse-based editor).
 Statecharts are commonly used as a form of component description, as it can represent the behavior of components depending on its state.
 
 \subsubsection{Activity Diagram}
@@ -149,7 +149,7 @@ Activity diagrams are graphical representations of workflows of stepwise activit
 
 \section{Verification techniques} 
 
-As modern society is becoming more and more dependent on safety-critical systems, the need for faultlessly working hardware and software increases. The development of safety critical systems require extensive testing efforts. Validation and verification methodologies have been present in the development processes of such systems for a long time\citep{ieee1012}, but faster and more reliable approaches are needed. Validation assures that the requirements specified for the software meet the needs of the user -- as such, validation usually can be aided, but can’t entirely be done by software. The goal of verification is to analyze whether the specified requirements are met by the system. Methods for verification can be divided into two groups: design time verification and runtime verification. These approaches aren't exclusive, and their mutual use can support a more robust verification process.
+As modern society is becoming more and more dependent on safety-critical systems, the need for faultlessly working hardware and software increases. The development of safety-critical systems require extensive testing efforts. Validation and verification methodologies have been present in the development processes of such systems for a long time\citep{ieee1012}, but faster and more reliable approaches are needed. Validation assures that the requirements specified for the software meet the needs of the user -- as such, validation usually can be aided, but can’t entirely be done by software. The goal of verification is to analyze whether the specified requirements are met by the system. Methods for verification can be divided into two groups: design time verification and runtime verification. These approaches aren't exclusive, and their mutual use can support a more robust verification process.
 
 \subsection{Design time verification}
 
@@ -163,7 +163,7 @@ Runtime verification is a method for the inspection of running systems. The moti
 is to reduce to complexity of the design time verification. 
 As systems are getting larger, the application of formal methods are more and more limited as the resources needed for verification cannot be realized. This means that formal verification methods must verify an abstract model, not the deployed system itself. In addition, specifications are rarely complete, and design time methods can rarely handle hardware errors. %\todo{This line break is strange}
 
-Runtime verification uses monitors to observe certain (usually critical) components, checking whether their operation violates properties described in the specification. The usage of monitoring components can result in significantly smaller monitors than the component itself as multiple levels of abstraction can be used, as long as the error states remain distinguishable. This has the advantage of detecting the erroneous operation of the system, and allows systematic safety engineering to handle faults, or trigger an emergency shutdown if necessary.
+Runtime verification uses monitors to observe certain (usually critical) components, checking whether their operation violates properties described in the specification. The usage of monitoring components can result in significantly smaller monitors than the component itself as multiple levels of abstraction can be used, as long as the error states remain distinguishable. This has the advantage of detecting the erroneous operation of the system and allows systematic safety engineering to handle faults, or trigger an emergency shutdown if necessary.
 
 The main advantages of runtime verification are the following:
 
@@ -182,19 +182,19 @@ The main advantages of runtime verification are the following:
 	\label{fig:intro:cep}
 \end{figure}
 
-Complex event processing (or CEP for short) is a method of tracking and analyzing streams of information and deriving conclusions. In a complex event processing environment, there can be multiple event sources, and with logical patterns given by a formalism, patterns can be found in the incoming stream, e.g.~events followed by another events in some sequence.
+Complex event processing (or CEP for short) is a method of tracking and analyzing streams of information and deriving conclusions. In a complex event processing environment, there can be multiple event sources, and with logical patterns given by a formalism, patterns (pattern matches) can be found in the incoming stream, e.g.~events followed by another events in some predefined sequence.
 
 \subsection{Complex Event Processing Frameworks}
 There are many Complex Event Processing Frameworks in the industry.
 
-One of these tools is Drools\citep{drools} which is the leading Java based open-source rule engine. It is a hybrid chaining engine meaning it can react to changes in data and also provides advanced query capabilities. Drools provides built in temporal reasoning for complex event processing and is fully integrated with the jBPM project for BPMN2 based workflows.
+One of these tools is Drools\citep{drools} which is the leading Java based open-source rule engine. It is a hybrid chaining engine meaning that it can react to changes in data and also provides advanced query capabilities. Drools provides built-in temporal reasoning for complex event processing and is fully integrated with the jBPM project for BPMN2 based workflows.
 
 Another well-known tool in the industry is Esper\citep{esper} which is an Event Stream Processing (ESP) and event correlation engine.
 Targeted to real-time Event Driven Architectures (EDA), Esper is capable of triggering custom actions written as Plain Old Java Objects (POJO) when event conditions occur among event streams. It is designed for high-volume event correlation where millions of events coming in seconds. This amount of input would make it impossible to store all event in a classical database architecture and query them later.
 
 \section{Runtime verification with CEP}
-In this section the application of CEP into runtime verification is overviewed.
-In general, system level runtime verification can be provided with the help of complex event processing. A complex event processing framework can monitor either the messaging between components and also the current state of the system and detected errors based on the specification of valid message sequences and valid states. 
+In this section the application of CEP for runtime verification is overviewed.
+In general, system level runtime verification can be provided with the help of complex event processing. A complex event processing framework can monitor either the messaging between components and also the current state of the system and detect errors based on the specification of valid message sequences and valid states. 
 The approach uses pattern matching to detect faulty operation of the system. Should illegal sequences occur, error handling operations (e.g.~restart or shutdown of a component or the whole system) can be applied to avoid the violation of safety criteria.
 
 \subsection{Finite automaton }
@@ -204,12 +204,12 @@ The modeling of systems with finite state space is often done by using finite au
 Although finite automata can be easily visualized, this formalism describes a simple, flat transition system and lacks the support for higher level concepts. The development of finite automata models are supported by many tools (e.g.: Finite State Machine Designer \citep{fsmd}).
 
 \subsection{Data structures supporting parametric decision}
-As most of the Complex Event Processing tools support some sort of parametric approach, such as parametric events.
-To support such functionalities some sort of data structure is required which can decide which parameters are in them and which of them are not.
+Most of the Complex Event Processing tools support the handling of parameters, such as parametric events.
+To support such functionalities, some data structure is required which can decide which parameters are in them and which of them are not.
 
 \subsubsection{BDD and MDD}
 
-Many problems can be stated naturally using variables that have multiple values (i.e., take their values from a discrete set). Functions defined on these variables can also take on values from a discrete set. Examples of such problems range from combinatorial optimization such as routing and resource scheduling, to logic simulation and formal verification, and to logic synthesis such as state minimization and state assignment. In many cases these problems are NP-complete or coNP-complete. Compact representation and efficient manipulation of such multi-valued functions are key to the design of efficient algorithms that advance the frontier of the problems that can be solved exactly. Binary decision diagrams (BDDs) are such a compact representation for problems involving binary variables. In this paper, we define the multi-valued decision diagram (MDD), which is a canonical representation of a multi-valued function as a directed acyclic graph. We analyze its properties and provide algorithms for constructing and manipulating MDDs. With our MDD package, an MDD is mapped into a BDD using either a logarithmic encoding or a 1-hot encoding, each suitable for a different class of applications. We have applied both kinds of MDD to many different applications, and this paper serves as a summary of the work done so far. Furthermore, general problem solving techniques, such as binate table covering and other graph algorithms, have been formulated using MDDs.\citep{Kam98mdd}
+Many problems can be stated naturally using variables that have multiple values (i.e., take their values from a discrete domain). Functions defined on these variables can also take on values from a discrete set. Examples of such problems range from combinatorial optimization such as routing and resource scheduling, to logic simulation and formal verification, and to logic synthesis such as state minimization and state assignment. In many cases these problems are NP-complete or coNP-complete. Compact representation and efficient manipulation of such multi-valued functions are key to the design of efficient algorithms that advance the frontier of the problems that can be solved exactly. Binary decision diagrams (BDDs) are such a compact representation for problems involving binary variables. In this paper, we define the multi-valued decision diagram (MDD), which is a canonical representation of a multi-valued function as a directed acyclic graph. We analyze its properties and provide algorithms for constructing and manipulating MDDs. With our MDD package, an MDD is mapped into a BDD using either a logarithmic encoding or a 1-hot encoding, each suitable for a different class of applications. We have applied both kinds of MDD to many different applications, and this paper serves as a summary of the work done so far. Furthermore, general problem solving techniques, such as binate table covering and other graph algorithms, have been formulated using MDDs.\citep{Kam98mdd}
 
 \subsubsection{BDD}
 
@@ -221,10 +221,10 @@ Many problems can be stated naturally using variables that have multiple values 
 \todo{Steal an abstract and add a reference}
 
 \section{Model based tools}
-In this section I introduce the basic model based tools and technologies I used in my work. The motivation of using models, and model based technologies are:
+In this section I introduce the basic model-based tools and technologies I used in my work. The motivation of using models, and model-based technologies are:
 \begin{itemize}
-	\item The models can be formal, or can be transformed to a formal model, and formal models can be formally verified.
-	\item A model is a high level representation of a software component, allowing us to use high level of abstraction in the implementation and in the documentation as well.
+	\item The models can be formal, or can be transformed into a formal model, and formal models can be formally verified.
+	\item A model is a high-level representation of a software component, allowing us to use a high level of abstraction in the implementation and the documentation as well.
 \end{itemize}
 
 \subsection{Eclipse Modeling Framework}
@@ -232,7 +232,7 @@ The EMF project is a modeling framework and code generation facility for buildin
 
 EMF consists of three fundamental pieces:
 \begin{itemize}
-	\item \textbf{EMF} -- The core EMF framework includes a meta model (Ecore) for describing models and runtime support for the models including change notification, persistence support with default XMI serialization, and a very efficient reflective API for manipulating EMF objects generically.
+	\item \textbf{EMF} -- The core EMF framework includes a metamodel (Ecore) for describing models and runtime support for the models including change notification, persistence support with default XMI serialization, and a very efficient reflective API for manipulating EMF objects generically.
 	\item \textbf{EMF.Edit} -- The EMF.Edit framework includes generic reusable classes for building editors for EMF models.
 	\item \textbf{EMF.Codegen} -- The EMF code generation facility is capable of generating everything needed to build a complete editor for an EMF model. It includes a GUI from which generation options can be specified, and generators can be invoked. The generation facility leverages the JDT (Java Development Tooling) component of Eclipse\citep{EMF}.
 \end{itemize} 
@@ -247,13 +247,13 @@ The VIATRA framework supports the development of model transformations with spec
 
 VIATRA-Query is a query language in the VIATRA framework for defining declarative graph queries over EMF models, and executing them efficiently without manual coding in an imperative programming language such as Java\citep{IncQuery}.
 
-Graph  patterns are  an  expressive  formalism used for various purposes in Model Driven Development,  such  as  the definition of  declarative  model transformation  rules,  defining  the  behavioral  semantics of dynamic domain specific languages, or capturing general purpose model queries including model validation constraints. A graph pattern (GP) represents  conditions  (or  constraints)  that  have  to be fulfilled by a part of the instance model. A basic graph pattern consists of structural constraints prescribing the existence of nodes and edges of a given type. Languages usually include a way to express attribute constraints. A negative application condition (NAC) defines cases when the original pattern is not valid (even if all other constraints are met), in form of a negative sub-pattern. With NACs nested in arbitrary depth, the expressive power of graph patterns is equivalent to first order logic. A match of a graph pattern is a group of model elements that have the exact same configuration as the pattern, satisfying all the constraints (except for NACs, which must be made unsatisfiable)\citep{bergmann2010incremental}.
+Graph  patterns are  an  expressive  formalism used for various purposes in Model Driven Development,  such  as  the definition of  declarative  model transformation  rules,  defining  the  behavioral  semantics of dynamic domain-specific languages, or capturing general purpose model queries including model validation constraints. A graph pattern (GP) represents  conditions  (or  constraints)  that  have  to be fulfilled by a part of the instance model. A basic graph pattern consists of structural constraints prescribing the existence of nodes and edges of a given type. Languages usually include a way to express attribute constraints. A negative application condition (NAC) defines cases when the original pattern is not valid (even if all other constraints are met), in form of a negative sub-pattern. With NACs nested in arbitrary depth, the expressive power of graph patterns is equivalent to first-order logic. A match of a graph pattern is a group of model elements that have the same configuration as the pattern, satisfying all the constraints (except for NACs, which must be made unsatisfiable)\citep{bergmann2010incremental}.
 
 
 \subsection{VIATRA-CEP}
 CEP plays an important role in model-driven engineering (MDE) as a supporting technique in various scenarios. The VIATRA project delivers a state-of-the-art event processing framework for the MDE scene, called VIATRA-CEP\citep{CEP}. 
 
-The VIATRA-CEP is using the EMF models, and the VIATRA-Query graph search engine to deliver a high throughput, model based complex event processing framework.
+The VIATRA-CEP is using the EMF models, and the VIATRA-Query graph search engine to deliver a high throughput, model-based complex event processing framework.
 
 I will introduce more details about VIATRA-CEP in~\cref{chap:viatra_cep}.
 
@@ -262,7 +262,7 @@ I will introduce more details about VIATRA-CEP in~\cref{chap:viatra_cep}.
 
 \section{Related work}
 \todo{This is actually not related work, maybe remove this?}
-Runtime verification has a long standing history and it is applied in various domains.
+Runtime verification has a long-standing history and it is applied in various domains.
 Starting from analyzing the runs of the processors by special constructs called watchdog processor up to the system level verification of whole hardware--software ecosystems with the help of CEP.
 Various languages were designed to specify the requirements.
 % \paragraph{Linear Temporal Logic}
