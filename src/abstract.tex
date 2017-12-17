@@ -5,9 +5,19 @@
   \addcontentsline{toc}{chapter}{Kivonat}
   \thispagestyle{plain}
 
-  Ide kerül a kivonat.
+  A hagyományos kritikus rendszerekben gyakorta alkalmazott módszer a futási idejű ellenőrzés.
+  Ennek célja olyan ellenőrző programok szintézise, melyek segítségével felderíthető egy kritikus komponens hibás, a követelményektől eltérő viselkedése a rendszer működése közben.
+  Többek között ezt a célt szolgálja egy, a tanszéken fejlesztett keretrendszer is, amely élő modelleket használ és az azok fölött értelmezett modelltranszformációs szabályok segítségével definiálja a vizsgálandó temporális kifejezést.
+  Modelltranszformációk helyességének ellenőrzése azonban algoritmikusan eldönthetetlen feladat általánosságban, így a definiált temporális viselkedéseket is nehéz formálisan vizsgálni.
+  Az irodalomban többféle megközelítés létezik a temporális viselkedések definiálására és többféle formalizmust is definiáltak automata alapokon.
+  Ezekben közös, hogy az automaták többnyire jól vizsgálhatóak algoritmikusan, az általuk definiált és elfogadott nyelvekkel kapcsolatban lehetőség van formális analízisre és ellenőrzésre.
   
-  \paragraph{Kulcsszavak} diplomaterv, sablon, \LaTeX
+  Ebben a dolgozatban megvizsgálom az irodalomban ismert legfontosabb automataelméleti megközelítéseket, és ez alapján kiterjesztem a tanszéki keretrendszert a paraméteres temporális viselkedések automata elméleti reprezentációjával.
+  Bemutatom egy automata reprezentáció implementációját amely alkalmas paraméteres és temporális tulajdonságok ellenőrzéséhez. 
+  Elemzem a megoldást kifejezőerő szempontjából, és megvizsgálok egy mérnöki leíró nyelvet és annak leképzését automata reprezentációra.
+  Ezen felül bemutatom az alapvető koncepcionális megoldását egy paraméteres temporális automata végrehajtónak, és a néhány ehhez szükséges, általam kidolgozott adatszerkezetet.
+  
+  \paragraph{Kulcsszavak} véges állapotú automata, időzített automata, paraméteres időzített automata, Futásidejű verifikáció, komplexesemény-feldogozás, reguláris kifejezések
 \end{otherlanguage}
 
 \cleardoublepage
@@ -17,9 +27,25 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \thispagestyle{plain}
 
-Here comes the abstract.
+In traditional safety-critical systems, runtime verification is a frequently used
+method. The goal of runtime verification is to synthesize verification components, which
+can detect the possible failures of the components. Over the last few years, researchers
+of my department have started developing a framework called VIATRA-CEP being able
+to support the runtime analysis and verification of complex systems. This framework
+uses live models, and defines the temporal expressions by model transformation rules
+over these live models. Verification of model transformations are generally algorithmically undecidable therefore it is hard to analyze these temporal behaviors. 
+Various approaches exist in the literature supporting the definition of temporal behaviors, and many of them are defined based on automata theory.
+Automata are usually easier to analyze algorithmically as the accepted languages of these automata can be formally analyzed.
 
-\paragraph{Keywords} thesis, template, \LaTeX
+In this thesis various automata based property representations are overviewed,
+and a possible extension of the VIATRA-CEP framework is outlined. An automata
+representation implementation for the analysis of parametric and temporal behavior is examined. The
+solution is analyzed in terms of expressiveness, and a mapping from a high level domain
+specific language to this automata representation is introduced.
+An automaton executor implementation is also overviewed, alongside with the data structures which are required for the parametric timed execution. 
+
+
+\paragraph{Keywords} finite state machine, timed automata, parametric timed automata, Runtime verification, complex event processing, regular expressions
 
 %%% Local Variables:
 %%% mode: latex
