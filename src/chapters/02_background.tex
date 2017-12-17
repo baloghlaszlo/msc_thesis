@@ -1,8 +1,7 @@
 \chapter{Background}
 \label{chap:background}
 
-System development is a complex process, therefore it needs to be supported by various tools and algorithms. In this chapter the background of our work \citep{tdk2015}  and my previous BSc thesis \citep{bsc_thesis} is introduced towards an approach supporting correct system design.
-\todo{Ide meg kell valami}
+System development is a complex process, therefore it needs to be supported by various tools and algorithms. In this chapter the background of our work in the Scientific Students' Association Report \citep{tdk2015} and my previous BSc thesis \citep{bsc_thesis} is introduced towards an approach supporting correct system design.
 
 \section{Development methods}
 
@@ -160,7 +159,7 @@ As modern society is becoming more and more dependent on safety-critical systems
 
 \subsection{Design time verification}
 
-Design time verification is a method used for finding errors of the system before deployment. Traditional software development methodologies usually rely on design time approaches. Verification methods can be applied on multiple levels, from small parts to the whole system. These processes check the compliance of the system against the specification of the appropriate level.%\\ \todo{This line break is strange}
+Design time verification is a method used for finding errors of the system before deployment. Traditional software development methodologies usually rely on design time approaches. Verification methods can be applied on multiple levels, from small parts to the whole system. These processes check the compliance of the system against the specification of the appropriate level.
 
 Formal verification can also be used to give proof that the verified parts match the behavior described by the formal specification. On the other hand, applying formal methods usually have higher costs, and the verification of complex systems can be impossible due to the phenomenon of state space explosion. As a result, a possible application of formal methods is the verification of the correct behavior of system components, and not the entire system.
 
@@ -168,7 +167,7 @@ Formal verification can also be used to give proof that the verified parts match
 
 Runtime verification is a method for the inspection of running systems. The motivation of the approach
 is to reduce the complexity of design time verification. 
-As systems are getting larger, the application of formal methods are more and more limited as the resources needed for verification cannot be provided. This means that formal verification methods must verify an abstract model, not the deployed system itself. In addition, specifications are rarely complete, and design time methods can rarely handle hardware errors. %\todo{This line break is strange}
+As systems are getting larger, the application of formal methods are more and more limited as the resources needed for verification cannot be provided. This means that formal verification methods must verify an abstract model, not the deployed system itself. In addition, specifications are rarely complete, and design time methods can rarely handle hardware errors.
 
 Runtime verification uses monitors to observe certain (usually critical) components, checking whether their operation violates properties described in the specification. The usage of monitoring components can result in significantly smaller monitors than the component itself as multiple levels of abstraction can be used, as long as the error states remain distinguishable. This has the advantage of detecting the erroneous operation of the system and allows systematic safety engineering to handle faults, or trigger an emergency shutdown if necessary.
 
@@ -251,9 +250,6 @@ CEP plays an important role in model-driven engineering (MDE) as a supporting te
 The VIATRA-CEP is using the EMF models, and the VIATRA-Query graph search engine to deliver a high throughput, model-based complex event processing framework.
 
 I will introduce more details about VIATRA-CEP in~\cref{chap:viatra_cep}.
-
-
-\todo{New related work?}
 
 \section{Related work}
 Runtime verification has a long-standing history and it is applied in various domains.
