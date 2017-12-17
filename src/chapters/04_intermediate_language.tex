@@ -422,83 +422,67 @@ In the following, we have to introduce the concept of tokens. Tokens mark states
 			With the timed regular expression formalism the example can be extended with timing, and adding the concept of the timeout becomes possible.
 			The new expression will be: $ \langle a \; (a)^\ast \rangle_{t > 10} \; r \; (r)^\ast \; a$
 			
-			\subsection{Timeout Region Automaton}
+\subsection{Timeout Region Automaton}
 			
-			Timeout Region Automaton is introduced as an intermediate step between the Timeout Regular Expression formalism and the Timeout Automaton representation to ease the understanding and also to have simpler transformation rules.
-			However the Timeout Region Automaton formalism has the same expressive power as the Timeout Regular Expression formalism, the more general and better-known Timeout Automaton is more expressive.
+Timeout Region Automaton is introduced as an intermediate step between the Timeout Regular Expression formalism and the Timeout Automaton representation to ease the understanding and also to have simpler transformation rules.
+However the Timeout Region Automaton formalism has the same expressive power as the Timeout Regular Expression formalism, the more general and better-known Timeout Automaton is more expressive.
 			%If in the future for some use cases the Regular Expression lacks the required expressiveness then the Timeout Automata can be used as an intermediate language as well.
 			
-			We add a syntactic sugar to ease the compilation of high-level languages to this intermediate language.
-			Using timed regions in our automaton language has the same motivation as the application of regions in state chart formalisms.
+We add a syntactic sugar to ease the compilation of high-level languages to this intermediate language.
+Using timed regions in our automaton language has the same motivation as the application of regions in state chart formalisms.
 			
-			From now on, the notation $\mathit{Reg}$ will be used for regions. Each regions consists of a  set of states, i.e.~$\mathit{Reg}_{i}~\subseteq~Q$. In addition, note that the used timed formalisms are always represented by a nondeterministic automaton.
+From now on, the notation $\mathit{Reg}$ will be used for regions. Each regions consists of a  set of states, i.e.~$\mathit{Reg}_{i}~\subseteq~Q$. In addition, note that the used timed formalisms are always represented by a nondeterministic automaton, so multiple active states might occur. This also means that tokens will represent the active states.
 			
 			
-			\begin{dfn}
-				\label{dfn:cep:trea}
-				A Timeout Region Event Automaton is a tuple $\langle Q,\Sigma,\delta,q_0, F, t, T \rangle$ where
-				\begin{itemize}
-					\item $Q, q_0,$and $F$ are the same as in \cref{dfn:cep:nea},
-					\item $\Sigma$ is defined the same as $\Sigma'$ in \cref{dfn:cep:nea}, 
-					
-					\item $T$ is a set of tuples $\langle \mathit{Reg}, \RR \rangle$ i.e.~a set of (timeout) clock variables for a set of states,
-					\item and $\delta$ is the union of discrete and timed transitions i.e.~$\delta_t \cup \delta_d$ where
-					\begin{itemize}
-						\item $\delta_d$ is the same as $\delta$ in \cref{dfn:cep:nea},
-						\item and $\delta_t$ represents timed transitions and defined as the set of tuples $\langle \mathit{Reg} , \mathbb{R} , Q \rangle$, i.e.~a tuple which represents a timed region, the value of the maximum time which can elapse (before invalidating the state)
-					\end{itemize}
-					
-				\end{itemize}
-			\end{dfn}
+\begin{dfn}
+\label{dfn:cep:trea}
+A Timeout Region Event Automaton is represented as a tuple $\langle Q,\Sigma,\delta,q_0, F, t, T \rangle$ where
+\begin{itemize}
+	\item $Q, q_0,$and $F$ are the same as in \cref{dfn:cep:nea},
+	\item $\Sigma$ is defined the same as $\Sigma'$ in \cref{dfn:cep:nea}, 
+	
+	\item $T$ is a set of tuples $\langle \mathit{Reg}, \RR \rangle$ i.e.~a set of (timeout) clock variables for a set of states,
+	\item and $\delta$ is the union of discrete and timed transitions i.e.~$\delta_t \cup \delta_d$ where
+	\begin{itemize}
+		\item $\delta_d$ is the same as $\delta$ in \cref{dfn:cep:nea},
+		\item and $\delta_t$ represents timed transitions and defined as the set of tuples $\langle \mathit{Reg} , \mathbb{R} , Q \rangle$, i.e.~a tuple which represents a timed region, the value of the maximum time which can elapse (before invalidating the state) and the possible next states
+	\end{itemize}
+\end{itemize}
+\end{dfn}
 			
 	%		WTF: \linebreak the set of which have outgoing timed transitions i.e.~$ \forall R_i \in \mathit{Reg}, \exists t, \exists q  \subseteq \delta_t \langle R_i, t, q \rangle$ 
 			
-			The semantics of the timed region automaton is defined as follows:
-			$Q_t \subseteq Q$ is the set of states with outgoing timed transitions, 
-			i.e.~$\forall q \in Q_t$ : $ q \in R $. 
+The semantics of the timed region automaton is defined as follows: $Q_t \subseteq Q$ is the set of states with outgoing timed transitions, i.e.~$\forall q \in Q_t$ : $ q \in \mathit{Reg} $. 
 			
 			
-			Let us use the following notations: 
+Let us use the following notations: 
 			
-			\begin{itemize}
-				\item $s$ is the currently active state, and $s'$ is the next state according to $\delta$.		
-				\item $r$ is the set of currently active regions, i.e.~$r \subseteq \mathit{Reg}$ where $\exists r_s : r_s \in r, s \in r_s $ 
-				\item $r'$ is the set of regions the token enters, i.e.~$r \subseteq \mathit{Reg}$ where $\exists r_s :  r_s \in r, s' \in r_s $ 
-				\item $r^+ \subseteq \mathit{Reg}$ is a set of timed regions the token has just entered, i.e.~$r^+ = r' \setminus r$ 
-				\item $r^- \subseteq \mathit{Reg}$ is a set of timed regions the toke has just left i.e.~$r^- = r \setminus r'$
-			\end{itemize}
+\begin{itemize}
+	\item $s$ is the currently active state (a state with a token), and $s'$ is the next state according to $\delta$.		
+	\item $r$ is the set of currently active regions, i.e.~$r \subseteq \mathit{Reg}$ where $\exists r_s : r_s \in r, s \in r_s $ 
+	\item $r'$ is the set of regions the token enters, i.e.~$r \subseteq \mathit{Reg}$ where $\exists r_s :  r_s \in r, s' \in r_s $ 
+	\item $r^+ \subseteq \mathit{Reg}$ is a set of timed regions the token has just entered, i.e.~$r^+ = r' \setminus r$ 
+	\item $r^- \subseteq \mathit{Reg}$ is a set of timed regions the toke has just left i.e.~$r^- = r \setminus r'$
+\end{itemize}
 			
-			Rules have to be defined for the initialization of the automaton, entering states with timed outgoing transitions and we also define the general rules of changing states. 
+Rules have to be defined for the initialization of the automaton, entering states with timed outgoing transitions and we also define the general rules of changing states. 
 			
-			\begin{enumerate}
-				\item Initialization Rule: at the initialization  of the automaton, we have to set all clock variables to infinity: $\infty$ 
-				i.e.~$\forall t_i, \forall q_i, T_i \coloneqq \infty $, where $r_i \in R$. This means that no timeout is set.
+\begin{enumerate}
+	\item Initialization Rule: at the initialization  of the automaton, we have to set all clock variables to infinity: $\infty$, i.e.~$\forall t_i, \forall q_i, T_i \coloneqq \infty $, where $r_i \in R$. This means that no timeout is set.
 				
-				\item Entering new timed region rule :
-				if a token enters a new set of timed regions such as $r^+ \neq \emptyset$, then the timers are set according to the timeouts: $\forall t_i: t_i \coloneqq t + t_i $ where $ r_t \in r^+, \exists q ,\delta_t\langle  r_t,t_i,q \rangle, T \langle r_t, t_{\textit{timeout}} \rangle$
-				
-				\item Firing Transition Rule: Choose an enabled transition from the set of enabled discrete or timed transitions. 
-				There are two cases, the chosen transition is:
-				\begin{enumerate}
-					\item discrete transition: in case of $r^- = \emptyset$ than the execution of the transition is similar as it was described formerly. 
-					If the token exits a region i.e.~$r^- \neq \emptyset$, 
-					then the following rule extends the firing rule of discrete transitions:
-					$\forall t_s, \forall q_s$ in $ \delta_t \langle r_i, t_s, q_s \rangle$ where $r_i \in r^-$, the timer of the regions are invalidated i.e.~	$t_s \coloneqq \infty$
-					\item timed transition: the transition with the minimal timeout value is selected, 
-					i.e.~transition $\delta_t \langle r_i, t_{\mathit{min}}, s_i \rangle$ where $ r_i \in r$ and $t_{\mathit{min}}$ is the minimum from all clock values (timeout values),
-					than the following rules apply:
-					the global time is set $t \coloneqq t_{\textit{min}}$, 
-					those local clocks which correspond to a region which is left by the token are invalidated, i.e.~
-					$\forall t_s, \forall q_s$ in $ \delta_t \langle r_i, t_i, q_s \rangle$ where $r_i \in r^-$, the timer of the regions are invalidated i.e.~$t_s \coloneqq \infty$ 
-					and move to the next state according to $\delta_t$.
-				\end{enumerate}			
-			\end{enumerate}
+	\item Entering new timed region rule : if a token enters a new set of timed regions such as $r^+ \neq \emptyset$, then the timer (clock) of the token is set according to the timeout value corresponding to the region%$\forall t_i: t_i \coloneqq t + t_i $ where $ r_t \in r^+, \exists q ,\delta_t\langle  r_t,t_i,q \rangle, T \langle r_t, t_{\textit{timeout}} \rangle$
+	\item Firing Transition Rule: Choose an enabled transition from the set of enabled discrete or timed transitions. There are two cases, the chosen transition is:
+	\begin{enumerate}
+		\item discrete transition: in case of $r^- = \emptyset$ than the execution of the transition is similar as it was described formerly. If the token exits a region i.e.~$r^- \neq \emptyset$, then the following rule extends the firing rule of discrete transitions: $\forall t_s, \forall q_s$ in $ \delta_t \langle r_i, t_s, q_s \rangle$ where $r_i \in r^-$, the timer of the regions are invalidated i.e.~	$t_s \coloneqq \infty$
+		\item timed transition: the transition with the minimal timeout value is selected, i.e.~transition $\delta_t \langle r_i, t_{\mathit{min}}, s_i \rangle$ where $ r_i \in r$ and $t_{\mathit{min}}$ is the minimum from all clock values (timeout values), than the following rules apply:
+					the global time is set $t \coloneqq t_{\textit{min}}$, those local clocks which correspond to a region which is left by the token are invalidated, i.e.~$\forall t_s, \forall q_s$ in $ \delta_t \langle r_i, t_i, q_s \rangle$ where $r_i \in r^-$, the timer of the regions are invalidated i.e.~$t_s \coloneqq \infty$ and move to the next state according to $\delta_t$.
+	\end{enumerate}			
+\end{enumerate}
 			
 			
-			We can generate from the expression % $(a (a)^\ast r (r)^\ast a)|( \langle a (a)^\ast r \rangle_{t < 10 s})$
-			$(\langle a (a)^\ast \rangle_{t > 10} r (r)^\ast a)$
-			the automaton of~\cref{fig:cep:trea}.
-			Note the additional timed region which contains the ``allocating phase'' state.
+We can generate from the expression % $(a (a)^\ast r (r)^\ast a)|( \langle a (a)^\ast r \rangle_{t < 10 s})$
+$(\langle a (a)^\ast \rangle_{t > 10} r (r)^\ast a)$ the automaton of~\cref{fig:cep:trea}.
+Note the additional timed region which contains the ``allocating phase'' state.
 			
 			\begin{figure}[h]
 				\centering
@@ -655,43 +639,44 @@ In the following, we have to introduce the concept of tokens. Tokens mark states
 			
 			\todo{When I find the solution to write text on the SE corner, fix this}
 			
-			Automata with timeout regions can be compiled into simple timeout automata without any regions. 
-			For each region, the incoming and the outgoing transitions must be collected and a clock must be added to the set of clocks.
+			Automata with timeout regions can be compiled into a simple timeout automata without any regions. 
+			For each region, the incoming and the outgoing transitions must be collected and a clock must be added to the set of clocks (so when entering the state, a clock will be instantiated with the corresponding timeout value).
 			The incoming transitions must start the given clock, with the timeout value of the timed region, and the outgoing transitions must reset the clock.
 			
 		
-			This construction yields an automaton with $\varepsilon$-transitions. Determinizing the nondeterministic automaton constructed from a timed regular expression is not a solved problem \emph{yet}. However, there are some results regarding the transformation from a subset of MTL to deterministic timed automaton~\citep{nivckovic2010mtl}.
+This construction yields an automaton with $\varepsilon$-transitions. The determinization of a timed automaton is an algorithmically infeasible problem.
+However, there are some results regarding the transformation from a subset of MTL to deterministic timed automaton~\citep{nivckovic2010mtl}.
 			
 			Testing whether a timed automaton is determinizable has been proved undecidable\citep{finkel2006undecidable}.
 			Also, the undecidability of universality has been further investigated, and rather restricted classes of timed automata suffer from that undecidability result. On the other hand, classes of timed automata have been exhibited, that either can be effectively determinized (for instance event-clock timed automata \citep{alur1994determinizable}, or timed automata
 			with integer resets \citep{suman2008timed}), or for which universality can be decided (for instance single-clock timed automata \citep{ouaknine2004language}).\citep{baier2009timed}.
-			This means that we need further research in this direction, to find out whether nondeterministic timed region automatons generated from timed regular expressions can be determinized, or not.
+			This means that we need further research in this direction, to find out whether nondeterministic timed region automata generated from timed regular expressions can be determinized. 
 			
 	
-	\section{Parametric Timed Languages}
+\section{Parametric Timed Languages}
 	
-			Complex systems usually have parametric behaviors, which can be expressed by formalisms extended with parameters. In this section we overview such formalisms that generate the parametric timed regular languages and an automaton formalism accepting them.
+Complex systems usually have parametric behaviors, which can be expressed by a formalisms extended with parameters. In this section I introduce a formalism, which generates the parametric timed regular languages and an automaton formalism representation.
 			
-		\subsection{Parametric Timed Regular Expression}
+\subsection{Parametric Timed Regular Expression}
 		
-		In this section I will overview the parametric extension of the Timed Regular Expression formalism.
+In this section I overview the parametric extension of the Timed Regular Expression formalism.
 			
-			\begin{dfn}
-				\label{dfn:cep:ptrea:event}
-				A Parametric Event $\Gamma$ is a tuple $\langle \Sigma, P \rangle$, where 
-				\begin{itemize}
-					\item $\Sigma$ the input alphabet, as described formerly in \cref{dfn:cep:tre},
-					\item and $P$ is a relation with the parameters. It describes that for the given event what are the parameter values. For a given event, the size of $P$ must be the same.
-				\end{itemize}
-			\end{dfn}
+\begin{dfn}
+\label{dfn:cep:ptrea:event}
+A Parametric Event $\Gamma$ is a tuple $\langle \Sigma, P \rangle$, where 
+\begin{itemize}
+	\item $\Sigma$ the input alphabet, as described formerly in \cref{dfn:cep:tre},
+	\item and $P$ is a relation with the parameters. It constrains that for the given event what are the valid parameter values. $P$ is represented as a tuple for each event.
+	\end{itemize}
+\end{dfn}
 			
 	
-			\begin{dfn}
-			A Parametric Timed Regular Expression is a Timed Regular Expression as described in \cref{dfn:cep:tre}, but in this case, we use $\Gamma$ instead of $\Sigma$.
+\begin{dfn}
+A Parametric Timed Regular Expression is a Timed Regular Expression as described in \cref{dfn:cep:tre}, but in this case, we use $\Gamma$ instead of $\Sigma$.
 			
 %			timed regular expression where the set of events are defined as a set of tuples, $\langle \Sigma, P \rangle$,
 %			where $\Sigma$ is defined as formerly and $P$ is a set of parameters.
-			\end{dfn}
+\end{dfn}
 			
 			With parametric timed regular expressions the example can be extended regular expression with parameters:
 			$ \langle a[i] \; a[i]^\ast \rangle_{t > 10} \; r[i] \; r[i]^\ast \; a[i]$ %| (\langle a[i] \; a[i]^\ast \; r[i]\rangle_{t > 10} )$.
@@ -714,7 +699,7 @@ In the following, we have to introduce the concept of tokens. Tokens mark states
 			\subsubsection{Semantics}
 			\label{cep:trea:semantics}
 
-			The semantics are only changed in the transition rules, described as:
+			Compared to the former formalisms, the difference of their semantics is restricted to the transition firing, described as:
 			\begin{itemize}
 				\item The transitions are only enabled if the fix parameters in the transition matches the event parameters. For example, if the pattern contains $\dots \; a[i,2] \; \dots$, if an event $a$ occurs then the second parameter must be $2$ to enable the transition for that event,
 				\item A transition is enabled if the event parameters can be bound to the parameters of the token in the input location, and the corresponding tokens with the parameter bindings will be copied from the input to the output.
@@ -810,16 +795,16 @@ In the following, we have to introduce the concept of tokens. Tokens mark states
 			A token in a Parametric Timeout Event Automaton is a set of the active states with their timer values.
 		\end{dfn}
 		
-		The semantics are changed as in the case of the Parametric Timeout Region Automaton. \cref{cep:trea:semantics}
+The semantics are changed as in the case of the Parametric Timeout Region Automaton. \cref{cep:trea:semantics}
 		
-		\subsection{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}
-		\label{section:ptre2tnfa}	
+\subsection{Transformation from Parametric Timed Regular Expression to Parametric Timed Event Automaton}
+\label{section:ptre2tnfa}	
 			
-		Constructing a Parametric Timeout Region Automaton from a Parametric Timeout Regular Expression depends on the steps described in \cref{section:tre2tnfa} as only the event has been parametrized. The transformation of the new events require some kind of auxiliary data structure be constructed which can determine that the a given event parameter on a given transition corresponds to which token parameter. For example, if the event $\dots \; a[i,j] \; \dots$ should be transformed, then this auxiliary data structure should contain, that for this transition event's first parameter the corresponding token parameter is $i$ and for the second parameter the corresponding token parameter is $j$. 
+Constructing a Parametric Timeout Region Automaton from a Parametric Timeout Regular Expression depends on the steps described in \cref{section:tre2tnfa} as only the event has been parametrized. The transformation of the new events require some kind of auxiliary data structure to handle the parameters of the tokens and also the parameter bindings of the event firings. The data structure has to be able to determine the event parameter bindings to token parameters. For example, if the event $\dots \; a[i,j] \; \dots$ should be transformed, then this auxiliary data structure should contain, that for this transition event's first parameter the corresponding token parameter is $i$ and for the second parameter the corresponding token parameter is $j$. 
 		
 	
-		Constructing a nondeterminsitic parametric timed region automaton from a parametric timed regular expression is possible according to the results know for timed regular expressions. As parametric automata are always nondeterminstic, thanks to the possibility of multiple tokens, we have no intention to determinize such automata.
-		However, at least the $\varepsilon$-transitions should be eliminated from the automata, for efficient execution, and analysis.
+Constructing a nondeterminsitic parametric timed region automaton from a parametric timed regular expression is possible by the formerly introduced algorithms. As parametric automata are always nondeterminstic, thanks to the possibility of multiple tokens, we have no intention to determinize such automata.
+However, at least the $\varepsilon$-transitions should be eliminated from the automata, for the sake of efficient execution and analysis.
 		
-		To our best knowledge, there are no results about eliminating $\varepsilon$-transitions from a parametric time region automaton, being generated from parametric timed regular expression.
+However, to the best of our knowledge, there is no published algorithm for eliminating $\varepsilon$-transitions from a parametric time region automaton.%, being generated from parametric timed regular expression.
 		
