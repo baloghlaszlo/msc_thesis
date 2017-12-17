@@ -1,11 +1,12 @@
 \chapter{Background}
 \label{chap:background}
 
-System development is a complex process, therefore it needs to be supported by various tools and algorithms. In this chapter I will introduce the background of our work \citep{tdk2015} and my previous BSc thesis \citep{bsc_thesis} towards an approach supporting correct system design.
+System development is a complex process, therefore it needs to be supported by various tools and algorithms. In this chapter the background of our work \citep{tdk2015}  and my previous BSc thesis \citep{bsc_thesis} is introduced towards an approach supporting correct system design.
+\todo{Ide meg kell valami}
 
 \section{Development methods}
 
-Traditional software development methods often use informal specifications to support system, architecture and component level designs -- which may also be informal. This can easily result in higher verification costs or faulty systems, making them suboptimal choices for safety-critical software development. In order to introduce some level of formality and allow manageable, hierarchical software testing procedures, the V model was developed.
+Traditional software development methods often use informal specifications to support system, architecture and component level designs -- which may also be informal. This can easily result in higher verification costs or faulty systems, making them ineffective choices for safety-critical software development. In order to introduce some level of formality and allow manageable, hierarchical software testing procedures, the V model was developed.
 
 \begin{figure}
 	\centering
@@ -57,7 +58,7 @@ The V model is the basic scheme of software development. In the left of the figu
 
 Model-driven software development (MDSD) emphasizes problem solving by the development and maintenance of models describing the system being designed. MDSD heavily relies on automated code and documentation generation based on the models of components or the overall model of the system. 
 
-Modeling has the advantage of introducing abstractions, thus reducing the complexity of the development process, by dividing it into smaller phases. Code generation guarantees that the code will inherit the properties that can be directly derived from the model, while reducing the costs by eliminating unnecessary round-trip engineering. The generation of documentation also results in the always up-to-date description of components, stored together with the requirements and the model. Furthermore, model-based approaches have the advantage of easier testability, or if the model is formal enough then formal verification might be applicable. This is especially important for the development of safety-critical systems, making MDSD notably widespread in such areas.
+Modeling has the advantage of introducing abstractions, thus reducing the complexity of the development process, by dividing it into smaller phases. Code generation guarantees that the code will inherit the properties that can be directly derived from the model, while reducing the costs by eliminating unnecessary round-trip engineering. The generation of documentation also results in the always up-to-date description of components, stored together with the requirements and the model. Furthermore, model-based approaches have the advantage of easier testability, or if the model has a formal syntax then formal verification might be applicable. This is especially important for the development of safety-critical systems, making MDSD notably widespread in such areas.
 
 Various methods and tools are available for the generation of test cases and monitoring components from models, as well as for formally verifying certain properties. These tools usually support the modeling formalisms used in their application domain.
 
@@ -118,10 +119,16 @@ The Y model\citep{ymodel} is an extension of the V model\citep{randomwikipediali
 
 \subsection{Modeling languages on different levels of abstraction}
 
-Model Driven Software Development methods require modeling languages to describe the behavior of systems and components. Engineering practices resulted a wide range of such languages over the years to support efficient product development. This allows the use of domain-specific languages, which leads to a shorter modeling process. The result is the need for complex model transformations before the verification can begin,
-but since the domain-specific languages are tailored exactly to the problem, their usage is more efficient -- but requires expertise in the domain.  
+Model Driven Software Development methods require modeling languages to describe the behavior of systems and components. Engineering practices produced a wide range of such languages over the years to support efficient product development. This leads to the use of domain-specific languages, which leads to a shorter modeling process. The results is the need for complex model transformations before the verification can begin,
+but since the domain-specific languages are tailored to the exact problem, their usage is still more efficient -- but requires expertise in the domain as well as in the modeling language.  
 
 Standardized modeling languages were developed like the UML (Unified Modeling Language\citep{uml}) and SysML (Systems Modeling Language\citep{sysml1}\citep{sysml2}).
+
+
+\subsection{Finite automaton }
+
+The modeling of systems with finite state space is often done by using finite automata -- also known as finite state machines. A finite automaton accepts a (finite) list of symbols and produces a computation of the automaton for each input list.
+Although finite automata can be easily visualized, this formalism describes a simple, flat transition system and lacks the support for higher level concepts. The development of finite automata models are supported by many tools (e.g.: Finite State Machine Designer \citep{fsmd}).
 
 \subsubsection{Class diagram}
 
@@ -155,13 +162,13 @@ As modern society is becoming more and more dependent on safety-critical systems
 
 Design time verification is a method used for finding errors of the system before deployment. Traditional software development methodologies usually rely on design time approaches. Verification methods can be applied on multiple levels, from small parts to the whole system. These processes check the compliance of the system against the specification of the appropriate level.%\\ \todo{This line break is strange}
 
-Formal verification can also be used to give proof that the verified parts match the behavior described by the (also formal) specification. On the other hand, applying formal methods usually have higher costs, and the verification of complex systems can be impossible due to the phenomenon of state space explosion. As a result, a possible application of formal methods is to verify the correct behavior of system components, and not the entire system.
+Formal verification can also be used to give proof that the verified parts match the behavior described by the formal specification. On the other hand, applying formal methods usually have higher costs, and the verification of complex systems can be impossible due to the phenomenon of state space explosion. As a result, a possible application of formal methods is the verification of the correct behavior of system components, and not the entire system.
 
 \subsection{Runtime verification}
 
 Runtime verification is a method for the inspection of running systems. The motivation of the approach
-is to reduce to complexity of the design time verification. 
-As systems are getting larger, the application of formal methods are more and more limited as the resources needed for verification cannot be realized. This means that formal verification methods must verify an abstract model, not the deployed system itself. In addition, specifications are rarely complete, and design time methods can rarely handle hardware errors. %\todo{This line break is strange}
+is to reduce the complexity of design time verification. 
+As systems are getting larger, the application of formal methods are more and more limited as the resources needed for verification cannot be provided. This means that formal verification methods must verify an abstract model, not the deployed system itself. In addition, specifications are rarely complete, and design time methods can rarely handle hardware errors. %\todo{This line break is strange}
 
 Runtime verification uses monitors to observe certain (usually critical) components, checking whether their operation violates properties described in the specification. The usage of monitoring components can result in significantly smaller monitors than the component itself as multiple levels of abstraction can be used, as long as the error states remain distinguishable. This has the advantage of detecting the erroneous operation of the system and allows systematic safety engineering to handle faults, or trigger an emergency shutdown if necessary.
 
@@ -197,11 +204,7 @@ In this section the application of CEP for runtime verification is overviewed.
 In general, system level runtime verification can be provided with the help of complex event processing. A complex event processing framework can monitor either the messaging between components and also the current state of the system and detect errors based on the specification of valid message sequences and valid states. 
 The approach uses pattern matching to detect faulty operation of the system. Should illegal sequences occur, error handling operations (e.g.~restart or shutdown of a component or the whole system) can be applied to avoid the violation of safety criteria.
 
-\subsection{Finite automaton }
 
-\todo{How the fuck did this get here?}
-The modeling of systems with finite state space is often done by using finite automata -- also known as finite state machines. A finite automaton accepts a (finite) list of symbols and produces a computation of the automaton for each input list.
-Although finite automata can be easily visualized, this formalism describes a simple, flat transition system and lacks the support for higher level concepts. The development of finite automata models are supported by many tools (e.g.: Finite State Machine Designer \citep{fsmd}).
 
 \subsection{Data structures supporting parametric decision}
 Most of the Complex Event Processing tools support the handling of parameters, such as parametric events.
@@ -211,20 +214,12 @@ To support such functionalities, some data structure is required which can decid
 
 Many problems can be stated naturally using variables that have multiple values (i.e., take their values from a discrete domain). Functions defined on these variables can also take on values from a discrete set. Examples of such problems range from combinatorial optimization such as routing and resource scheduling, to logic simulation and formal verification, and to logic synthesis such as state minimization and state assignment. In many cases these problems are NP-complete or coNP-complete. Compact representation and efficient manipulation of such multi-valued functions are key to the design of efficient algorithms that advance the frontier of the problems that can be solved exactly. Binary decision diagrams (BDDs) are such a compact representation for problems involving binary variables. In this paper, we define the multi-valued decision diagram (MDD), which is a canonical representation of a multi-valued function as a directed acyclic graph. We analyze its properties and provide algorithms for constructing and manipulating MDDs. With our MDD package, an MDD is mapped into a BDD using either a logarithmic encoding or a 1-hot encoding, each suitable for a different class of applications. We have applied both kinds of MDD to many different applications, and this paper serves as a summary of the work done so far. Furthermore, general problem solving techniques, such as binate table covering and other graph algorithms, have been formulated using MDDs.\citep{Kam98mdd}
 
-\subsubsection{BDD}
-
-\todo{Steal an abstract and add a reference? Or the previous is enough?}
-
-\subsubsection{Trie}
-
-
-\todo{Steal an abstract and add a reference}
-
 \section{Model based tools}
 In this section I introduce the basic model-based tools and technologies I used in my work. The motivation of using models, and model-based technologies are:
 \begin{itemize}
-	\item The models can be formal, or can be transformed into a formal model, and formal models can be formally verified.
 	\item A model is a high-level representation of a software component, allowing us to use a high level of abstraction in the implementation and the documentation as well.
+	\item The models can be formal, or can be transformed into a formal model, and formal models can be formally verified.
+
 \end{itemize}
 
 \subsection{Eclipse Modeling Framework}
@@ -261,7 +256,6 @@ I will introduce more details about VIATRA-CEP in~\cref{chap:viatra_cep}.
 \todo{New related work?}
 
 \section{Related work}
-\todo{This is actually not related work, maybe remove this?}
 Runtime verification has a long-standing history and it is applied in various domains.
 Starting from analyzing the runs of the processors by special constructs called watchdog processor up to the system level verification of whole hardware--software ecosystems with the help of CEP.
 Various languages were designed to specify the requirements.
