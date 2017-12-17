@@ -8,14 +8,14 @@
 	Since regular expressions are widely used by the engineers and finite state automata provide clear semantics they are a good candidate as an intermediate language.
 	
 	First we overview formalisms from the literature, and suggest parametric timed region automaton as an intermediate formalism.
-	As many of the high level specification languages like VEPL and Sequence charts can be characterized with the help of regular languages,
+	As many of the high-level specification languages like VEPL and Sequence charts can be characterized with the help of regular languages,
 	this was the motivation behind our research.% Our findings are based on \citep{dicep}.
 	
 	We are going to introduce every step through an example: 
-	We will specify a runtime verification component (also known as monitor) which will be in accepting state if the system is violating the rules of the two phase lock algorithm extended with a timeout.
+	We will specify a runtime verification component (also known as monitor) which will be in accepting state if the system is violating the rules of the two-phase lock algorithm extended with a timeout.
 	This can be considered as a runtime verification component of such system. This example is based on the File System example of paper \citep{marq}.
 	
-	In the two phase locking algorithm there are three rules to be held :
+	In the two-phase locking algorithm there are three rules to be held :
 	\begin{enumerate}
 		\item Resources must be allocated in a previously defined sequence (this sequence is the same for all tasks).
 		\item If a task releases a resource, it is not allowed to do any more allocations.
@@ -23,7 +23,7 @@
 	\end{enumerate}
 	
 	Since this example uses resources, their behavior is defined as following:
-	Each resource can be allocated once before every release, and can be released once before every allocation.
+	Each resource can be allocated once before every release and can be released once before every allocation.
 		
 	\section{Overview of Formalisms}
 
@@ -70,7 +70,7 @@
 		
 	\section{Regular Languages}
 	
-		Regular Languages are commonly used both in the industry and in the academic researches as they commonly serve as a domain specific language.
+		Regular Languages are commonly used both in the industry and in the academic research as they commonly serve as a domain specific language.
 		Most of their properties which are interesting from the academic point of view can be analyzed and decided, and they are simple enough to be used in industrial projects to ease up the description of something which does not require a more complex language.
 	
 		\subsection{Regular Expression}
@@ -101,7 +101,7 @@
 			\end{itemize}
 			
 	
-			To illustrate the usage of the regular expressions in the two phase locking example, the behavior ``After a task has released a resource, it's not allowed to allocate again'' is described with the regular expression : $a \; (a)^* \; r \; (r)^* \; a $, where $a$ is short for allocation and $r$ is short for release.
+			To illustrate the usage of the regular expressions in the two-phase locking example, the behavior ``After a task has released a resource, it's not allowed to allocate again'' is described with the regular expression : $a \; (a)^* \; r \; (r)^* \; a $, where $a$ is short for allocation and $r$ is short for release.
 	
 	
 		\subsection{Deterministic Finite Event Automaton}
@@ -197,7 +197,7 @@
 					(release) edge[loop below] node{$r$} ();
 					
 					\end{tikzpicture}
-					\caption{Event automaton of the two phase locking example}
+					\caption{Event automaton of the two-phase locking example}
 					\label{fig:cep:fa}
 				\end{figure}
 
@@ -245,14 +245,14 @@
 			
 			\subsubsection{Transformation from Regular Expression to Nondeterministic Automaton with $\bm{\varepsilon}$ transitions}
 			\label{section:re2nfa}
-			First the regular expression is transformed to a nondeterministic automaton with recursive rules for each operator
+			First, the regular expression is transformed to a nondeterministic automaton with recursive rules for each operator
 			\begin{itemize}
 				\item The automaton corresponds to a simple event is constructed as an initial state and an acceptor state with one transition between them, which has the label of the event, as shown on \cref{fig:cep:nfaevent}. Note that this is the only non-recursive rule, as the concrete syntax tree's leaves are always Events, therefore this is where the recursion always stops.\todo{There is a better terminology for ``algorithm stops'' :D}
 				\item The sequence of two expressions are compiled in two steps, first the two subexpressions are compiled into one automaton each. After that we merge the acceptors states of the first automaton with the initial state of the second automaton, i.e.~remove the acceptor flag from the first automaton's acceptor states, and add every outgoing transition of the second automaton's initial state to the first automatons acceptor states, as shown on \cref{fig:cep:nfasequence}
 				\item A choice can be compiled in two steps. First the two subexpressions are compiled into one automaton each. In the second step we create one new initial state, and create a two $\varepsilon$-transition from the new initial state to the two subexpression's compiled automata's initial state. After that we create one $\varepsilon$-transition from their acceptor states to a newly created acceptor state. The result's initial state will be the newly created state and the result's only acceptor state will be the newly created one, as shown on \cref{fig:cep:nfachoice}
 				\item A closure can also be compiled in two steps, first the internal expression has to be compiled to the automaton and a new initial and acceptor state has to be constructed. Then four $\varepsilon$ transition needs to be added:
 				\begin{enumerate}
-					\item From the compiled automaton's acceptor state to it's initial state,
+					\item From the compiled automaton's acceptor state to its initial state,
 					\item From the new initial state to the subexpression's initial state,
 					\item From the subexpression's acceptor state to the new acceptor state,
 					\item From the new initial state to the new acceptor state.
@@ -399,7 +399,7 @@
 		\section{Timed Regular Languages}	
 		
 		Timed Regular Languages are an extension over the Regular Languages to express timed properties.
-		These timed properties are common in most of the usecases as many system has timed behavior which can be described using Timed Regular Languages.
+		These timed properties are common in most of the use cases as many system has timed behavior which can be described using Timed Regular Languages.
 		
 			\subsection{Timeout Regular Expression}
 		
@@ -434,7 +434,7 @@
 			However the Timeout Region Automaton has the same expressive power as the Timeout Regular Expression the more general and better known Timeout Automaton is more expressive.
 			If in the future for some use cases the Regular Expression lacks the required expressiveness then the Timeout Automata can be used as an intermediate language as well.
 			
-			We add a syntactic sugar to ease the compilation of high level languages to this intermediate language.
+			We add a syntactic sugar to ease the compilation of high-level languages to this intermediate language.
 			Using timed regions in our automaton language has the same motivation as the application of regions in state chart formalisms.
 			
 			From now on, the notation $\mathit{Reg}$ will be used for regions, which is a set of states, i.e.~$\mathit{Reg}~\subseteq~Q$
@@ -474,10 +474,10 @@
 				\item $r^- \subseteq \mathit{Reg}$ is a set of timed regions the toke has just left i.e.~$r^- = r \setminus r'$
 			\end{itemize}
 			
-			Rules  have to defined for the initialization of the automaton, entering states with timed outgoing transitions and we also define the general rules of changing states. 
+			Rules  have to be defined for the initialization of the automaton, entering states with timed outgoing transitions and we also define the general rules of changing states. 
 			
 			\begin{enumerate}
-				\item Initialization Rule : At the initialization  of the automaton, we have to set all clock variables to $\infty$ 
+				\item Initialization Rule: At the initialization  of the automaton, we have to set all clock variables to $\infty$ 
 				i.e.~$\forall t_i, \forall q_i, T \langle r_i, t_i \rangle, t_i \coloneqq \infty $, where $r_i \in R$
 				
 				\item Entering new timed region rule :
@@ -545,7 +545,7 @@
 				\draw [->] (timing.south east) to [out=0,in=-90] (error);
 				
 				\end{tikzpicture}
-				\caption{Timed region event automaton of the two phase locking example}
+				\caption{Timed region event automaton of the two-phase locking example}
 				\label{fig:cep:trea}
 			\end{figure}
 		
@@ -594,7 +594,7 @@
 				
 				\begin{dfn}
 					\label{dfn:cep:tea:accepting}
-					A Nondeterministic Timeout Event Automaton accepts a timed input sequence if exists an accepting trace for the timed input sequence.
+					A Nondeterministic Timeout Event Automaton accepts a timed input sequence if there exists an accepting trace for the timed input sequence.
 				\end{dfn}
 				
 				\begin{dfn}
@@ -690,13 +690,13 @@
 				A Parametric Event $\Gamma$ is a tuple $\langle \Sigma, P \rangle$, where 
 				\begin{itemize}
 					\item $\Sigma$ the input alphabet, as described formerly in \cref{dfn:cep:tre},
-					\item and $P$ is a relation with the parameters. It describes that for the given event what are the parameter values. For a given event the size of $P$ must be the same.
+					\item and $P$ is a relation with the parameters. It describes that for the given event what are the parameter values. For a given event, the size of $P$ must be the same.
 				\end{itemize}
 			\end{dfn}
 			
 	
 			\begin{dfn}
-			A Parametric Timed Regular Expression is a Timed Regular Expression as described in \cref{dfn:cep:tre}, but in this case we use $\Gamma$ instead of $\Sigma$.
+			A Parametric Timed Regular Expression is a Timed Regular Expression as described in \cref{dfn:cep:tre}, but in this case, we use $\Gamma$ instead of $\Sigma$.
 			
 %			timed regular expression where the set of events are defined as a set of tuples, $\langle \Sigma, P \rangle$,
 %			where $\Sigma$ is defined as formerly and $P$ is a set of parameters.
@@ -725,7 +725,7 @@
 
 			The semantics are only changed in the transition rules, described as:
 			\begin{itemize}
-				\item The transitions are only enabled if the fix parameters in the transition matches the event parameters. For example if the pattern contains $\dots \; a[i,2] \; \dots$, if an event $a$ occurs then the the second parameter must be $2$ to enable the transition for that event,
+				\item The transitions are only enabled if the fix parameters in the transition matches the event parameters. For example, if the pattern contains $\dots \; a[i,2] \; \dots$, if an event $a$ occurs then the second parameter must be $2$ to enable the transition for that event,
 				\item A transition is enabled if the event parameters can be bound to the parameters of the token in the input location, and the corresponding tokens with the parameter bindings will be copied from the input to the output.
 			\end{itemize}
 	
@@ -767,13 +767,13 @@
 					\draw [->] (timing.south east) to [out=0,in=-90] (error);
 
 			\end{tikzpicture}
-			\caption{Parametric timed region event automaton of the two phase locking example}
+			\caption{Parametric timed region event automaton of the two-phase locking example}
 			\label{fig:cep:ptrea}
 			\end{figure}
 	
 		\subsection{Parametric Timed Event Automaton}
 		
-		As in the case of the Timeout Region Event Automaton, the case is somewhat similar here; a formalism is introduced, swhich is more general and well-known in the literature. 
+		As in the case of the Timeout Region Event Automaton, the case is somewhat similar here; a formalism is introduced according to the literature. 
 		
 		\todo{Revision needed}
 		
@@ -828,7 +828,7 @@
 		
 	
 		Constructing a nondeterminsitic parametric timed region automaton from a parametric timed regular expression is possible according to the results know for timed regular expressions. As parametric automata are always nondeterminstic, thanks to the possibility of multiple tokens, we have no intention to determinize such automata.
-		However, at least the $\varepsilon$-transitions should be eliminated from the automata, for the purpose of efficient execution, and analysis.
+		However, at least the $\varepsilon$-transitions should be eliminated from the automata, for efficient execution, and analysis.
 		
 		To our best knowledge, there are no results about eliminating $\varepsilon$-transitions from a parametric time region automaton, being generated from parametric timed regular expression.
 		
