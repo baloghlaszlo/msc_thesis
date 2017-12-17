@@ -1,6 +1,0 @@
-PWD C:/Users/Balogh Laszlo/git/thesis-template-latex-kris/src/chapters
-INPUT c:/texlive/2016/texmf.cnf
-INPUT c:/texlive/2016/texmf-dist/web2c/texmf.cnf
-INPUT c:/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT ./07_ack.tex
-OUTPUT 07_ack.log
