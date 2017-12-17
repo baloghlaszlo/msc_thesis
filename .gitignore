@@ -17,10 +17,12 @@ pdf/
 **/*.blg
 **/*.fdb_latexmk
 **/*.log
+**/*.fls
 **/*.out
 **/*.synctex.gz
 **/*.thm
 **/*.toc
+**/*.fls
 
 
 
