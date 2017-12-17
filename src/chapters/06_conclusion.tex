@@ -1,10 +1,20 @@
 \chapter{Conclusions and future work}
 
-A formalism was introduced, to provide a language for complex event processing
+%I briefly overview the architecture of the VIATRA-CEP framework.
+The architecture of the VIATRA-CEP was briefly overviewed.
+%I introduce multiple automata and regular expression formalisms, and specify transformations from the regular expressions to the automata.
+Multiple automata and regular expression formalisms were overviewed, and some specifications were introduced from these regular expressions to the corresponding automata formalisms. 
+%And lastly, I go through the implementation of these formalisms and transformations, and show the transformations from the language of VIATRA-CEP to one of the previously mentioned formalism.
+After all these introductions, the implementation of these formalisms and transformations were overviewed, a transformation was shown from the language of VIATRA-CEP to the Parametric Timed Regular Expressions.
 
 
 
 \section{Future Work}
+
+There are many ways to optimize these automata, and the research about this topic is considered future work. 
+There could be algorithms which can remove $\varepsilon$-edges from an automaton, and the management of the tokens could be also improved via merging tokens by some logic.
+
+The formalism could be extended, for example towards the State Charts instead of the plain automata, as it could provide hierarchy. 
 
 \paragraph*{Acknowledgments}
 \phantomsection

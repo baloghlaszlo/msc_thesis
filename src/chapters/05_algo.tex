@@ -5,7 +5,7 @@ The currently implemented and algorithmized parts of the intermediate language a
 \section{Parametric Timeout Regular Expression}
 
 Currently the regular expression has a grammar implemented in Xtext, which generates a textual editor, and can parse textual input to an EMF model. This EMF model can be transformed later. 
-The grammar is shown on \cref{lst:grammar}. \todo{Wrong cref}
+The grammar is shown on \cref{lst:grammar}. %\todo{Wrong cref}
 
 Note that the parameter listing is inside with square brackets ``[]'' to make the language context free. If we would use the simple round brackets, then A(B) would be ambiguous -- it could be either an A event with a B parameter, or a simple sequence of event A and event B with an unnecessary bracket.
 %\todo{Do we require additional explanation?}
@@ -105,7 +105,7 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	In this case every token moves exactly one on each event, splitting the potential bindings to two part, one which matched the event's parameter, and one which did not.
 	
 	\paragraph{Nondeterministic Execution}
-	\todo{Maybe pseudocode}
+%	\todo{Maybe pseudocode}
 	In the nondeterministic way, the automaton can contain $\varepsilon$-edges, and a token can move through multiple transitions each. This solution implies an another way to handle the parameters, as the executor should do the following steps:
 	\begin{enumerate}
 		\item Save each token in a list,
@@ -249,125 +249,140 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 		
 		There are many more data structures which can be used for the underlying implementation of a Parameter Relation. Two more was under consideration, Trie, and BDD. Both are somewhat similar to MDD, however Trie is a mutable data structure, which theoretically seems to be more efficient in the case of the Deterministic Execution, as the operations are always mutating the data structure. The other one was BDD which is the Binary version of MDD, but thanks to that, the tree structure would be higher, however with a lower branching factor, and updating such data structures could be cheaper than using MDDs.
 	
-	\section{Preliminary measurements}
-	To analyze the efficiency of the implementation some measurements were done, using the example from \cref{chap:cep}.
-	
-	\subsection{Measurement setup}
-	As the current implementation lacks of logical clocks, and the timed properties can only be evaluated by elapsing the required time, the pattern $a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]$ will be the parametric and not temporal example.
-	The scalability is viewed from three points:
-	
-	\begin{enumerate}
-		\item How well does the implementation scale with the size of the pattern?
-		\item How well does the implementation scale with the size of the input sequence?
-		\item With a given pattern and a given size for the input sequence, does it matter how many times the automaton accepts?
-	\end{enumerate}
-	
-	To answer the first question, the pattern must be extended. The extension was with adding one more requirement to the pattern: How much is the maximum allocation allowed for one process. Therefore the extended pattern will be $ ( a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i] ) | (a[i],\dots,a[i])$, where on the right side of the pattern the length sequence of $a[i]$ events will be expanded to one, ten, one hundred, one thousand, and ten thousand.
-	
-	To answer the second question, input sequences were generated in five sizes: one long, ten long, one hundred long, one thousand long and ten thousand long ones.
-	However to measure multiple cases, these inputs are generated with the following logic:
-	\begin{enumerate}
-		\item A randomly generated sequence,
-		\item only events $a[1]$ and $a[2]$ but on a random sequence to not a match, in other words to generate less than the required $a[1]$ events and $a[2]$ events,
-		\item only sequences of $a[1] r[1] a[1]$ and $a[2] r[2] a[2]$ to have as much matches as possible.
-	\end{enumerate}
-
-	The measurements were done with two underlying parametric data structures MDDe, and the  Disjunctive Decision Set.
-	
-	
-		\subsubsection{Threats to validity}
-		Every measurement was done thirty two times. The first two measurement result was dropped as it was considered as the warm up for the JVM. From the remaining thirty, the median was calculated, to have a stable value which is the least affected by the noises of the measurement and the extremely high or low values. Between every iteration of a measurement, the garbage collector was called three times followed by a sleep to ensure that the garbage collection is if required.
-		
-		The measurements were aimed to cover some part of most use cases, however they are not exhausting every potential use case to think of.
-		
-		
-	
-	\subsection{Measurement Results}
-		\begin{table}
-			\centering
-			\caption{Measurement results for the compilation tasks}		
-			\label{tab:cep:meascompile}
-			\begin{tabular}{rr}
-				\toprule
-				number of $a[i]$ & runtime in milliseconds \\ \midrule
-				             $0$ &                  $1.11$ \\
-				             $1$ &                  $1.22$ \\
-				            $10$ &                  $1.31$ \\
-				           $100$ &                  $2.71$ \\
-				          $1000$ &                 $69.12$ \\
-				         $10000$ &               $2008.73$ \\
-				        $100000$ &                 timeout \\ \bottomrule
-			\end{tabular}
-		\end{table}
-		The measurement results of the compilation are shown on \cref{tab:cep:meascompile}.
-		The implementation of the compilation seems to be scaling well up until one thousand long inputs, even the ten thousand long input still compiles under two seconds. With the time limit of 1 minute, the hundred thousand long input did not finish.
-		
-		As we found out, in most of the use cases the patterns are not extremely long, and thus We are satisfied with the result.
-		
-		\begin{table}
-			\centering
-			\caption{Measurement results for the MDD with the smallest pattern}		
-			\label{tab:cep:measrun:small:mdd}
-			\begin{tabular}{rrrr}
-				\toprule
-				length of input & random input & matching input & not matching input \\ \midrule
-				            $1$ &         1.53 &           0.57 &               0.41 \\
-				           $10$ &         1.52 &           1.66 &               2.03 \\
-				          $100$ &        12.17 &          12.32 &              21.84 \\
-				          $200$ &        17.57 &          21.20 &              42.23 \\
-				          $300$ &        25.02 &          32.38 &              43.63 \\
-				          $400$ &        42.32 &          42.68 &              83.85 \\
-				          $500$ &        41.13 &          75.98 &              98.78 \\ \bottomrule
-			\end{tabular}
-		\end{table}
-	
-		\begin{table}
-			\centering
-			\caption{Measurement results for the MDD with the biggest pattern}		
-			\label{tab:cep:measrun:big:mdd}
-			\begin{tabular}{rrrr}
-				\toprule
-				length of input & random input & matching input & not matching input \\ \midrule
-				            $1$ &         1.53 &           1.28 &               0.91 \\
-				           $10$ &         6.31 &           5.41 &               7.55 \\
-				          $100$ &        49.96 &          53.27 &              62.13 \\
-				          $200$ &       101.16 &          99.68 &             117.76 \\
-				          $300$ &       150.00 &         150.43 &             176.47 \\
-				          $400$ &       199.38 &         199.40 &             235.79 \\
-				          $500$ &       249.24 &         249.02 &             294.19 \\ \bottomrule
-			\end{tabular}
-		\end{table}
-	
-		\begin{table}
-			\centering
-			\caption{Measurement results for the DDS with the smallest pattern}		
-			\label{tab:cep:measrun:small:dds}
-			\begin{tabular}{rrrr}
-				\toprule
-				length of input & random input & matching input & not matching input \\ \midrule
-				            $1$ &         1.48 &           0.74 &               0.61 \\
-				           $10$ &         2.29 &           2.49 &               2.93 \\
-				          $100$ &        24.50 &          24.51 &              44.18 \\
-				          $200$ &        41.31 &          48.44 &              85.03 \\
-				          $300$ &        63.85 &          75.45 &              98.46 \\
-				          $400$ &        92.21 &          96.78 &             144.99 \\
-				          $500$ &       109.70 &         142.97 &             185.95 \\ \bottomrule
-			\end{tabular}
-		\end{table}
-	
-		\begin{table}
-			\centering
-			\caption{Measurement results for the DDS with the smallest pattern}		
-			\label{tab:cep:measrun:big:dds}
-			\begin{tabular}{rrrr}
-				\toprule
-				length of input & random input & matching input & not matching input \\ \midrule
-				            $1$ &         1.37 &           1.54 &               1.09 \\
-				           $10$ &         7.83 &           7.30 &               7.74 \\
-				          $100$ &        60.54 &          67.93 &              80.98 \\
-				          $200$ &       122.98 &         130.25 &             161.43 \\
-				          $300$ &       178.86 &         195.13 &             237.92 \\
-				          $400$ &       239.53 &         259.06 &             324.71 \\
-				          $500$ &       298.38 &         325.48 &             403.61 \\ \bottomrule
-			\end{tabular}
-		\end{table}
+\section{Preliminary measurements}
+    To analyze the efficiency of the implementation some measurements were done, using the example from \cref{chap:cep}.
+    
+    \subsection{Measurement setup}
+    As the current implementation lacks of logical clocks, and the timed properties can only be evaluated by elapsing the required time, the pattern $a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]$ will be the parametric and not temporal example.
+    The scalability is viewed from three points:
+    
+    \begin{enumerate}
+        \label{algo:meas:setup}
+        \item How well does the implementation scale with the size of the pattern?
+        \item How well does the implementation scale with the size of the input sequence?
+        \item With a given pattern and a given size for the input sequence, does it matter how many times the automaton accepts?
+    \end{enumerate}
+    
+    To answer the first question, the pattern must be extended. The extension was with adding one more requirement to the pattern: How much is the maximum allocation allowed for one process. Therefore the extended pattern will be $ ( a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i] ) | (a[i],\dots,a[i])$, where on the right side of the pattern the length sequence of $a[i]$ events will be expanded to one, ten, one hundred, one thousand, and ten thousand.
+    
+    To answer the second question, input sequences were generated in five sizes: one long, ten long, one hundred long, two hundred long, three hundred long, four hundred long, and lastly five hundred long.
+    To measure multiple cases, these inputs are generated with the following logic:
+    \begin{enumerate}
+        \item A randomly generated sequence,
+        \item only events $a[1]$ and $a[2]$ but on a random sequence to not a match, in other words to generate less than the required $a[1]$ events and $a[2]$ events,
+        \item only sequences of $a[1] r[1] a[1]$ and $a[2] r[2] a[2]$ to have as much matches as possible.
+    \end{enumerate}
+    The measurements were done with two underlying parametric data structures MDDe, and the  Disjunctive Decision Set.
+    
+    
+        \subsubsection{Threats to validity}
+        Every measurement was done thirty two times. The first two measurement result was dropped as it was considered as the warm up for the JVM. From the remaining thirty, the median was calculated, to have a stable value which is the least affected by the noises of the measurement and the extremely high or low values. Between every iteration of a measurement, the garbage collector was called three times followed by a sleep to ensure that the garbage collection is if required.
+        
+        The measurements were aimed to cover some part of most use cases, however they are not exhausting every potential use case to think of.
+        
+        
+    
+    \subsection{Measurement Results}
+        \begin{table}
+            \centering
+            \caption{Measurement results for the compilation tasks}     
+            \label{tab:cep:meascompile}
+            \begin{tabular}{rr}
+                \toprule
+                number of $a[i]$ & compilation time \\ \midrule
+                             $0$ &                  $1.11$ \\
+                             $1$ &                  $1.22$ \\
+                            $10$ &                  $1.31$ \\
+                           $100$ &                  $2.71$ \\
+                          $1000$ &                 $69.12$ \\
+                         $10000$ &               $2008.73$ \\
+                        $100000$ &                 timeout \\ \bottomrule
+            \end{tabular}
+        \end{table}
+        The measurement results of the compilation are shown on \cref{tab:cep:meascompile}.
+        The implementation of the compilation seems to be scaling well up until one thousand long inputs, even the ten thousand long input still compiles under two seconds. With the time limit of 1 minute, the hundred thousand long input did not finish.
+        
+        As we found out, in most of the use cases the patterns are not extremely long, and the compilation is a design time concept, and it is allowed to have a bigger runtime, thus We are satisfied with the result.
+        
+        The measurements of the scalability with long input traces, are separated four ways
+        \begin{itemize}
+            \item one with zero $a[i]$ with MDDe, the results are shown on \cref{tab:cep:measrun:small:mdd},
+            \item one with zero $a[i]$ with Disjunctive  decision set, the results are shown on \cref{tab:cep:measrun:small:dds},
+            \item one with one thousand $a[i]$ with MDDe, the results are shown on \cref{tab:cep:measrun:big:mdd},
+            \item and one with one thousand $a[i]$ with Disjunctive decision set, the results are shown on \cref{tab:cep:measrun:big:dds}.
+        \end{itemize}
+    
+        The answer to the questions of \cref{algo:meas:setup}, the following can be answered:
+        \begin{enumerate}
+            \item The implementation of the compilation scales well (nearly linear) for small inputs, but seems to be exponential upon big inputs.
+            \item The implementation seems to scale with the size of the input sequence in a linear way.
+            \item With a given pattern and a given size of an input sequence, the acceptance of the automaton does not seem to be important, at most a two factor is applied, when the automaton does not accept.
+        \end{enumerate}
+        
+        \begin{table}
+            \centering
+            \caption{Measurement results for the MDD with the smallest pattern}     
+            \label{tab:cep:measrun:small:mdd}
+            \begin{tabular}{rrrr}
+                \toprule
+                length of input & random input & matching input & not matching input \\ \midrule
+                            $1$ &         1.53 &           0.57 &               0.41 \\
+                           $10$ &         1.52 &           1.66 &               2.03 \\
+                          $100$ &        12.17 &          12.32 &              21.84 \\
+                          $200$ &        17.57 &          21.20 &              42.23 \\
+                          $300$ &        25.02 &          32.38 &              43.63 \\
+                          $400$ &        42.32 &          42.68 &              83.85 \\
+                          $500$ &        41.13 &          75.98 &              98.78 \\ \bottomrule
+            \end{tabular}
+        \end{table}
+    
+        \begin{table}
+            \centering
+            \caption{Measurement results for the MDD with the biggest pattern}      
+            \label{tab:cep:measrun:big:mdd}
+            \begin{tabular}{rrrr}
+                \toprule
+                length of input & random input & matching input & not matching input \\ \midrule
+                            $1$ &         1.53 &           1.28 &               0.91 \\
+                           $10$ &         6.31 &           5.41 &               7.55 \\
+                          $100$ &        49.96 &          53.27 &              62.13 \\
+                          $200$ &       101.16 &          99.68 &             117.76 \\
+                          $300$ &       150.00 &         150.43 &             176.47 \\
+                          $400$ &       199.38 &         199.40 &             235.79 \\
+                          $500$ &       249.24 &         249.02 &             294.19 \\ \bottomrule
+            \end{tabular}
+        \end{table}
+    
+        \begin{table}
+            \centering
+            \caption{Measurement results for the DDS with the smallest pattern}     
+            \label{tab:cep:measrun:small:dds}
+            \begin{tabular}{rrrr}
+                \toprule
+                length of input & random input & matching input & not matching input \\ \midrule
+                            $1$ &         1.48 &           0.74 &               0.61 \\
+                           $10$ &         2.29 &           2.49 &               2.93 \\
+                          $100$ &        24.50 &          24.51 &              44.18 \\
+                          $200$ &        41.31 &          48.44 &              85.03 \\
+                          $300$ &        63.85 &          75.45 &              98.46 \\
+                          $400$ &        92.21 &          96.78 &             144.99 \\
+                          $500$ &       109.70 &         142.97 &             185.95 \\ \bottomrule
+            \end{tabular}
+        \end{table}
+    
+        \begin{table}
+            \centering
+            \caption{Measurement results for the DDS with the biggest pattern}      
+            \label{tab:cep:measrun:big:dds}
+            \begin{tabular}{rrrr}
+                \toprule
+                length of input & random input & matching input & not matching input \\ \midrule
+                            $1$ &         1.37 &           1.54 &               1.09 \\
+                           $10$ &         7.83 &           7.30 &               7.74 \\
+                          $100$ &        60.54 &          67.93 &              80.98 \\
+                          $200$ &       122.98 &         130.25 &             161.43 \\
+                          $300$ &       178.86 &         195.13 &             237.92 \\
+                          $400$ &       239.53 &         259.06 &             324.71 \\
+                          $500$ &       298.38 &         325.48 &             403.61 \\ \bottomrule
+            \end{tabular}
+        \end{table}
