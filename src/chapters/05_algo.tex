@@ -254,7 +254,7 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	
 	\subsection{Measurement setup}
 	As the current implementation lacks of logical clocks, and the timed properties can only be evaluated by elapsing the required time, the pattern $a[i] \; a[i]^\ast \; r[i] \; r[i]^\ast \; a[i]$ will be the parametric and not temporal example.
-	The scalability is viewed from two points:
+	The scalability is viewed from three points:
 	
 	\begin{enumerate}
 		\item How well does the implementation scale with the size of the pattern?
@@ -276,16 +276,48 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	
 	
 		\subsubsection{Threats to validity}
-		Every measurement was done twelve times. The first two measurement result was dropped as it was considered as the warm up for the JVM. From the remaining ten, the median was calculated, to have a stable value which is the least affected by the noises of the measurement and the extremely high or low values.
+		Every measurement was done thirty two times. The first two measurement result was dropped as it was considered as the warm up for the JVM. From the remaining thirty, the median was calculated, to have a stable value which is the least affected by the noises of the measurement and the extremely high or low values. Between every iteration of a measurement, the garbage collector was called three times followed by a sleep to ensure that the garbage collection is if required.
 		
 		The measurements were aimed to cover some part of most use cases, however they are not exhausting every potential use case to think of.
 		
 		
 	
 	\subsection{Measurement Results}
+		Compilation time: 
 	
 		\todo{Diagram}
 		
 		\todo{Explanation}
+	
+	
+	%Research Questions: Itemize q1-q2, Performance
+	%
+	%Regex -> Automata
+	%or Execution
+	%
+	%
+	%Measurement setup
+	%What kind of input, what kind of queries, what was exactly measured, number of runs (min 5, ideally 30), median/min
+	%Measure +2 times and throw away the first.
+	%
+	%1 min runtime limit.
+	%
+	%
+	%/section{Measurement Results}
+	%Diagrams: explanation: explicity state the scalability 
+	%analysis of the result a1-a2-a3: answer q1-q2-q3
+	%
+	%
+	%Threats to validity : Eclipse is running, on my machine, noises expectedly cancelled with median (but who knows)
+	%Only one stuff was measured but this hűen reprezentálja a problémát
+	%Nagyon függ a bemeneti querytől és csak szemléltetni tudjuk a skálázhatóságot
+	%
+	%
+	%System.Nanosec
+	%
+	%Minden java indításkor belemegítés
+	%
+	%Minden mérés után 3x System.GC (Threats to validity)
+	%Thread.sleep(3s)
 	
 	
