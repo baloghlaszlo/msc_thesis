@@ -8,11 +8,11 @@ Currently the regular expression has a grammar implemented in Xtext, which gener
 The grammar is shown on \cref{lst:grammar}. \todo{Wrong cref}
 
 Note that the parameter listing is inside with square brackets ``[]'' to make the language context free. If we would use the simple round brackets, then A(B) would be ambiguous -- it could be either an A event with a B parameter, or a simple sequence of event A and event B with an unnecessary bracket.
-\todo{Do we require additional explanation?}
+%\todo{Do we require additional explanation?}
 
 \section{Parametric Timed Event Automaton}
 
-The parametric timed automaton was implemented using Eclipse Modeling Framework to provide a metamodel for it. The entire static structure is represented with EMF objects, but some of the runtime concepts are not covered with this metamodel, this will be further explained in \cref{section:algo:paramhandling}.
+The parametric timed automaton was implemented using the Eclipse Modeling Framework to provide a metamodel for it. The entire static structure is represented by EMF objects, but some of the runtime concepts are not covered with this metamodel, this will be further explained in \cref{section:algo:paramhandling}.
 
 \subsection{Finite Automaton}
 
@@ -31,9 +31,9 @@ Transitions have one EventGuard which shows what type of event can fire the tran
 \subsection{Timeout Event Automaton}
 
 The additional classes required to implement the Timeout functionalities are shown on \cref{fig:algo:timed_automaton}.
-Every timed expression in the regular expression is compiled to SymbolicTimer. Upon entering such timed region all transitions will have a SetTimerAction Action to start the timer. The transitions which exit the given region will have a ResetTimerAction Action for that timer. Every state which is in the Timeout region will have a Transition with a SymbolicTimeoutEvent instead of a SymbolicInputEvent to further specify the movement of the token in case of timeout. Currently these SymbolicTimeoutEvent Transitions are always pointing on a Trap state, however as this gives a more generalized automaton structure so this can help in the future to make the implementation of the Timeout Event Automaton with Intervals easier.
+Every timed expression in the regular expression is compiled to SymbolicTimer. Upon entering such timed region all transitions will have a SetTimerAction Action to start the timer. The transitions which exit the given region will have a ResetTimerAction Action for that timer. Every state which is in the Timeout region will have a Transition with a SymbolicTimeoutEvent instead of a SymbolicInputEvent to further specify the movement of the token in case of timeout. Currently these SymbolicTimeoutEvent Transitions are always pointing into a Trap state, however as this gives a more generalized automaton structure so this can help in the future to make the implementation of the Timeout Event Automaton with Intervals easier.
 
-A scratch of the implementation plan is duplicate the entire region, for each timeout \\ $\langle \mathit{Complex Pattern} \rangle_{t_0 < t < t_1}$ compile the $\mathit{ComplexPattern}$ twice. For the sake of easier understanding, let us call the first compilation's result  pre-interval as it represents when the token is before the desired time interval, and the call the second compilation result in-interval as it represents when the token is in the desired time interval. For each state in the pre-interval part the transition with the timeout will point to the equivalent state in the in-interval part, and for each state in the in-interval part the transition with the timeout will point to a trap state. All of the transitions, which would point to the accepting state of the pre-interval should be pointed to a Trap State as these shows that the pattern match occurred before the required interval.
+The implementation is introduced now at a high level. For each timeout \\ $\langle \mathit{Complex Pattern} \rangle_{t_0 < t < t_1}$ the algorithm compiles the $\mathit{ComplexPattern}$ twice. For the sake of easier understanding, let us call the first compilation's result  pre-interval as it represents when the token is before the desired time interval, and let call the second compilation result as in-interval, as it represents when the token is in the desired time interval. For each state in the pre-interval part the transition with the timeout will point to the equivalent state in the in-interval part, and for each state in the in-interval part the transition with the timeout will point to a trap state. All of the transitions, which would point to the accepting state of the pre-interval should point to a Trap State as they represent that the pattern match occurred before the required interval.
   
 \begin{figure}[h]
 	\centering
@@ -49,7 +49,7 @@ The part of the automaton metamodel which is extended with the parametric proper
 The parametrization of the events is represented by the Parameter abstract class. The type of each parameter is implemented with a reference to a SymbolicEvent instance. Parameters can be Fix or Free, an Event only has Fix parameters, but the tokens can have both. Event parameters can be bound to fix values or to a token parameter, this is done by the ConstantBinding and TokenParameterBinding respectively.
 
 This parameter handling approach is not the best, however this is which can be easily implemented using EMF.
-The deeper analysis of these parameter relations can are discussed in \cref{section:algo:paramhandling}.
+The deeper analysis of these parameter relations is discussed in \cref{section:algo:paramhandling}.
 
 \begin{figure}[h]
 	\centering
@@ -60,8 +60,8 @@ The deeper analysis of these parameter relations can are discussed in \cref{sect
 
 \section{Transformation from VEPL to the intermediate language}
 
-Regular expressions can be built from VEPL patterns, taking the event contexts into consideration
-Strict immediate is show on \cref{tab:cep:vepl_regex_strict}, and Chronicle is shown on \cref{tab:cep:vepl_regex_chronicle}.
+Regular expressions can be built from VEPL patterns, taking the event contexts into consideration.
+Strict immediate\citep{davidi} event context is show on \cref{tab:cep:vepl_regex_strict}, and Chronicle\citep{davidi} is shown on \cref{tab:cep:vepl_regex_chronicle}.
 Each of the patterns must start with a $\Sigma^*$, as in Complex Event Processing every pattern might have arbitrary prefix.
 
 Note that the semantics introduced in the previous chapter for the OR operator of Regular Expression, and the semantics of VEPL defined in\citep{davidi} are not exactly the same.
@@ -95,7 +95,7 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 \end{table}
 
 \section{Automaton Executor}
-	Two approaches exist on executing a parametric timed automaton, and in both ways there are multiple tokens in each automaton, so in some sense both can be considered nondeterministic.
+	Two approaches exist on executing a parametric timed automaton, and both approaches may have multiple tokens in an automaton, so in some sense both can be considered nondeterministic.
 	However from the token's point of view we can consider the two approaches deterministic and a nondeterministic.
 	
 %	In  both ways there are multiple tokens in the automaton with one parameter relation each, therefore they can be both considered nondeterministic.
@@ -119,7 +119,7 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 
 	On the implementation level the Nondeterministic Executor has been implemented as it is more general can execute any automaton generated from the regular expressions.
 
-	\todo{Maybe an example execution?}
+%	\todo{Maybe an example execution?}
 
 
 %	The algorithm first searches for all the activated transitions.
@@ -155,9 +155,9 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	The ``add every possible parameter value'' is only required upon the initialization of the automaton, and considering that the relations are empty on construction this operation can be changed to a complementer operation, which is more general.
 	In both cases the union is required for further optimization, and not an absolute necessity.
 
-	\subsection{Most Na\"ive approach}
+	\subsection{Explicit approach}
 	
-	The most na\"ive approach is to keep every potential binding in the memory, for example if there is a pattern $a[i_1]\;b[i_1,\dots,i_n]$ where all parameters are integers and event $a[1]$ happens the state of the memory is shown on \cref{tab:algo:memory}. This indicates that there would be $2^{32^{n-1}}$ objects in the memory, which is not feasible even if $n=3$.\footnote{If each object's size is just 1 bit even then $n=2$ would waste 512MB of memory}
+	The most na\"ive approach is to keep every potential binding in the memory, for example if there is a pattern $a[i_1]\;b[i_1,\dots,i_n]$ where all parameters are integers and event $a[1]$ happens the state of the memory is shown on \cref{tab:algo:memory}. This shows that there would be $2^{32^{n-1}}$ objects in the memory, which is not feasible even if $n=3$.\footnote{If each object's size is just 1 bit even then $n=2$ would waste 512MB of memory}
 	
 	\begin{table}
 	\caption{State of the memory on the most na\"ive approach}		
@@ -188,10 +188,10 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	where the abstract value can be either be
 	\begin{itemize}
 		\item A concrete value, which shows that for that token the given parameter is bound to that value, i.e.~the given parameter must be exactly that value, or
-		\item a list of excluded values which shows that for that token the given parameters values have been reduced by them, i.e.~the given parameter must not be any of the excluded values
+		\item a list of excluded values which shows that for that token the given parameters values have been reduced, i.e.~the given parameter must not be any of the excluded values
 	\end{itemize}
 
-	With this approach, every operation seems to be plausible, however a simple counter-example easily shows that the solution can not support the deterministic approach.
+	With this approach, every operation seems to be plausible, however a simple counter-example easily shows that the solution can not support the deterministic execution approach.
 	Consider the following example:
 	\begin{enumerate}
 		\item At first we have a parameter relation $P$, where $\langle p_1 = \forall, p_2 = \forall \rangle$, i.e.~with two excluded values with empty exclusion list.
@@ -203,7 +203,7 @@ Note that the semantics introduced in the previous chapter for the OR operator o
 	\subsection{Decision List}
 	
 	A decision list is a list of data, where each cell contains either a concrete value or the symbol $\ast$ which stands
-	for ``anything''. To find out if a values in the relation the rows must be read in order, and find the first row which conforms the values you are searching for \todo{algorithm} \dots and return the containment.
+	for ``anything''. To find values in the relation the rows must be read in order, and find the first row which conforms the values you are searching for and return the contained element.
 	An example of a decision list is shown on \cref{tab:cep:decision_list}
 	
 	\begin{table}
