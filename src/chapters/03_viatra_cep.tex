@@ -233,10 +233,36 @@ Our proposal is to use an intermediate language between the event pattern langua
 Using an intermediate language increases the extensibility of the framework, as additional pattern languages can be added later, by implementing a compiler from the high level language to the intermediate language, as shown on \cref{fig:viatracep:newinputs}.
 The intermediate language would allow the user to combine patterns defined in multiple languages, as multiple automata could run and their simultaneous runs could be analyzed in a formal way.
 
-
 \begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\linewidth]{figures/chapter_3/newinput}
-	\caption{A brief outline of the live model integration in VIATRA-CEP, with the intermediate language \redraw}
+	\noindent
+	\makebox[\textwidth]{
+		\centering
+		\begin{tikzpicture}[
+		node distance=1cm and 2cm,
+		edge/.style={thick, ->}
+		]
+		\small{
+			\node[rect, minimum height=30mm] (cep) {Complex\\Event\\Processing};
+			\node[rect, left=of cep, yshift=9mm, xshift=10mm] (es) {Event stream\\adapter};
+			\node[rect, left=of es] (vp) {VIATRA-Query\\graph patterns};
+			\node[rect, left=of vp, xshift=4mm] (emf) {EMF Model};
+			\node[rect, below=of emf] (jes) {Java\\Event Source};
+			\node[rect, below=0cm and 0cm of cep, text width = 19.55mm, inner xsep = 0mm] (il) {Intermediate\\language\\layer};
+			\node[rect, below=of il] (vql) {VEPL pattern};
+			\node[rect, left=of vql] (additional) {Additional\\languages};
+			\node[right=of cep, xshift=-3.5mm] (fakeNode){};
+		}
+		\footnotesize{
+			\draw[edge](emf) -- (vp) node[midway, above, align=center]{EMF\\notification};
+			\draw[edge](vp) -- (es) node[midway, above, align=center]{VIATRA-Query\\notification};
+			\draw[edge](es) -- (es-|cep.west) node[midway, above, align=center]{Pushed\\Events};
+			\draw[edge](jes) -- (jes-|cep.west) node[midway, above, align=center]{Pushed Events};
+			\draw[edge](vql) -- (il);
+			\draw[edge] (additional.north) |- (il.west);
+			\draw[edge](cep) -- (fakeNode) node[midway, above, align=center]{Conclusions};
+		} 
+		\end{tikzpicture}
+	}
+	\caption{A brief outline of the live model integration in VIATRA-CEP, with the intermediate language}
 	\label{fig:viatracep:newinputs}
 \end{figure}
